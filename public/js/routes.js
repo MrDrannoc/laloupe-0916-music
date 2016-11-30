@@ -24,8 +24,8 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('/partitionCreating', {
-            templateUrl: 'views/admin/partitionCreating.html',
+        .when('/partitionCreate', {
+            templateUrl: 'views/admin/partitionCreate.html',
             controller: 'loginController',
             controllerAs: 'vm'
         })
@@ -36,6 +36,16 @@ const routes = ($routeProvider, $httpProvider) => {
         })
         .when('/userEdit', {
             templateUrl: 'views/admin/userEdit.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
+        .when('/partitionEdit', {
+            templateUrl: 'views/admin/partitionEdit.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
+        .when('/partitionDelete', {
+            templateUrl: 'views/admin/partitionDelete.html',
             controller: 'loginController',
             controllerAs: 'vm'
         })
