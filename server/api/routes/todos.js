@@ -1,6 +1,6 @@
 import express from 'express';
 import Todo from '../models/todo.js';
-import Auth from '../middlewares/authorization.js';
+/*import Auth from '../middlewares/authorization.js';*/
 
 let router = express.Router();
 
@@ -18,6 +18,6 @@ module.exports = (app) => {
 
     router.delete('/:id', todo.delete);
 
-    app.use('/todos', Auth.hasAuthorization, router);
+    app.use('/todos', /*Auth.hasAuthorization,*/ router);
 
 }
