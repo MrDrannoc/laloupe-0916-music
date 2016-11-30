@@ -14,6 +14,41 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'loginController',
             controllerAs: 'vm'
         })
+        .when('/creatingUser', {
+            templateUrl: 'views/admin/creatingUser.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
+        .when('dashboard', {
+            templateUrl: 'views/admin/dashboard.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
+        .when('/partitionCreating', {
+            templateUrl: 'views/admin/partitionCreating.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
+        .when('/userBlock', {
+            templateUrl: 'views/admin/userBlock.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
+        .when('/userEdit', {
+            templateUrl: 'views/admin/userEdit.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
+        .when('/exercice', {
+            templateUrl: 'views/user/exercice.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
+        .when('/listExercices', {
+            templateUrl: 'views/user/listExercices.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
+        })
         .otherwise({
             redirectTo: '/'
         })
