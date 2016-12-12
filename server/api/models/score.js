@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
-var Bar = require('bar.js');
-var Note = require('note.js');
+import Bar from './bar.js';
+import Note from './note.js';
+var Schema=mongoose.Schema;
 
 const scoreSchema = new mongoose.Schema({
     tempoScore: String,

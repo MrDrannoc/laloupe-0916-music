@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
-var Score = require('score.js');
-var Bar = require('bar.js');
+import Score from './score.js';
+import Bar from './bar.js';
+var Schema=mongoose.Schema;
 
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
