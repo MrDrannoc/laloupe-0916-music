@@ -1,16 +1,28 @@
-.navbar-yellow {
-    background-color: #FFF94D;
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    border-radius: 0;
-    border-bottom: 2px solid black;
+*{
+  margin: 0;
+  padding:0;
 }
-.navbar-brand img {
-    max-height: 100%;
-    transition: 0.8s;
+
+/*navbar*/
+nav{
+  background-color: #9933CC!important;
+  color : white;
+  font-family: 'Grand Hotel', cursive;
 }
-.navbar-brand:hover img {
-    transform: rotate(360deg);
+nav .container-fluid .part1 .navbar-brand{
+  margin: 0;
+  padding: 0;
 }
+nav .container-fluid .part1 .navbar-brand img {
+  width: 50px;
+  margin-top:  8%;
+ }
+nav .container-fluid .part2 h1{
+line-height: 45%;
+padding-bottom: 2%;
+}
+nav .container-fluid .part3 a img {
+  width: 45px;
+  padding-top: 8%;
+}
+/*fin de navbar*/
