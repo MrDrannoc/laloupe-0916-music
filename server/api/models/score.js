@@ -39,7 +39,7 @@ export default class Score {
                     res.json(score);
                 }
             })
-            .populate('bars');;
+            .populate('bars');
     }
 
     create(req, res) {
