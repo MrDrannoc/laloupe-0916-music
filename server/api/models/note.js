@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
-import score from './score.js';
-import bar from './bar.js';
-var Schema = mongoose.Schema;
+import Score from './score.js';
+import Bar from './bar.js';
+var Schema=mongoose.Schema;
 
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
     valueNote: String,
+    urlNote: String,
     score: {
         type: Schema.Types.ObjectId,
         ref: 'Score'
