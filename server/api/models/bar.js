@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-var Score = require('score.js');
-var Note = require('note.js');
+import score from './score.js';
+var Schema = mongoose.Schema;
 
 const barSchema = new mongoose.Schema({
     numBitBar: String,
@@ -78,7 +78,7 @@ export default class Bar {
             } else {
                 res.sendStatus(200);
             }
-        })
+        });
     }
 
     addNoteToBar(bar_id, note_id, res) {

@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
-var Bar = require('bar.js');
-var Note = require('note.js');
+import bar from './bar.js';
+import note from './note.js';
+var Schema = mongoose.Schema;
+
 
 const scoreSchema = new mongoose.Schema({
     tempoScore: String,
@@ -74,7 +76,7 @@ export default class Score {
             } else {
                 res.sendStatus(200);
             }
-        })
+        });
     }
     addBarToScore(score_id, bar_id, res) {
         model.findByIdAndUpdate(score_id, {

@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-
 const todoSchema = new mongoose.Schema({
     description: String
 });
@@ -62,6 +61,6 @@ export default class Todo {
             } else {
                 res.sendStatus(200);
             }
-        })
+        });
     }
 }
