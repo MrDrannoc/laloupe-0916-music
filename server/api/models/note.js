@@ -5,6 +5,7 @@ var Bar = require('bar.js');
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
     valueNote: String,
+    urlNote: String,
     score: {
         type: Schema.Types.ObjectId,
         ref: 'Score'
