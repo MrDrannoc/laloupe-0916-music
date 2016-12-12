@@ -44,7 +44,8 @@ export default class Note {
     create(req, res) {
         model.create({
                 heigthNote: req.body.heigthNote,
-                valueNote: req.body.valueNote
+                valueNote: req.body.valueNote,
+                urlNote: req.body.urlNote
             },
             (err, note) => {
                 if (err) {
@@ -60,7 +61,8 @@ export default class Note {
             _id: req.params.id
         }, {
             heigthNote: req.body.heigthNote,
-            valueNote: req.body.valueNote
+            valueNote: req.body.valueNote,
+            urlNote: req.body.urlNote
         }, (err, note) => {
             if (err || !note) {
                 res.status(500).send(err.message);
