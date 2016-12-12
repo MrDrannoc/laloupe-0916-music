@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-var Score = require('testScore.js');
-var Note = require('testNote.js');
+var Score = require('score.js');
+var Note = require('note.js');
 
 const barSchema = new mongoose.Schema({
     numBitBar: String,
@@ -82,7 +82,7 @@ export default class Bar {
     }
 
     addNoteToBar(bar_id, note_id, res) {
-        model.findByIdAndUpdate(note_id, {
+        model.findByIdAndUpdate(bar_id, {
                 $push: {
                     notes: note_id
                 }
