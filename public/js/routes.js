@@ -19,14 +19,14 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('dashboard', {
+        .when('/dashboard', {
             templateUrl: 'views/admin/dashboard.html',
             controller: 'loginController',
             controllerAs: 'vm'
         })
         .when('/partitionCreate', {
             templateUrl: 'views/admin/partitionCreate.html',
-            controller: 'loginController',
+            controller: 'partitionCreateController',
             controllerAs: 'vm'
         })
         .when('/userBlock', {
