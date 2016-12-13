@@ -26,3 +26,52 @@ nav .container-fluid .part3 a img {
   padding-top: 8%;
 }
 /*fin de navbar*/
+
+/* Footer*/
+
+#contact {
+  font-size : 2em;
+  color : white;
+}
+
+.envelope {
+  color: white;
+  margin-left : 20%;
+}
+.envelope:hover {
+  color:black;
+}
+
+#realisation {
+  font-size : 2em;
+  color : white;
+}
+
+.school {
+  color : white;
+}
+.school:hover {
+  color : black;
+}
+
+.logoSchool{
+  width : 2em;
+  color : white;
+  margin-left : 40%;
+}
+
+#credits {
+  font-size : 2em;
+  color : white;
+  padding-right: 3%;
+}
+
+.credits {
+  width : 2em;
+  color : white;
+  margin-left : 18%;
+}
+.credits:hover {
+  color : black;
+}
+/* Fin de footer */
