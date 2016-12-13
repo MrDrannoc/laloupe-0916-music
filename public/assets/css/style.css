@@ -1,28 +1,106 @@
-*{
-  margin: 0;
-  padding:0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
+
 /*navbar*/
-nav{
-  background-color: #9933CC!important;
-  color : white;
-  font-family: 'Grand Hotel', cursive;
+
+nav {
+    background-color: #9933CC!important;
+    color: white;
+    font-family: 'Grand Hotel', cursive;
 }
-nav .container-fluid .part1 .navbar-brand{
-  margin: 0;
-  padding: 0;
+
+nav .container-fluid .part1 .navbar-brand {
+    margin: 0;
+    padding: 0;
 }
+
 nav .container-fluid .part1 .navbar-brand img {
-  width: 50px;
-  margin-top:  8%;
- }
-nav .container-fluid .part2 h1{
-line-height: 45%;
-padding-bottom: 2%;
+    width: 50px;
+    margin-top: 8%;
 }
+
+nav .container-fluid .part2 h1 {
+    line-height: 45%;
+    padding-bottom: 2%;
+}
+
 nav .container-fluid .part3 a img {
-  width: 45px;
-  padding-top: 8%;
+    width: 45px;
+    padding-top: 8%;
 }
+
+
 /*fin de navbar*/
+
+
+/*creation utilisateur*/
+
+
+/*bloc 1 (ourson)*/
+
+.container .bloc1 {
+    margin-top: 5%;
+    margin-left: 4%;
+}
+
+
+/*fin du bloc 1*/
+
+
+/*bloc 2 (discours de l'ourson)*/
+
+.container .bloc2 {
+    margin-top: 0.5%;
+    width: 70%;
+}
+
+.row .paragrapheOurson {
+    background-color: #9933CC;
+    color: white;
+}
+.row .paragrapheOurson h2{
+  text-align: center;
+}
+.row .paragrapheOurson p{
+  text-align: justify;
+}
+
+
+/*fin du bloc 2*/
+
+
+/*bloc 3 donnée utilisateur*/
+
+.bloc3 {
+    margin-top: 0.5%;
+    background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
+    background-repeat: no-repeat;
+    width: 570px;
+    height: 344px;
+}
+.bloc3 .formulaire{
+  background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+height: 90%;
+top: 5%;
+}
+.bloc3 .form-horizontal{
+  height: 90%;
+  margin-top: 5%;
+  background-color: white;
+  padding: 10%;
+}
+.bloc3 button{
+  background-color: #9933CC;
+  color: white;
+}
+.bloc3 button:hover{
+  background-color: #aa66cc;
+  color: #f3e5f5;
+}
+/*fin du bloc3*/
+
+
+/*fin de creation utilisateur*/
