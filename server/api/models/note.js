@@ -6,7 +6,7 @@ var Schema=mongoose.Schema;
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
     valueNote: String,
-    urlNote: String,
+    orderNote: String,
     score: {
         type: Schema.Types.ObjectId,
         ref: 'Score'
@@ -44,7 +44,8 @@ export default class Note {
     create(req, res) {
         model.create({
                 heigthNote: req.body.heigthNote,
-                valueNote: req.body.valueNote
+                valueNote: req.body.valueNote,
+                orderNote: req.body.orderNote
             },
             (err, note) => {
                 if (err) {
@@ -60,7 +61,8 @@ export default class Note {
             _id: req.params.id
         }, {
             heigthNote: req.body.heigthNote,
-            valueNote: req.body.valueNote
+            valueNote: req.body.valueNote,
+            orderNote: req.body.orderNote
         }, (err, note) => {
             if (err || !note) {
                 res.status(500).send(err.message);
