@@ -27,7 +27,14 @@ nav .container-fluid .part3 a img {
 }
 /*fin de navbar*/
 
+#mainView {
+  min-height: 100vh;
+}
+
 /* Footer*/
+footer {
+bottom: 0;
+}
 
 #contact {
   font-size : 2em;
