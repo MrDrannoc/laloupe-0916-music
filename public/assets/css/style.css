@@ -203,7 +203,7 @@ footer {
 /* Fin de footer */
 
 
-/*creation utilisateur*/
+/*creation utilisateur, blocage utilisateur*/
 
 
 /*bloc 1 (ourson)*/
@@ -231,10 +231,14 @@ footer {
 
 .row .paragrapheOurson h2 {
     text-align: center;
+    font-family:'Grand Hotel', cursive;
+    text-decoration: underline;
 }
 
 .row .paragrapheOurson p {
-    text-align: justify;
+    text-align: center;
+    font-family:'Grand Hotel', cursive;
+    font-size: 1.5em;
 }
 
 
@@ -244,14 +248,28 @@ footer {
 /*bloc 3 donnée utilisateur*/
 
 .bloc3 {
-    margin-top: 0.5%;
+    margin-top: 2%;
     background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
     background-repeat: no-repeat;
     width: 570px;
     height: 344px;
 }
 
+.bloc3blocage {
+    margin-top: 2%;
+    background-image: url(/assets/img/elementsPages/backgroundBlockUser.png);
+    background-repeat: no-repeat;
+    width: 570px;
+    height: 344px;
+}
+
 .bloc3 .formulaire {
+    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    height: 90%;
+    top: 5%;
+}
+
+.bloc3blocage .formulaire {
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
     height: 90%;
     top: 5%;
@@ -264,12 +282,39 @@ footer {
     padding: 10%;
 }
 
+.bloc3blocage .form-horizontal {
+    height: 90%;
+    margin-top: 5%;
+    background-color: white;
+    padding: 10%;
+}
+
+.bloc3blocage .form-horizontal h6  {
+  font-family:'Grand Hotel', cursive;
+  font-size: 1.5em;
+
+}
+
 .bloc3 button {
     background-color: #9933CC;
     color: white;
 }
 
+.bloc3blocage button {
+    background-color: #9933CC;
+    color: white;
+}
+
+.bloc3blocage .formulaire .form-group button{
+  margin-top: 65%;
+}
+
+
 .bloc3 button:hover {
+    background-color: #aa66cc;
+    color: #f3e5f5;
+}
+.bloc3blocage button:hover {
     background-color: #aa66cc;
     color: #f3e5f5;
 }
