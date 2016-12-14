@@ -1,49 +1,48 @@
-<div>
-    <h1>Pierre</h1>
-    <p></p>
-</div>
-
-<div id="createPartition">
-    <form class="form-horizontal">
-
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput"></label>
-            <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Nom de l'exercice" class="form-control input-md" type="text">
-
+<div class="container">
+    <div class="bloc1">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <img src="./assets/img/elementsPages/ourson.png" alt="ourson"/>
             </div>
         </div>
-
-        <!-- Select Basic -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasic"></label>
-            <div class="col-md-4">
-                <select id="selectbasic" name="selectbasic" class="form-control">
-                    <option value="0">Niveau de l'exercice</option>
-                    <option value="1">Facile</option>
-                    <option value="2">Intermédiaire</option>
-                    <option value="3">Expert</option>
-                </select>
+    </div>
+    <div class="bloc2">
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-6 paragrapheOurson">
+                <h1>Pierre</h1>
+                <p>Nomme, décrit et compose les exercices grâce aux outils ci-dessous.</p>
             </div>
         </div>
-
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput"></label>
-            <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Tempo" class="form-control input-md" type="text">
-
-            </div>
+    </div>
+    <div class="container grosBloc col-lg-6 col-lg-offset-3">
+        <div class="formulaire col-lg-9 col-lg-offset-3">
+          <h2>Création d'une partition</h2>
+          <div class="caracteristiquePartition">
+            <form class="form-horizontal col-lg-11 col-lg-offset-1">
+                <div class="form-group">
+                    <input id="textinput" name="textinput" placeholder="NOM DE L'EXERCICE" class="form-control input-md" type="text">
+                </div>
+                <div class="form-group">
+                    <select id="selectbasic" name="selectbasic" class="form-control">
+                        <option value="0">NIVEAU DE L'EXERCICE</option>
+                        <option value="1">Facile</option>
+                        <option value="2">Intermédiaire</option>
+                        <option value="3">Expert</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input id="textinput" name="textinput" placeholder="TEMPO" class="form-control input-md" type="text">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="textarea" name="textarea">ENONCE DE L'EXERCICE DIT PAR LE PANDA</textarea>
+                </div>
+            </form>
+          </div>
         </div>
-
-        <!-- Textarea -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="textarea"></label>
-            <div class="col-md-4">
-                <textarea class="form-control" id="textarea" name="textarea">Texte que dira le panda dans sa bulle d'énoncé.</textarea>
-            </div>
-        </div>
-
-    </form>
+    </div>
+    <div class="bloc4 col-lg-12">
+      <p class="text-center">
+        C'est ici que nous allons mettre les différents éléments afin de créer une partition
+      </p>
+    </div>
 </div>
