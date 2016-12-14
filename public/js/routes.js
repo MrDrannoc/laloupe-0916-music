@@ -34,11 +34,6 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('/userEdit', {
-            templateUrl: 'views/admin/userEdit.html',
-            controller: 'loginController',
-            controllerAs: 'vm'
-        })
         .when('/partitionEdit', {
             templateUrl: 'views/admin/partitionEdit.html',
             controller: 'loginController',
