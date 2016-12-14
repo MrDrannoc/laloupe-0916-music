@@ -23,6 +23,7 @@ nav .container-fluid .part1 .navbar-brand img {
 }
 
 nav .container-fluid .part2 h1 {
+    margin-left: 30px;
     line-height: 45%;
     padding-bottom: 2%;
 }
@@ -203,7 +204,7 @@ footer {
 /* Fin de footer */
 
 
-/*creation utilisateur*/
+/*creation uti  lisateur*/
 
 
 /*bloc 1 (ourson)*/
@@ -274,8 +275,46 @@ footer {
     color: #f3e5f5;
 }
 
-
 /*fin du bloc3*/
 
 
 /*fin de creation utilisateur*/
+
+/*page login*/
+
+.pageLogin .bloc1{
+      background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
+      background-repeat: no-repeat;
+      width: 570px;
+      height: 344px;
+      margin-top: 17%;
+      margin-left: 25%;
+}
+.pageLogin .bloc1 .sousBloc1{
+  background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  height: 70%;
+  top: 12%;
+}
+.pageLogin .bloc1 .sousBloc1 h2{
+  font-family: 'Grand Hotel', cursive;
+  text-align: center;
+}
+
+.pageLogin .bloc1 .sousBloc1 button {
+    background-color: #9933CC;
+    color: white;
+    margin-left: 25%;
+}
+.pageLogin .bloc1 .sousBloc1 form{
+  margin-top: 5%;
+}
+.pageLogin .bloc1 .sousBloc1 button:hover {
+    background-color: #aa66cc;
+    color: #f3e5f5;
+  }
+  .pageLogin .bloc1 p{
+    margin-top: 57%;
+    text-align: center;
+    font-size: 12px;
+  }
+/*fin de page login*/
