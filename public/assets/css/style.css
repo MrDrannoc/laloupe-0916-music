@@ -264,26 +264,13 @@ footer {
     height: 344px;
 }
 
-.bloc3 .formulaire {
+.bloc3 .formulaire, .bloc3blocage .formulaire {
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
     height: 90%;
     top: 5%;
 }
 
-.bloc3blocage .formulaire {
-    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-    height: 90%;
-    top: 5%;
-}
-
-.bloc3 .form-horizontal {
-    height: 90%;
-    margin-top: 5%;
-    background-color: white;
-    padding: 10%;
-}
-
-.bloc3blocage .form-horizontal {
+.bloc3 .form-horizontal, .bloc3blocage .form-horizontal  {
     height: 90%;
     margin-top: 5%;
     background-color: white;
@@ -296,12 +283,7 @@ footer {
 
 }
 
-.bloc3 button {
-    background-color: #9933CC;
-    color: white;
-}
-
-.bloc3blocage button {
+.bloc3 button, .bloc3blocage button {
     background-color: #9933CC;
     color: white;
 }
@@ -311,11 +293,7 @@ footer {
 }
 
 
-.bloc3 button:hover {
-    background-color: #aa66cc;
-    color: #f3e5f5;
-}
-.bloc3blocage button:hover {
+.bloc3 button:hover, .bloc3blocage button:hover  {
     background-color: #aa66cc;
     color: #f3e5f5;
 }
@@ -363,3 +341,49 @@ footer {
     font-size: 12px;
   }
 /*fin de page login*/
+
+/* Page supprimer et éditer un exercice */
+
+.bloc3delete {
+    margin-top: 2%;
+    background-image: url(/assets/img/elementsPages/backgroundSuppressionExercice.png);
+    background-repeat: no-repeat;
+    width: 570px;
+    height: 344px;
+}
+.bloc3edit {
+    margin-top: 2%;
+    background-image: url(/assets/img/elementsPages/backgroundEditionExercice.png);
+    background-repeat: no-repeat;
+    width: 570px;
+    height: 344px;
+}
+.bloc3delete .formulaire, .bloc3edit .formulaire {
+    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    height: 90%;
+    top: 5%;
+}
+.bloc3delete .form-horizontal, .bloc3edit .form-horizontal {
+    height: 90%;
+    margin-top: 5%;
+    background-color: white;
+    padding: 10%;
+}
+.bloc3delete .form-horizontal h6, .bloc3edit .form-horizontal h6  {
+  font-family:'Grand Hotel', cursive;
+  font-size: 1.5em;
+
+}
+.bloc3delete button, .bloc3edit button {
+    background-color: #9933CC;
+    color: white;
+}
+
+.bloc3delete .formulaire .form-group button, .bloc3edit .formulaire .form-group button{
+  margin-top: 65%;
+}
+
+.bloc3delete button:hover, .bloc3edit button:hover {
+    background-color: #aa66cc;
+    color: #f3e5f5;
+}
