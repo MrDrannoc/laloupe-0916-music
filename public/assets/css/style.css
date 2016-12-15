@@ -218,8 +218,15 @@ footer {
 
 
 /*fin du bloc 1*/
-
-
+li:before {
+content: "♥ "; /* caractère UTF-8 */
+color:white; /*couleur du caractere*/
+}
+ul {
+list-style:none;
+margin-left:0;
+padding-left:0;
+}
 /*bloc 2 (discours de l'ourson)*/
 
 .container .bloc2 {
@@ -442,6 +449,8 @@ footer {
 
 
 /*fin de bloc3*/
-
+.oursonlist{
+  margin-top:120px;
+}
 
 /*fin de creation d'une partition*/
