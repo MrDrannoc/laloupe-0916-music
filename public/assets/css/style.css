@@ -240,7 +240,6 @@ footer {
 
 .row .paragrapheOurson p {
     text-align: center;
-    font-family: 'Grand Hotel', cursive;
     font-size: 1.5em;
 }
 
@@ -426,6 +425,7 @@ footer {
 .grosBloc .formulaire {
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
     top: 15%;
+    height: 75%;
 }
 
 .grosBloc .formulaire .caracteristiquePartition .form-horizontal {
@@ -433,15 +433,82 @@ footer {
 }
 
 .container .grosBloc {
-    height: 400px;
+    height: 440px;
     margin-top: 2%;
     background-image: url(/assets/img/elementsPages/background_partitionCreate.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.grosBloc .formulaire form {
+  background-color: white;
+  padding: 6%;
+}
 
 /*fin de bloc3*/
 
 
-/*fin de creation d'une partition*/
+/*User interface exercise*/
+
+.container .bloc2user {
+    background-color: #2196f3;
+    margin-top: 1%;
+}
+
+.bloc2user h1 {
+    text-align: center;
+    font-family: 'Grand Hotel', cursive;
+    color: white;
+}
+
+.bloc2user .paragrapheOursonUser p {
+    text-align: justify;
+    color: white;
+}
+.container .bloc3user{
+  background-color: #2196f3;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.bloc3user .row{
+  margin-top: 2%;
+  height: 130px;
+}
+.titleExercise h1, .titleTrack h2 {
+  text-align: center;
+  color: white;
+  font-family: 'Grand Hotel', cursive;
+}
+.titleExercise h1{
+  font-size: 70px;
+}
+.titleTrack h2{
+  font-size: 50px;
+  margin-top: 10%;
+}
+.bloc3user .dropdown{
+  margin-top: 13%;
+  margin-left: 20%;
+}
+.bloc3user .dropdown ul li{
+  margin: 2%;
+}
+.bloc3user .buttonPlaying button{
+  margin: 1%;
+  width: 25%;
+  height: 60px;
+  left: -5%;
+  font-size: 40px;
+  line-height: 0.99;
+}
+.bloc3user .measure{
+  margin-top: 5%;
+  margin-left: 22%;
+}
+.metronome img{
+  width: 60%;
+}
+.metronome{
+  margin-left: 90%;
+  margin-bottom: 2%;
+}
+/*fin de user inferface exercice*/
