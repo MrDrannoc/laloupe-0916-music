@@ -232,11 +232,12 @@ padding-left:0;
 .container .bloc2 {
     margin-top: 0.5%;
     width: 70%;
+
 }
 
 .row .paragrapheOurson {
-    background-color: #3196F3;
-    color: white;
+    background-color: #9933CC;
+        color: white;
 }
 
 .row .paragrapheOurson h2 {
@@ -459,7 +460,7 @@ padding-left:0;
 /*User interface exercise*/
 
 .container .bloc2user {
-    background-color: #2196f3;
+    background-color: #9933CC;
     margin-top: 1%;
 }
 
@@ -474,7 +475,7 @@ padding-left:0;
     color: white;
 }
 .container .bloc3user{
-  background-color: #2196f3;
+  background-color: #9933CC;
   margin-top: 2%;
   margin-bottom: 2%;
 }
