@@ -23,9 +23,21 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    firstname: {
+        type: String,
+        required: true
+    },
+    lastname: {
+        type: String,
+        required: true
+    },
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    suspendUser : {
+      type: Boolean,
+      default: false
     }
 });
 
@@ -140,6 +152,18 @@ export default class User {
                     user: user,
                     token: tk
                 });
+            }
+        });
+    }
+
+    suspend(req, res) {
+        model.update({
+            _id: req.params.id
+        }, {suspendUser:true}, (err, user) => {
+            if (err || !user) {
+                res.status(500).send(err.message);
+            } else {
+                res.sendStatus(200);
             }
         });
     }

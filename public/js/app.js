@@ -6,6 +6,7 @@ angular.module('app', ['ngRoute'])
         .controller('partitionCreateController', partitionCreateController)
         .controller('navbarController', navbarController)
         .controller('loginController', loginController)
+        .controller('userCreateController', userCreateController)
         .config(routes)
         .run(loginStatus)
         ;

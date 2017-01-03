@@ -9,7 +9,11 @@ export default {
                 if (err) {
                     return res.sendStatus(403);
                 } else {
-                    next();
+                    if (decoded._doc.suspendUser) {
+                        return res.sendStatus(403);
+                    } else {
+                        next();
+                    }
                 }
             });
         } else {
