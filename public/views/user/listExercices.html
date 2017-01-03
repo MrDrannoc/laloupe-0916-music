@@ -20,48 +20,15 @@
         <div class="bloc3-exo">
             <div class="col-lg-10 col-lg-offset-1 paragrapheOurson">
                 <h2>Mes exercices</h2>
-                <div class="row">
+                <div class="row" ng-controller="scoreController as vm">
                     <div class="col-lg-2 col-lg-offset-1">
-                        <img src="../../assets/img/elementsPages/sucetteverte.png" alt=""/>
+                        {{levelPicture}}
                     </div>
                     <div class="col-lg-6">
-                        <p>Exercice : Faire quelque chose</p>
+                        <p>{{nameScore}}</p>
                     </div>
                     <div class="col-lg-2">
-                        <p>FACILE</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-lg-offset-1">
-                        <img src="../../assets/img/elementsPages/sucetteverte.png" alt=""/>
-                    </div>
-                    <div class="col-lg-6">
-                        <p>Exercice : Faire quelque chose</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>FACILE</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-lg-offset-1">
-                        <img src="../../assets/img/elementsPages/sucetteverte.png" alt=""/>
-                    </div>
-                    <div class="col-lg-6">
-                        <p>Exercice : Faire quelque chose</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>FACILE</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-lg-offset-1">
-                        <img src="../../assets/img/elementsPages/sucetteverte.png" alt=""/>
-                    </div>
-                    <div class="col-lg-6">
-                        <p>Exercice : Faire quelque chose</p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>FACILE</p>
+                        <p>{{levelScore}}</p>
                     </div>
                 </div>
             </div>
