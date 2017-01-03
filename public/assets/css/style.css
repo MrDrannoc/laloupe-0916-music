@@ -11,20 +11,7 @@ nav {
   font-family      : 'Grand Hotel',
                      cursive;
 }
-.puce{
-  height:25px;
-  width: 5px;
-  border-radius: 50px;
-  background-color: green;
-  border: 2px solid black
-}
-.puce2{
-  height:25px;
-  width: 5px;
-  border-radius: 50px;
-  background-color: red;
-  border: 2px solid black
-}
+
 nav .container-fluid .part1 .navbar-brand {
   margin  : 0;
   padding : 0;
@@ -548,3 +535,8 @@ padding-left:0;
   margin-bottom: 2%;
 }
 /*fin de user inferface exercice*/
+/*listExercice*/
+.bloc3-exo {
+  padding-top: 3%;
+}
+/*fin de listExercice*/
