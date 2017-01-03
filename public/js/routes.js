@@ -16,7 +16,7 @@ const routes = ($routeProvider, $httpProvider) => {
         })
         .when('/userCreate', {
             templateUrl: 'views/admin/userCreate.html',
-            controller: 'loginController',
+            controller: 'userCreateController',
             controllerAs: 'vm'
         })
         .when('/dashboard', {
@@ -24,22 +24,22 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('/partitionCreate', {
+        .when('/partition/create', {
             templateUrl: 'views/admin/partitionCreate.html',
             controller: 'partitionCreateController',
             controllerAs: 'vm'
         })
-        .when('/userBlock', {
+        .when('/user/block', {
             templateUrl: 'views/admin/userBlock.html',
-            controller: 'loginController',
+            controller: 'userBlockController',
             controllerAs: 'vm'
         })
-        .when('/partitionEdit', {
+        .when('/partition/edit', {
             templateUrl: 'views/admin/partitionEdit.html',
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('/partitionDelete', {
+        .when('/partition/delete', {
             templateUrl: 'views/admin/partitionDelete.html',
             controller: 'loginController',
             controllerAs: 'vm'
@@ -49,7 +49,7 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('/listExercices', {
+        .when('/list/exercices', {
             templateUrl: 'views/user/listExercices.html',
             controller: 'loginController',
             controllerAs: 'vm'

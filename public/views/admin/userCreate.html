@@ -20,20 +20,20 @@
         <div class="formulaire col-lg-8 col-lg-offset-4">
             <form class="form-horizontal col-lg-8 col-lg-offset-3">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="firstName" placeholder="Prénom de l'utilisateur">
+                    <input ng-model="vm.user.firstname" type="text" class="form-control" id="firstName" placeholder="Prénom de l'utilisateur">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Nom de l'utilisateur">
+                    <input ng-model="vm.user.lastname" type="text" class="form-control" id="name" placeholder="Nom de l'utilisateur">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <input ng-model="vm.user.email" type="email" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe partout">
+                    <input ng-model="vm.user.password" type="password" class="form-control" id="inputPassword" placeholder="Mot de passe partout">
                 </div>
                 <div class="form-group">
                     <div class="col-lg-offset-2 ">
-                        <button type="submit" class="btn btn-default">Créer l'utilisateur</button>
+                        <button ng-click="vm.create()" type="submit" class="btn btn-default">Créer l'utilisateur</button>
                     </div>
                 </div>
             </form>
