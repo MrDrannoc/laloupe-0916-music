@@ -1,19 +1,18 @@
 import mongoose from 'mongoose';
 import Score from './score.js';
 import Bar from './bar.js';
-var Schema=mongoose.Schema;
 
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
     valueNote: String,
     orderNote: String,
-    score: {
-        type: Schema.Types.ObjectId,
-        ref: 'Score'
-    },
     bar: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Bar'
+    },
+    score: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Score'
     }
 });
 
@@ -45,7 +44,8 @@ export default class Note {
         model.create({
                 heigthNote: req.body.heigthNote,
                 valueNote: req.body.valueNote,
-                orderNote: req.body.orderNote
+                orderNote: req.body.orderNote,
+                bar: req.body.bar
             },
             (err, note) => {
                 if (err) {
@@ -62,7 +62,8 @@ export default class Note {
         }, {
             heigthNote: req.body.heigthNote,
             valueNote: req.body.valueNote,
-            orderNote: req.body.orderNote
+            orderNote: req.body.orderNote,
+            bar: req.body.bar
         }, (err, note) => {
             if (err || !note) {
                 res.status(500).send(err.message);

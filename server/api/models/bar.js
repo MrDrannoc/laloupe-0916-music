@@ -1,17 +1,17 @@
 import mongoose from 'mongoose';
 import Score from './score.js';
 import Note from './note.js';
-var Schema=mongoose.Schema;
 
 const barSchema = new mongoose.Schema({
     numBitBar: String,
     referenceValueBar: String,
+    orderBar: String,
     score: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Score'
     },
     notes: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Note'
     }]
 });
@@ -46,7 +46,8 @@ export default class Bar {
         model.create({
                 numBitBar: req.body.numBitBar,
                 referenceValueBar: req.body.referenceValueBar,
-                notes: req.body.notes
+                orderBar: req.body.orderBar,
+                score: req.body.score
             },
             (err, bar) => {
                 if (err) {
@@ -62,7 +63,8 @@ export default class Bar {
             _id: req.params.id
         }, {
             numBitBar: req.body.numBitBar,
-            referenceValueBar: req.body.referenceValueBar
+            referenceValueBar: req.body.referenceValueBar,
+            orderBar: req.body.orderBar
         }, (err, bar) => {
             if (err || !bar) {
                 res.status(500).send(err.message);
