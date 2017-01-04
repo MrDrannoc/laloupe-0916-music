@@ -157,13 +157,21 @@ export default class User {
     }
 
     suspend(req, res) {
-        model.update({
-            _id: req.params.id
-        }, {suspendUser:true}, (err, user) => {
+        model.findById(req.params.id, {
+            password: 0
+        }, (err, user) => {
             if (err || !user) {
-                res.status(500).send(err.message);
+                res.sendStatus(403);
             } else {
-                res.sendStatus(200);
+              model.update({
+                  _id: req.params.id
+              }, {suspendUser:!user.suspendUser}, (err, user) => {
+                  if (err || !user) {
+                      res.status(500).send(err.message);
+                  } else {
+                      res.sendStatus(200);
+                  }
+              });
             }
         });
     }

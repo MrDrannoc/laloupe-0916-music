@@ -11,32 +11,31 @@
             <div class="col-lg-5 col-lg-offset-6 paragrapheOurson">
                 <h2>Pierre</h2>
                 <p>
-                    Selectionne un utilisateur dans la liste.<br>
-                    Clique sur "suspendre" et ce dernier n'aura plus accès à la plateforme.
+                    Selectionne un utilisateur à suspendre ou à réactiver dans une des deux listes puis valide.
                 </p>
             </div>
         </div>
     </div>
     <div class="container bloc3blocage col-lg-6 col-lg-offset-3">
         <div class="formulaire col-lg-7 col-lg-offset-5">
-            <form ng-submit="vm.suspend()" class="form-horizontal col-lg-10 col-lg-offset-1">
-              <h6>Sélectionne un utilisateur</h6>
-                <div class="dropdown">
-                  <div class="col-lg-offset-2 ">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Utilisateurs
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li ng-repeat="user in vm.users">
-                            <a ng-click="" href="">{{user.firstname}} {{user.lastname}}</a>
-                        </li>
-                    </ul>
-                    </div>
+            <form ng-submit="vm.suspend(vm.select._id)" class="form-horizontal col-lg-10 col-lg-offset-1">
+                <h6>Sélectionne un utilisateur</h6>
+                <div class="select">
+                        <p>Réactiver</p>
+                        <select class="form-control" ng-model="vm.select">
+                            <option ng-repeat="user in vm.users | filter: {'suspendUser': true}" ng-value="user">{{user.firstname}} {{user.lastname}}</option>
+                        </select>
+                        <p>Suspendre</p>
+                        <select class="form-control" ng-model="vm.select">
+                            <option ng-repeat="user in vm.users | filter: {'suspendUser': false}" ng-value="user">{{user.firstname}} {{user.lastname}}</option>
+                        </select><br>
+                    <p ng-show="vm.select.suspendUser && vm.select">Réactiver cet utilisateur ?</p>
+                    <p ng-show="!vm.select.suspendUser && vm.select">Suspendre cet utilisateur ?</p>
                 </div>
-                <p>hello{{vm.user.firstname}} {{vm.user.lastname}} </p>
                 <div class="form-group">
                     <div class="col-lg-offset-3 ">
-                        <button type="submit" class="btn btn-default">Suspendre</button>
+                        <button ng-show="vm.select.suspendUser && vm.select" class="btn btn-default">Réactiver</button>
+                        <button ng-show="!vm.select.suspendUser && vm.select" class="btn btn-default">Suspendre</button>
                     </div>
                 </div>
             </form>

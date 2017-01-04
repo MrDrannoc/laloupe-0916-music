@@ -19,9 +19,8 @@ function userBlockController (userService) {
 
     this.suspend = (id) => {
         this.userService.suspend(id).then(() => {
-            alert("utilisateur suspendu avec succès ")
+            this.load();
         });
     };
-
 
 }

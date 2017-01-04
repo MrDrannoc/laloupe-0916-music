@@ -285,7 +285,7 @@ padding-left:0;
 .bloc3blocage .form-horizontal {
   height           : 90%;
   margin-top       : 5%;
-  padding          : 10%;
+  padding          : 3%;
   background-color : white;
 }
 
@@ -302,7 +302,7 @@ padding-left:0;
 }
 
 .bloc3blocage .formulaire .form-group button {
-  margin-top : 65%;
+  margin-top : -2%;
 }
 
 .bloc3 button:hover,

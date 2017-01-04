@@ -11,9 +11,9 @@ const routes = ($routeProvider, $httpProvider) => {
             templateUrl: 'views/admin/userCreate.html',
             controller: 'userCreateController',
             controllerAs: 'vm',
-            resolve: {
-                connected: checkIsConnected
-            }
+            // resolve: {
+            //    connected: checkIsConnected
+            // }
         })
         .when('/dashboard', {
             templateUrl: 'views/admin/dashboard.html',
@@ -27,9 +27,9 @@ const routes = ($routeProvider, $httpProvider) => {
             templateUrl: 'views/admin/userBlock.html',
             controller: 'userBlockController',
             controllerAs: 'vm',
-            resolve: {
-                connected: checkIsConnected
-            }
+            // resolve: {
+            //     connected: checkIsConnected
+            // }
         })
         .when('/score/create', {
             templateUrl: 'views/admin/scoreCreate.html',

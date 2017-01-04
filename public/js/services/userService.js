@@ -19,7 +19,7 @@ function userService($http) {
     }
 
     this.suspend = (id) => {
-        return this.$http.get('/api/users/suspend' + id)
+        return this.$http.get('/api/users/suspend/' + id)
     }
 
     this.update = (id, user) => {
