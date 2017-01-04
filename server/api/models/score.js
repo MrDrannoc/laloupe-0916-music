@@ -3,6 +3,8 @@ import Bar from './bar.js';
 import Note from './note.js';
 
 const scoreSchema = new mongoose.Schema({
+    nameScore: String,
+    levelScore: String,
     tempoScore: String,
     bars: [{
         type: mongoose.Schema.Types.ObjectId,
