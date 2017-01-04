@@ -4,10 +4,10 @@
             <h2>Connexion à Happy Rythme</h2>
             <form class="col-lg-10 col-lg-offset-1">
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" ng-model='vm.email' ng-required='true' placeholder="Adresse eMail">
+                    <input type="email" class="form-control" id="exampleInputEmail1" ng-model='vm.email' ng-required='true' placeholder="Adresse mail">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" ng-model='vm.password' ng-required='true' placeholder="Mot de passe temps">
+                    <input type="password" class="form-control" id="exampleInputPassword1" ng-model='vm.password' ng-required='true' placeholder="Mot de passe">
                 </div>
               <button  type="submit" class="btn btn-default" ng-click='vm.login()' ng-disabled="formConnect.$invalid" >Se connecter</button>
               <div ng-show="(vm.loginMessage)" class="alert" ng-class="{'alert-danger': vm.loginMessage.type == 'error', 'alert-success': vm.loginMessage.type == 'connection validée', 'alert-info': vm.loginMessage.type == 'info'}">
@@ -17,7 +17,9 @@
             </form>
         </div>
         <p>
-            Pour avoir un compte et vous connecter, adressez-vous à l'administrateur du site.
+            Pour avoir un compte et vous connecter, adressez-vous à l'administrateur du site.<br>
+            Téléphone: 0612345678
+            Mail: p.l.ledru@gmail.com
         </p>
     </div>
 </div>

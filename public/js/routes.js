@@ -2,12 +2,9 @@ const routes = ($routeProvider, $httpProvider) => {
 
     $routeProvider
         .when('/', {
-            templateUrl: 'views/main.html',
+            templateUrl: 'views/login.html',
             controller: 'mainController',
-            controllerAs: 'vm',
-            /*resolve: {
-                connected: checkIsConnected
-            }*/
+            controllerAs: 'vm'
         })
         .when('/login', {
             templateUrl: 'views/login.html',
@@ -17,42 +14,66 @@ const routes = ($routeProvider, $httpProvider) => {
         .when('/userCreate', {
             templateUrl: 'views/admin/userCreate.html',
             controller: 'loginController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/dashboard', {
             templateUrl: 'views/admin/dashboard.html',
             controller: 'loginController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/partitionCreate', {
             templateUrl: 'views/admin/partitionCreate.html',
             controller: 'partitionCreateController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/userBlock', {
             templateUrl: 'views/admin/userBlock.html',
             controller: 'loginController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/partitionEdit', {
             templateUrl: 'views/admin/partitionEdit.html',
             controller: 'loginController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/partitionDelete', {
             templateUrl: 'views/admin/partitionDelete.html',
             controller: 'loginController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/exercice', {
             templateUrl: 'views/user/exercice.html',
             controller: 'loginController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/listExercices', {
             templateUrl: 'views/user/listExercices.html',
             controller: 'loginController',
             controllerAs: 'vm'
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .otherwise({
             redirectTo: '/'

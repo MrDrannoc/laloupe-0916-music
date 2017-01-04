@@ -2,7 +2,9 @@
   margin  : 0;
   padding : 0;
 }
-
+body{
+  max-height:400px;
+}
 /* navbar */
 
 nav {
@@ -10,20 +12,6 @@ nav {
   background-color : #9933CC!important;
   font-family      : 'Grand Hotel',
                      cursive;
-}
-.puce{
-  height:25px;
-  width: 5px;
-  border-radius: 50px;
-  background-color: green;
-  border: 2px solid black
-}
-.puce2{
-  height:25px;
-  width: 5px;
-  border-radius: 50px;
-  background-color: red;
-  border: 2px solid black
 }
 nav .container-fluid .part1 .navbar-brand {
   margin  : 0;
@@ -333,7 +321,7 @@ padding-left:0;
 .pageLogin .bloc1 {
   width             : 570px;
   height            : 344px;
-  margin-top        : 17%;
+  margin-top        : 10%;
   margin-left       : 25%;
   background-image  : url(/assets/img/elementsPages/backgroundCreationUser.jpg);
   background-repeat : no-repeat;
