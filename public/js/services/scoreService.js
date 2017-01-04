@@ -8,8 +8,8 @@ function scoreService($http) {
           levelScore: level,
           tempoScore: tempo,
           wordingScore: wording
-        })
-    }
+        });
+    };
 
     this.getAll = () => {
         return this.$http.get('/api/scores');
@@ -25,8 +25,8 @@ function scoreService($http) {
           levelScore: level,
           tempoScore: tempo,
           wordingScore: wording
-        })
-    }
+        });
+    };
 
     this.delete = (id) => {
         return this.$http.delete('/api/scores/' + id);
