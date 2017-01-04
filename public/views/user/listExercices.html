@@ -17,10 +17,10 @@
                 </div>
             </div>
         </div>
-        <div class="bloc3-exo">
+        <div class="bloc3-exo" ng-controller="scoreController as vm">
             <div class="col-lg-10 col-lg-offset-1 paragrapheOurson">
                 <h2>Mes exercices</h2>
-                <div class="row" ng-controller="scoreController as vm">
+                <div class="row" ng-repeat="score in vm">
                     <div class="col-lg-2 col-lg-offset-1">
                         {{levelPicture}}
                     </div>
