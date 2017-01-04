@@ -1,8 +1,11 @@
 function listExercicesController(scoreService) {
 
-    this.scoreCreate = () => {
-        this.scoreService.create(this.score).then(() => {
-            this.load();
-        });
-    };
+  this.load = () => {
+      this.userService.getAll().then((res) => {
+          this.users = res.data;
+      });
+  };
+
+  this.load();
+
 }
