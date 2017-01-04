@@ -7,7 +7,7 @@ function noteService($http) {
             heigthNote: heigth,
             valueNote: value,
             orderNote: order,
-            bar: refBar
+            bar: refBar,
         });
     };
 
@@ -24,8 +24,8 @@ function noteService($http) {
           heigthNote: heigth,
           valueNote: value,
           orderNote: order,
-          bar: refBar
-        })
+          bar: refBar,
+        });
     };
 
     this.delete = (id) => {

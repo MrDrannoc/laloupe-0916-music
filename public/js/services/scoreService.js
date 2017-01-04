@@ -12,12 +12,12 @@ function scoreService($http) {
     }
 
     this.getAll = () => {
-        return this.$http.get('/api/scores')
-    }
+        return this.$http.get('/api/scores');
+    };
 
     this.getOne = (id) => {
-        return this.$http.get('/api/scores/' + id)
-    }
+        return this.$http.get('/api/scores/' + id);
+    };
 
     this.update = (id, name,level,tempo,wording) => {
         return this.$http.put('/api/scores/' + id, {
@@ -29,7 +29,7 @@ function scoreService($http) {
     }
 
     this.delete = (id) => {
-        return this.$http.delete('/api/scores/' + id)
-    }
+        return this.$http.delete('/api/scores/' + id);
+    };
 
 }
