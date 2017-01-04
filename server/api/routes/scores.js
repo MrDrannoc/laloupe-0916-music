@@ -20,4 +20,4 @@ module.exports = (app) => {
 
     app.use('/scores', /*Auth.hasAuthorization,*/ router);
 
-}
+};
