@@ -24,22 +24,22 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('/partition/create', {
-            templateUrl: 'views/admin/partitionCreate.html',
-            controller: 'partitionCreateController',
-            controllerAs: 'vm'
-        })
         .when('/user/block', {
             templateUrl: 'views/admin/userBlock.html',
             controller: 'userBlockController',
             controllerAs: 'vm'
         })
-        .when('/partition/edit', {
+        .when('/score/create', {
+            templateUrl: 'views/admin/scoreCreate.html',
+            controller: 'scoreCreateController',
+            controllerAs: 'vm'
+        })
+        .when('/score/edit', {
             templateUrl: 'views/admin/partitionEdit.html',
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('/partition/delete', {
+        .when('/score/delete', {
             templateUrl: 'views/admin/partitionDelete.html',
             controller: 'loginController',
             controllerAs: 'vm'
