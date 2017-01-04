@@ -2,9 +2,12 @@ function scoreService($http) {
 
     this.$http = $http;
 
-    this.create = (data) => {
+    this.create = (name,level,tempo,wording) => {
         return this.$http.post('/api/scores', {
-            tempoScore: data
+          nameScore: name,
+          levelScore: level,
+          tempoScore: tempo,
+          wordingScore: wording
         })
     }
 
@@ -16,9 +19,12 @@ function scoreService($http) {
         return this.$http.get('/api/scores/' + id)
     }
 
-    this.update = (id, data) => {
+    this.update = (id, name,level,tempo,wording) => {
         return this.$http.put('/api/scores/' + id, {
-            tempoScore: data
+          nameScore: name,
+          levelScore: level,
+          tempoScore: tempo,
+          wordingScore: wording
         })
     }
 
