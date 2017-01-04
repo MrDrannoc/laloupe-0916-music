@@ -16,11 +16,12 @@ module.exports = (app) => {
 
     router.get('/', /*Auth.isAdministrator, */user.findAll);
 
+    router.get('/suspend/:id', user.suspend);
+    
     router.get('/:id', /*Auth.isAdministrator,*/ user.findById);
 
     router.post('/', user.create);
 
-    router.get('/suspend/:id', user.suspend);
 
     router.put('/:id', /*Auth.isAdministrator,*/ user.update);
 

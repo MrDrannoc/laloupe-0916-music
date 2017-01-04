@@ -7,7 +7,7 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'loginController',
             controllerAs: 'vm'
         })
-        .when('/userCreate', {
+        .when('/user/create', {
             templateUrl: 'views/admin/userCreate.html',
             controller: 'userCreateController',
             controllerAs: 'vm',

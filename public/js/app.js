@@ -7,6 +7,7 @@ angular.module('app', ['ngRoute'])
         .controller('navbarController', navbarController)
         .controller('loginController', loginController)
         .controller('userCreateController', userCreateController)
+        .controller('userBlockController', userBlockController)
         .config(routes)
         .run(loginStatus)
         ;
