@@ -1,4 +1,4 @@
-function barService($http) {
+function noteService($http) {
 
     this.$http = $http;
 
@@ -7,7 +7,7 @@ function barService($http) {
             heigthNote: heigth,
             valueNote: value,
             orderNote: order,
-            bar: refBar
+            bar: refBar,
         });
     };
 
@@ -24,8 +24,8 @@ function barService($http) {
           heigthNote: heigth,
           valueNote: value,
           orderNote: order,
-          bar: refBar
-        })
+          bar: refBar,
+        });
     };
 
     this.delete = (id) => {

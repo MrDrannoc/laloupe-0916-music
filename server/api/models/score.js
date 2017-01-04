@@ -6,6 +6,7 @@ const scoreSchema = new mongoose.Schema({
     nameScore: String,
     levelScore: String,
     tempoScore: String,
+    wordingScore: String,
     bars: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Bar'
@@ -44,7 +45,10 @@ export default class Score {
 
     create(req, res) {
         model.create({
-                tempoScore: req.body.tempoScore
+                nameScore: req.body.nameScore,
+                levelScore: req.body.levelScore,
+                tempoScore: req.body.tempoScore,
+                wordingScore: req.body.wordingScore
             },
             (err, score) => {
                 if (err) {
@@ -59,7 +63,10 @@ export default class Score {
         model.update({
             _id: req.params.id
         }, {
-            tempoScore: req.body.tempoScore
+            nameScore: req.body.nameScore,
+            levelScore: req.body.levelScore,
+            tempoScore: req.body.tempoScore,
+            wordingScore: req.body.wordingScore
         }, (err, score) => {
             if (err || !score) {
                 res.status(500).send(err.message);
