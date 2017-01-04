@@ -1,3 +1,0 @@
-function scoreController() {
-  this.load = "";
-}

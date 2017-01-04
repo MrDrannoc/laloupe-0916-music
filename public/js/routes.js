@@ -51,7 +51,7 @@ const routes = ($routeProvider, $httpProvider) => {
         })
         .when('/list/exercices', {
             templateUrl: 'views/user/listExercices.html',
-            controller: 'loginController',
+            controller: 'listExercicesController',
             controllerAs: 'vm'
         })
         .otherwise({
