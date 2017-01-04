@@ -1,4 +1,4 @@
-function barService($http) {
+function noteService($http) {
 
     this.$http = $http;
 
