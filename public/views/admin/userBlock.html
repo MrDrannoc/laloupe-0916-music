@@ -28,11 +28,12 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li ng-repeat="user in vm.users">
-                            <a href="#">{{user.firstname}}{{user.lastname}}</a>
+                            <a ng-click="" href="">{{user.firstname}} {{user.lastname}}</a>
                         </li>
                     </ul>
                     </div>
                 </div>
+                <p>hello{{vm.user.firstname}} {{vm.user.lastname}} </p>
                 <div class="form-group">
                     <div class="col-lg-offset-3 ">
                         <button type="submit" class="btn btn-default">Suspendre</button>
