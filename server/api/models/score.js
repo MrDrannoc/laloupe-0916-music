@@ -1,16 +1,17 @@
 import mongoose from 'mongoose';
 import Bar from './bar.js';
 import Note from './note.js';
-var Schema=mongoose.Schema;
 
 const scoreSchema = new mongoose.Schema({
+    nameScore: String,
+    levelScore: String,
     tempoScore: String,
     bars: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Bar'
     }],
     notes: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Note'
     }]
 });

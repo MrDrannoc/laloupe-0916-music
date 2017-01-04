@@ -1,2 +1,2 @@
-function partitionCreateController() {
+function scoreCreateController(scoreService,barService,noteService) {
 }
