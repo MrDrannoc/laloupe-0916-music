@@ -2,12 +2,12 @@ function scoreService($http) {
 
     this.$http = $http;
 
-    this.create = (name,level,tempo,wording) => {
+    this.create = (name, level, tempo, wording) => {
         return this.$http.post('/api/scores', {
-          nameScore: name,
-          levelScore: level,
-          tempoScore: tempo,
-          wordingScore: wording
+            nameScore: name,
+            levelScore: level,
+            tempoScore: tempo,
+            wordingScore: wording
         });
     };
 
@@ -19,12 +19,19 @@ function scoreService($http) {
         return this.$http.get('/api/scores/' + id);
     };
 
-    this.update = (id, name,level,tempo,wording) => {
+    this.update = (id, name, level, tempo, wording) => {
         return this.$http.put('/api/scores/' + id, {
-          nameScore: name,
-          levelScore: level,
-          tempoScore: tempo,
-          wordingScore: wording
+            nameScore: name,
+            levelScore: level,
+            tempoScore: tempo,
+            wordingScore: wording
+        });
+    };
+
+    this.addBarToScore = (scoreId, barId) => {
+        return this.$http.put('/api/scores/score/', {
+            bar_id:barId,
+            score_id:scoreId
         });
     };
 

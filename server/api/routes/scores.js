@@ -14,6 +14,8 @@ module.exports = (app) => {
 
     router.post('/', score.create);
 
+    router.put('/score/', score.addBarToScore);
+
     router.put('/:id', score.update);
 
     router.delete('/:id', score.delete);

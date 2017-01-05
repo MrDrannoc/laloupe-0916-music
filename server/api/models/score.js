@@ -85,10 +85,10 @@ export default class Score {
             }
         });
     }
-    addBarToScore(score_id, bar_id, res) {
-        model.findByIdAndUpdate(score_id, {
+    addBarToScore(req, res) {
+        model.findByIdAndUpdate(req.body.score_id, {
                 $push: {
-                    bars: bar_id
+                    bars: req.body.bar_id
                 }
             },
             function(err) {
@@ -100,7 +100,7 @@ export default class Score {
             });
     }
 
-    deleteBarFromScore(score_id, bar_id, res) {
+    deleteBarFromScore(req, res) {
         model.findByIdAndUpdate(score_id, {
                 $pull: {
                     bars: bar_id

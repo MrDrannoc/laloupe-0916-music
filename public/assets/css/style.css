@@ -206,8 +206,8 @@ ul {
 }
 
 .row .paragrapheOurson p {
-    text-align: center;
-    font-size: 1.5em;
+  text-align : center;
+  font-size  : 1.5em;
 }
 
 
@@ -238,20 +238,12 @@ ul {
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
-<<<<<<< HEAD
 .bloc3 .form-horizontal,
 .bloc3blocage .form-horizontal {
   height           : 90%;
   margin-top       : 5%;
   padding          : 3%;
   background-color : white;
-=======
-.bloc3 .form-horizontal, .bloc3blocage .form-horizontal {
-    height: 90%;
-    margin-top: 5%;
-    padding: 10%;
-    background-color: white;
->>>>>>> pierre
 }
 
 .bloc3blocage .form-horizontal h6 {
@@ -265,11 +257,7 @@ ul {
 }
 
 .bloc3blocage .formulaire .form-group button {
-<<<<<<< HEAD
-  margin-top : -2%;
-=======
     margin-top: 65%;
->>>>>>> pierre
 }
 
 .bloc3 button:hover, .bloc3blocage button:hover {
@@ -403,9 +391,12 @@ ul {
 /* bloc3 */
 
 .grosBloc .formulaire {
-    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-    top: 15%;
-    height: 75%;
+  top              : 1%;
+  height           : 87%;
+  background-image : linear-gradient(
+                       rgba(255, 255, 255, 0.5),
+                       rgba(255, 255, 255, 0.5)
+                     );
 }
 
 .grosBloc .formulaire .caracteristiquePartition .form-horizontal {
@@ -413,37 +404,42 @@ ul {
 }
 
 .container .grosBloc {
-    height: 440px;
-    margin-top: 2%;
-    background-image: url(/assets/img/elementsPages/background_partitionCreate.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+  height            : 440px;
+  margin-top        : 2%;
+  background-image  : url(/assets/img/elementsPages/background_partitionCreate.png);
+  background-repeat : no-repeat;
+  background-size   : cover;
 }
 
 .grosBloc .formulaire form {
-    background-color: white;
-    padding: 6%;
+  padding          : 6%;
+  background-color : white;
 }
 
-
-/*fin de bloc3*/
+/* fin de bloc3 */
 
 .oursonlist {
-    margin-top: 120px;
+  margin-top : 120px;
 }
 
+.star {
+  background-image: url(/assets/img/elementsPartitions/portee/portee.png);
+}
 
-/*User interface exercise*/
+/* Fin page création d'une partition */
+
+/* User interface exercise */
 
 .container .bloc2user {
-    background-color: #9933CC;
-    margin-top: 1%;
+  margin-top       : 1%;
+  background-color : #9933CC;
 }
 
 .bloc2user h1 {
-    text-align: center;
-    font-family: 'Grand Hotel', cursive;
-    color: white;
+  color       : white;
+  text-align  : center;
+  font-family : 'Grand Hotel',
+                cursive;
 }
 
 .bloc2user .paragrapheOursonUser p {
