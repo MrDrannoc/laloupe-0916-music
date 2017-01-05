@@ -218,9 +218,16 @@ footer {
   margin-left : 4%;
 }
 
+.container .bloc1 .retourDashboard {
+  margin-top      : 5%;
+  font-family     : 'Grand Hotel';
+  font-size       : 2em;
+  color           : black;
+}
+
+
 /* fin du bloc 1 */
 
-/*fin du bloc 1*/
 ul {
 list-style:none;
 margin-left:0;
