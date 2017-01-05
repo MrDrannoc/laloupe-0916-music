@@ -17,18 +17,18 @@
                 </div>
             </div>
         </div>
-        <div class="bloc3-exo" ng-controller="listExercicesController as vm">
+        <div class="bloc3-exo">
             <div class="col-lg-10 col-lg-offset-1 paragrapheOurson">
                 <h2>Mes exercices</h2>
                 <div class="row" ng-repeat="score in vm.scores">
                     <div class="col-lg-2 col-lg-offset-1">
-                        {{levelScore}}
+                        {{score.levelScore}}
                     </div>
                     <div class="col-lg-6">
-                        <p>{{nameScore}}</p>
+                        <p>{{score.nameScore}}</p>
                     </div>
                     <div class="col-lg-2">
-                        <p>{{levelScore}}</p>
+                        <p>{{score.levelScore}}</p>
                     </div>
                 </div>
             </div>
