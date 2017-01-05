@@ -220,23 +220,24 @@ footer {
 
 /* fin du bloc 1 */
 
-/*fin du bloc 1*/
+/* fin du bloc 1 */
+
 ul {
-list-style:none;
-margin-left:0;
-padding-left:0;
+  margin-left  : 0;
+  padding-left : 0;
+  list-style   : none;
 }
-/*bloc 2 (discours de l'ourson)*/
+
+/* bloc 2 (discours de l'ourson) */
 
 .container .bloc2 {
-    margin-top: 0.5%;
-    width: 70%;
-
+  width      : 70%;
+  margin-top : 0.5%;
 }
 
 .row .paragrapheOurson {
-    background-color: #9933CC;
-        color: white;
+  color            : white;
+  background-color : #9933CC;
 }
 
 .row .paragrapheOurson h2 {
@@ -247,8 +248,8 @@ padding-left:0;
 }
 
 .row .paragrapheOurson p {
-    text-align: center;
-    font-size: 1.5em;
+  text-align : center;
+  font-size  : 1.5em;
 }
 
 /* fin du bloc 2 */
@@ -444,9 +445,12 @@ padding-left:0;
 /* bloc3 */
 
 .grosBloc .formulaire {
-    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-    top: 15%;
-    height: 75%;
+  top              : 1%;
+  height           : 87%;
+  background-image : linear-gradient(
+                       rgba(255, 255, 255, 0.5),
+                       rgba(255, 255, 255, 0.5)
+                     );
 }
 
 .grosBloc .formulaire .caracteristiquePartition .form-horizontal {
@@ -454,89 +458,115 @@ padding-left:0;
 }
 
 .container .grosBloc {
-    height: 440px;
-    margin-top: 2%;
-    background-image: url(/assets/img/elementsPages/background_partitionCreate.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+  height            : 440px;
+  margin-top        : 2%;
+  background-image  : url(/assets/img/elementsPages/background_partitionCreate.png);
+  background-repeat : no-repeat;
+  background-size   : cover;
 }
+
 .grosBloc .formulaire form {
-  background-color: white;
-  padding: 6%;
+  padding          : 6%;
+  background-color : white;
 }
 
-/*fin de bloc3*/
-.oursonlist{
-  margin-top:120px;
+/* fin de bloc3 */
+
+.oursonlist {
+  margin-top : 120px;
 }
 
-/*User interface exercise*/
+.star {
+  background-image: url(/assets/img/elementsPartitions/portee/portee.png);
+}
+
+/* Fin page création d'une partition */
+
+/* User interface exercise */
 
 .container .bloc2user {
-    background-color: #9933CC;
-    margin-top: 1%;
+  margin-top       : 1%;
+  background-color : #9933CC;
 }
 
 .bloc2user h1 {
-    text-align: center;
-    font-family: 'Grand Hotel', cursive;
-    color: white;
+  color       : white;
+  text-align  : center;
+  font-family : 'Grand Hotel',
+                cursive;
 }
 
 .bloc2user .paragrapheOursonUser p {
-    text-align: justify;
-    color: white;
+  color      : white;
+  text-align : justify;
 }
-.container .bloc3user{
-  background-color: #9933CC;
-  margin-top: 2%;
-  margin-bottom: 2%;
+
+.container .bloc3user {
+  margin-top       : 2%;
+  margin-bottom    : 2%;
+  background-color : #9933CC;
 }
-.bloc3user .row{
-  margin-top: 2%;
-  height: 130px;
+
+.bloc3user .row {
+  height     : 130px;
+  margin-top : 2%;
 }
-.titleExercise h1, .titleTrack h2 {
-  text-align: center;
-  color: white;
-  font-family: 'Grand Hotel', cursive;
+
+.titleExercise h1,
+.titleTrack h2 {
+  color       : white;
+  text-align  : center;
+  font-family : 'Grand Hotel',
+                cursive;
 }
-.titleExercise h1{
-  font-size: 70px;
+
+.titleExercise h1 {
+  font-size : 70px;
 }
-.titleTrack h2{
-  font-size: 50px;
-  margin-top: 10%;
+
+.titleTrack h2 {
+  margin-top : 10%;
+  font-size  : 50px;
 }
-.bloc3user .dropdown{
-  margin-top: 13%;
-  margin-left: 20%;
+
+.bloc3user .dropdown {
+  margin-top  : 13%;
+  margin-left : 20%;
 }
-.bloc3user .dropdown ul li{
-  margin: 2%;
+
+.bloc3user .dropdown ul li {
+  margin : 2%;
 }
-.bloc3user .buttonPlaying button{
-  margin: 1%;
-  width: 25%;
-  height: 60px;
-  left: -5%;
-  font-size: 40px;
-  line-height: 0.99;
+
+.bloc3user .buttonPlaying button {
+  left        : -5%;
+  width       : 25%;
+  height      : 60px;
+  margin      : 1%;
+  font-size   : 40px;
+  line-height : 0.99;
 }
-.bloc3user .measure{
-  margin-top: 5%;
-  margin-left: 22%;
+
+.bloc3user .measure {
+  margin-top  : 5%;
+  margin-left : 22%;
 }
-.metronome img{
-  width: 60%;
+
+.metronome img {
+  width : 60%;
 }
-.metronome{
-  margin-left: 90%;
-  margin-bottom: 2%;
+
+.metronome {
+  margin-bottom : 2%;
+  margin-left   : 90%;
 }
-/*fin de user inferface exercice*/
-/*listExercice*/
+
+/* fin de user inferface exercice */
+
+/* listExercice */
+
 .bloc3-exo {
-  padding-top: 3%;
+  padding-top : 3%;
 }
-/*fin de listExercice*/
+
+/* fin de listExercice */

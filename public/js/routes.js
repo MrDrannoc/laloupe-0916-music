@@ -1,5 +1,6 @@
-const routes = ($routeProvider, $httpProvider) => {
+const routes = ($routeProvider, $httpProvider, $locationProvider) => {
 
+    $locationProvider.html5Mode(false).hashPrefix('');
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',
@@ -31,12 +32,12 @@ const routes = ($routeProvider, $httpProvider) => {
         })
         .when('/score/create', {
             templateUrl: 'views/admin/scoreCreate.html',
-            controller: 'scoreCreateController',
+            controller: 'scoreController',
             controllerAs: 'vm'
         })
         .when('/score/edit', {
             templateUrl: 'views/admin/scoreEdit.html',
-            controller: 'loginController',
+            controller: 'scoreController',
             controllerAs: 'vm'
         })
         .when('/score/delete', {
@@ -99,11 +100,11 @@ const loginStatus = ($rootScope, $window, sessionFactory) => {
 const checkIsConnected = ($q, $http, $location, $window, $rootScope) => {
     let deferred = $q.defer();
 
-    $http.get('/api/loggedin').success(() => {
+    $http.get('/api/loggedin').then(() => {
         $rootScope.$emit('loginStatusChanged', true);
         // Authenticated
         deferred.resolve();
-    }).error(() => {
+    }).catch(() => {
         $window.localStorage.removeItem('token');
         $window.localStorage.removeItem('currentUser');
         $rootScope.$emit('loginStatusChanged', false);

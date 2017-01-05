@@ -3,9 +3,9 @@ import Score from './score.js';
 import Note from './note.js';
 
 const barSchema = new mongoose.Schema({
-    numBitBar: String,
-    referenceValueBar: String,
-    orderBar: String,
+    numBitBar: Number,
+    referenceValueBar: Number,
+    orderBar: Number,
     score: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Score'

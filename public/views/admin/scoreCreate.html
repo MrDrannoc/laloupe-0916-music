@@ -20,39 +20,24 @@
             <div class="caracteristiquePartition">
                 <form class="form-horizontal col-lg-11 col-lg-offset-1">
                     <div class="form-group">
-                        <input id="textinput" name="textinput" placeholder="NOM DE L'EXERCICE" class="form-control input-md" type="text">
+                        <input id="textinput" ng-model='score.nameScore' name="textinput" placeholder="NOM DE L'EXERCICE" class="form-control input-md" type="text">
                     </div>
                     <div class="form-group">
-                        <select id="selectbasic" name="selectbasic" class="form-control">
-                            <option value="0">NIVEAU DE L'EXERCICE</option>
+                        <select id="selectLevel" ng-model='score.levelScore' name="selectbasic" class="form-control">
+                            <option value="" disabled>NIVEAU DE L'EXERCICE</option>
                             <option value="1">Facile</option>
                             <option value="2">Intermédiaire</option>
                             <option value="3">Expert</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <input id="textinput" name="textinput" placeholder="TEMPO" class="form-control input-md" type="text">
+                        <input id="textinput" ng-model='score.tempoScore' name="textinput" placeholder="TEMPO" class="form-control input-md" type="text">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="textarea" name="textarea">ENONCE DE L'EXERCICE DIT PAR LE PANDA</textarea>
+                        <textarea id="textarea" class="form-control" ng-model='score.wordingScore' name="textarea">ENONCE DE L'EXERCICE DIT PAR LE PANDA</textarea>
                     </div>
+                    <button ng-click='vm.scoreCreate(score)' class="btn btn-default">Créer l'exercice</button>
                 </form>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="bloc4 col-md-12">
-            <div class="row">
-                <input type="button" name="name" value="Démarrer">
-                <div class="star col-md-12">
-                    <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
-                    <img src="../assets/img/elementsPartitions/chiffrage/4x4.png"/>
-                    <img src="../assets/img/elementsPartitions/noire/sol2.png"/>
-                    <img src="../assets/img/elementsPartitions/noire/sol2.png"/>
-                    <img src="../assets/img/elementsPartitions/noire/sol2.png"/>
-                    <img src="../assets/img/elementsPartitions/noire/sol3.png"/>
-                    <img src="../assets/img/elementsPartitions/noire/do2.png"/>
-                </div>
             </div>
         </div>
     </div>
