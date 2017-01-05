@@ -8,7 +8,7 @@ function barService($http) {
             referenceValueBar: refValue,
             orderBar: order,
             score: refScore
-        })
+        });
     };
 
     this.getAll = () => {
@@ -25,7 +25,7 @@ function barService($http) {
             referenceValueBar: refValue,
             orderBar: order,
             score: refScore
-        })
+        });
     };
 
     this.delete = (id) => {
