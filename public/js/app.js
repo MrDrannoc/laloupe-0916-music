@@ -11,6 +11,7 @@ angular.module('app', ['ngRoute'])
         .controller('loginController', loginController)
         .controller('userCreateController', userCreateController)
         .controller('userBlockController', userBlockController)
+        .controller('duplicController', duplicController)
         .config(routes)
         .run(loginStatus)
         ;
