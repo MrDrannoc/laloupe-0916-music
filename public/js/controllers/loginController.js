@@ -16,7 +16,11 @@ function loginController(userService, sessionFactory, $timeout, $location, $root
             this.sessionFactory.isLogged = true;
             this.$rootScope.$emit('loginStatusChanged', true);
             this.loginMessage = null;
-            this.$location.path('/');
+            if (this.sessionFactory.user.isAdmin) {
+              this.$location.path('/dashboard');
+            }else {
+              this.$location.path('/list/exercices');
+            }
         }).catch(() => {
             this.sessionFactory.isLogged = false;
             this.$rootScope.$emit('loginStatusChanged', false);

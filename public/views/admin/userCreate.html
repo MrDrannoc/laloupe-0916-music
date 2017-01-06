@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="container bloc3 col-lg-6 col-lg-offset-3">
-        <div class="formulaire col-lg-8 col-lg-offset-4">
+        <div class="formulaire col-lg-11 col-lg-offset-1">
             <form class="form-horizontal col-lg-8 col-lg-offset-3">
                 <div class="form-group">
                     <input ng-model="vm.user.firstname" type="text" class="form-control" id="firstName" placeholder="Prénom de l'utilisateur">
@@ -36,10 +36,11 @@
                     <input ng-model="vm.user.email" type="email" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input ng-model="vm.user.password" type="password" class="form-control" id="inputPassword" placeholder="Mot de passe partout">
+                    <input ng-model="vm.user.password" type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
                 </div>
                 <div class="form-group">
                     <div class="col-lg-offset-2 ">
+                        <input type="checkbox"  ng-model="vm.user.isAdmin">Admin
                         <button ng-click="vm.create()" type="submit" class="btn btn-default">Créer l'utilisateur</button>
                     </div>
                 </div>

@@ -3,18 +3,14 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
     $locationProvider.html5Mode(false).hashPrefix('');
     $routeProvider
         .when('/', {
-            templateUrl: 'views/main.html',
-            controller: 'mainController',
-            controllerAs: 'vm',
+          templateUrl: 'views/login.html',
+          controller: 'loginController',
+          controllerAs: 'vm'
             /*resolve: {
                 connected: checkIsConnected
             }*/
         })
-        .when('/login', {
-            templateUrl: 'views/login.html',
-            controller: 'loginController',
-            controllerAs: 'vm'
-        })
+
         .when('/userCreate', {
             templateUrl: 'views/admin/userCreate.html',
             controller: 'userCreateController',

@@ -96,7 +96,9 @@ nav .container-fluid .part3 a img {
     background-color: #40a65c;
 }
 
-
+.backButtonDashboard{
+  margin-top: 5%;
+}
 /*end dashboard*/
 
 footer {
@@ -170,7 +172,7 @@ footer {
     margin-left: 4%;
 }
 
-.container .bloc1 .retourDashboard {
+.retourDashboard {
   margin-top      : 5%;
   font-family     : 'Grand Hotel';
   font-size       : 2em;
@@ -242,7 +244,10 @@ ul {
 .bloc3blocage .form-horizontal {
   height           : 90%;
   margin-top       : 5%;
-  padding          : 3%;
+  padding-top      : 4%;
+  padding-left     : 5%;
+  padding-right     : 5%;
+  padding-bottom   : 2%;
   background-color : white;
 }
 
