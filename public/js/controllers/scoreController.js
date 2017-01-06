@@ -22,6 +22,7 @@ function scoreController(scoreService, barService, noteService, $location, $rout
                 console.log("BAR VIDE OK");
                 this.scoreService.addBarToScore(this.currentScore, this.currentBar).then(() => {
                     console.log("Ajout mesure dans partition");
+                    this.$location.path('/score/editing/'+this.currentScore);
                 });
             });
         });
