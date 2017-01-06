@@ -30,16 +30,16 @@ function scoreController(scoreService, barService, noteService, $location, $rout
     };
 
     this.scoreafficher = (id) => {
-        console.log(id)
+        console.log(id);
         this.currentEditScore=id;
         this.$location.path('/score/editing/'+id);
-    }
+    };
 
 
 
     this.verificationdelapartition = () => {
-      console.log($routeParams.id)
-    }
+      console.log($routeParams.id);
+    };
 
     this.load = () => {
         this.scoreService.getAll().then((res) => {
