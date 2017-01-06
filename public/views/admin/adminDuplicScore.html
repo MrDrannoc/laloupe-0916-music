@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="bloc1">
+        <div class="row">
+            <div class="col-lg-5">
+                <a href="#/dashboard">
+                    <button type="button" class="btn btn-default retourDashboard">
+                        <span class="glyphicon glyphicon-home"></span>
+                        Tableau de bord</button>
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <img src="../assets/img/elementsPages/ourson.png" alt="ourson"/>
+            </div>
+        </div>
+    </div>
+    <div class="bloc2">
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-6 paragrapheOurson">
+                <h2>Pierre</h2>
+                <p>
+                    Selectionne un exercice dans la liste.<br>
+                    Clique sur "dupliquer" pour le dupliquer.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container bloc3edit col-lg-6 col-lg-offset-3">
+        <div class="formulaire col-lg-7 col-lg-offset-5">
+            <form ng-submit="vm.scoreafficher(vm.score)" class="form-horizontal col-lg-10 col-lg-offset-1">
+                <h6>Sélectionne une partition</h6>
+                <div class="select">
+                    <select class="form-control" ng-model="vm.id">
+                      <option value="" disabled>Selectionner l'exercice a dupliquer</option>
+                        <option ng-repeat="score in vm.scores" ng-value="score._id">{{score.nameScore}}</option>
+                    </select>
+                    <input id="textinput" ng-model='vm.nameScoreDuplic' name="textinput" placeholder="Nom de la dupliquation" class="form-control input-md" type="text">
+                </div>
+                <button ng-click="vm.duplic()"class="btn btn-default">Dupliquer</button>
+            </form>
+        </div>
+    </div>
+</div>
