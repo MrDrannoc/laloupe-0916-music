@@ -46,6 +46,11 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
             controller: 'scoreController',
             controllerAs: 'vm'
         })
+        .when('/score/editing/:id', {
+            templateUrl: 'views/admin/scoreEditing.html',
+            controller: 'scoreController',
+            controllerAs: 'vm'
+        })
         .when('/score/delete', {
             templateUrl: 'views/admin/scoreDelete.html',
             controller: 'loginController',
