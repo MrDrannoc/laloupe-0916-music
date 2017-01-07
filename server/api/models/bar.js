@@ -5,6 +5,7 @@ import Note from './note.js';
 const barSchema = new mongoose.Schema({
     numBitBar: Number,
     referenceValueBar: Number,
+
     orderBar: Number,
     score: {
         type: mongoose.Schema.Types.ObjectId,
