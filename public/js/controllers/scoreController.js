@@ -11,8 +11,8 @@ function scoreController(scoreService, barService, noteService, $location, $rout
             this.currentScore = res.data._id;
             console.log(res.data._id);
             console.log("PARTITION OK");
-            this.numBitBar = 0;
-            this.referenceValueBar = 0;
+            this.numBitBar = 4;
+            this.referenceValueBar = 4;
             this.orderBar = 1;
 
             this.barService.create(this.numBitBar, this.referenceValueBar, this.orderBar).then((res) => {
@@ -29,9 +29,8 @@ function scoreController(scoreService, barService, noteService, $location, $rout
         // this.scoreService.addBarToScore(score._id,)
     };
 
-    this.scoreafficher = (id) => {
+    this.scoreChoice = (id) => {
         console.log(id)
-        this.currentEditScore=id;
         this.$location.path('/score/editing/'+id);
     }
 
