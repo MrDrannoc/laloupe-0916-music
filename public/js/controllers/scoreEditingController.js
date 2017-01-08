@@ -1,4 +1,5 @@
 function scoreEditingController(scoreService, barService, noteService, $location, $routeParams) {
+  
     this.scoreService = scoreService;
     this.barService = barService;
     this.noteService = noteService;
@@ -20,7 +21,9 @@ function scoreEditingController(scoreService, barService, noteService, $location
     this.load = () => {
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
-            this.noteCURRENT=[];
+            this.noteCURRENT = [];
+            this.numBitBar = this.score.bars[0].numBitBar;
+            this.referenceValueBar = this.score.bars[0].referenceValueBar;
             console.log("kikoo " + this.score.bars[0].notes);
             for (let note of this.score.bars[0].notes) {
                 this.noteService.getOne(note).then((res) => {
@@ -43,6 +46,25 @@ function scoreEditingController(scoreService, barService, noteService, $location
     // this.noteService.create(this.note).then(() => {
     //     this.load();
     // });
+
+
+    this.addChiffrage = () => {
+      this.scoreService.getOne(this.currentScoreId).then((res) => {
+          this.score = res.data;
+      });
+      this.currentBar = this.score.bars[0]._id;
+      if(this.chiffrage == "3x4"){
+        this.numBitBar = 3;
+        this.referenceValueBar = 4;
+      } else {
+        this.numBitBar = 4;
+        this.referenceValueBar = 4;
+      }
+        this.barService.update(this.currentBar,this.numBitBar, this.referenceValueBar).then(() => {
+            console.log("Chiffrage ok " + res.data._id);
+        });
+    };
+
     this.addNote = () => {
         console.log(this.noteValue + " | " + this.noteHeigth);
         this.scoreService.getOne(this.currentScoreId).then((res) => {

@@ -64,8 +64,7 @@ export default class Bar {
             _id: req.params.id
         }, {
             numBitBar: req.body.numBitBar,
-            referenceValueBar: req.body.referenceValueBar,
-            orderBar: req.body.orderBar
+            referenceValueBar: req.body.referenceValueBar
         }, (err, bar) => {
             if (err || !bar) {
                 res.status(500).send(err.message);

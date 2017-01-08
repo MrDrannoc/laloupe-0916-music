@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="star col-md-12">
                     <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
-                    <img src="../assets/img/elementsPartitions/chiffrage/{{vm.chiffrage}}.png"/>
+                    <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note._id'">
                         <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
                     </span>
@@ -33,6 +33,7 @@
                         <option value="4x4">4/4</option>
                         <option value="3x4">3/4</option>
                     </select>
+                    <button ng-click="vm.addChiffrage()" type="submit">yo</button>
                 </span>
                 <span>
                     <span class="row">
