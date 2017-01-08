@@ -1,5 +1,5 @@
 function scoreEditingController(scoreService, barService, noteService, $location, $routeParams) {
-  
+
     this.scoreService = scoreService;
     this.barService = barService;
     this.noteService = noteService;
@@ -19,12 +19,18 @@ function scoreEditingController(scoreService, barService, noteService, $location
     };
 
     this.load = () => {
+
+        // Requete sur la partition pour récupérer les notes la première mesure "score.bars[0]"
+
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
             this.noteCURRENT = [];
             this.numBitBar = this.score.bars[0].numBitBar;
             this.referenceValueBar = this.score.bars[0].referenceValueBar;
-            console.log("kikoo " + this.score.bars[0].notes);
+            console.log("Toutes les notes présentes sur la première mesure " + this.score.bars[0].notes);
+
+            // Requete sur la partition pour récupérer les notes la première mesure "score.bars[0]"
+
             for (let note of this.score.bars[0].notes) {
                 this.noteService.getOne(note).then((res) => {
                     this.noteCURRENT.push(res.data);
@@ -33,6 +39,7 @@ function scoreEditingController(scoreService, barService, noteService, $location
             }
 
         });
+
     };
 
     this.load();
@@ -47,38 +54,51 @@ function scoreEditingController(scoreService, barService, noteService, $location
     //     this.load();
     // });
 
-
     this.addChiffrage = () => {
-      this.scoreService.getOne(this.currentScoreId).then((res) => {
-          this.score = res.data;
-      });
-      this.currentBar = this.score.bars[0]._id;
-      if(this.chiffrage == "3x4"){
-        this.numBitBar = 3;
-        this.referenceValueBar = 4;
-      } else {
-        this.numBitBar = 4;
-        this.referenceValueBar = 4;
-      }
-        this.barService.update(this.currentBar,this.numBitBar, this.referenceValueBar).then(() => {
-            console.log("Chiffrage ok " + res.data._id);
-        });
-    };
-
-    this.addNote = () => {
-        console.log(this.noteValue + " | " + this.noteHeigth);
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
         });
         this.currentBar = this.score.bars[0]._id;
-        console.log("La BARRE " + this.score.bars[0]._id);
-        this.noteService.create(this.noteHeigth, this.noteValue, 1).then((res) => {
+        if (this.chiffrage == "3x4") {
+            this.numBitBar = 3;
+            this.referenceValueBar = 4;
+        } else {
+            this.numBitBar = 4;
+            this.referenceValueBar = 4;
+        }
+        this.barService.update(this.currentBar, this.numBitBar, this.referenceValueBar).then(() => {
+            console.log("Chiffrage ok " + res.data._id);
+        });
+    };
 
+
+    this.addNote = () => {
+
+        // Requete sur la partition pour récupérer la première mesure "score.bars[0]"
+
+        console.log("Valeur de la note : " + this.noteValue + " | Hauteur de la note : " + this.noteHeigth);
+
+        this.scoreService.getOne(this.currentScoreId).then((res) => {
+            this.score = res.data;
+        });
+
+        this.currentBar = this.score.bars[0]._id;
+
+        // Création de la note avec les valeurs saisies dans les select
+
+        console.log("Id de la mesure utilisée  " + this.currentBar);
+
+        this.noteService.create(this.noteHeigth, this.noteValue, 1).then((res) => {
             this.currentNote = res.data._id;
-            console.log("Nouvelle note " + res.data._id);
+
+            console.log("Id de la nouvelle note créée " + res.data._id);
+
+            // Ajout de la note dans la mesure récupérée
+
             this.barService.addNoteToBar(this.currentBar, this.currentNote).then(() => {
-                console.log("Ajout Note dans Mesure");
+                console.log("Ajout Note dans Mesure OK");
             });
+
         });
     };
 }
