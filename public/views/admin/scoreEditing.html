@@ -22,7 +22,9 @@
                 <div class="star col-md-12">
                     <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
                     <img src="../assets/img/elementsPartitions/chiffrage/{{vm.chiffrage}}.png"/>
-                    <!-- <span ng-repeat="note in "></span> -->
+                    <span ng-repeat="note in vm.noteCURRENT | orderBy:'note._id'">
+                        <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
+                    </span>
                 </div>
             </div>
             <div class="row">
@@ -50,7 +52,7 @@
                                     <option value="sol2">sol2</option>
                                     <option value="sol3">sol3</option>
                                 </select>
-<button type="submit">bRRa</button>
+                                <button type="submit">bRRa</button>
                             </form>
                         </span>
                     </span>
@@ -67,6 +69,9 @@
                 <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
 
                 <!-- <span ng-repeat="note in "></span> -->
+            </div>
+            <div ng-repeat="note in vm.noteCURRENT">
+                {{note}}
             </div>
         </div>
     </div>

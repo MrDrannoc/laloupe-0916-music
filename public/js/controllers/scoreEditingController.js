@@ -20,7 +20,15 @@ function scoreEditingController(scoreService, barService, noteService, $location
     this.load = () => {
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
-            console.log("kikoo " + this.score.bars[0]._id)
+            this.noteCURRENT=[];
+            console.log("kikoo " + this.score.bars[0].notes);
+            for (let note of this.score.bars[0].notes) {
+                this.noteService.getOne(note).then((res) => {
+                    this.noteCURRENT.push(res.data);
+                    console.log(this.noteCURRENT);
+                })
+            }
+
         });
     };
 
@@ -40,9 +48,9 @@ function scoreEditingController(scoreService, barService, noteService, $location
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
         });
-        this.currentBar=this.score.bars[0]._id;
+        this.currentBar = this.score.bars[0]._id;
         console.log("La BARRE " + this.score.bars[0]._id);
-        this.noteService.create(this.noteHeigth,this.noteValue, 1).then((res) => {
+        this.noteService.create(this.noteHeigth, this.noteValue, 1).then((res) => {
 
             this.currentNote = res.data._id;
             console.log("Nouvelle note " + res.data._id);
