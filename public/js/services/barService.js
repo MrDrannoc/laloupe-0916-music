@@ -28,6 +28,13 @@ function barService($http) {
         });
     };
 
+    this.addNoteToBar = (barId, noteId) => {
+        return this.$http.put('/api/bars/bar/', {
+            bar_id:barId,
+            note_id:noteId
+        });
+    };
+
     this.delete = (id) => {
         return this.$http.delete('/api/bars/' + id);
     };

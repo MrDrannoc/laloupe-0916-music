@@ -85,10 +85,10 @@ export default class Bar {
         });
     }
 
-    addNoteToBar(bar_id, note_id, res) {
-        model.findByIdAndUpdate(bar_id, {
+    addNoteToBar(req, res) {
+        model.findByIdAndUpdate(req.body.bar_id, {
                 $push: {
-                    notes: note_id
+                    notes: req.body.note_id
                 }
             },
             function(err) {

@@ -52,7 +52,7 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
         })
         .when('/score/editing/:id', {
             templateUrl: 'views/admin/scoreEditing.html',
-            controller: 'scoreController',
+            controller: 'scoreEditingController',
             controllerAs: 'vm'
         })
         .when('/score/delete', {

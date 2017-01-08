@@ -14,6 +14,8 @@ module.exports = (app) => {
 
     router.post('/', bar.create);
 
+    router.put('/bar/', bar.addNoteToBar);
+
     router.put('/:id', bar.update);
 
     router.delete('/:id', bar.delete);
