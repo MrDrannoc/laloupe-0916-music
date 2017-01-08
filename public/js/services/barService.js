@@ -19,12 +19,10 @@ function barService($http) {
         return this.$http.get('/api/bars/' + id);
     };
 
-    this.update = (id, numBit, refValue, order, refScore) => {
+    this.update = (id, numBit, refValue) => {
         return this.$http.put('/api/bars/' + id, {
             numBitBar: numBit,
-            referenceValueBar: refValue,
-            orderBar: order,
-            score: refScore
+            referenceValueBar: refValue
         });
     };
 
