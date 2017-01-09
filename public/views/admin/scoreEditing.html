@@ -22,7 +22,7 @@
                 <div class="star col-md-12">
                     <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
                     <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
-                    <span ng-repeat="note in vm.noteCURRENT | orderBy:'note._id'">
+                    <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
                         <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
                     </span>
                 </div>
@@ -41,35 +41,55 @@
                             <form ng-submit="vm.addNote()">
                                 <select class="form-control" ng-model="vm.noteValue">
                                     <option value="0">Valeur</option>
-                                    <option value="noire">Noire</option>
-                                    <option value="blanche">Blanche</option>
+                                    <option value="ronde">Femme ronde</option>
+                                    <option value="blanche">Femme blanche</option>
+                                    <option value="noire">Femme noire</option>
+                                    <option value="croche">Cruche</option>
+                                    <option value="doubleCroche">Double Cloche</option>
+                                    <option value="triolet">Tryo laid</option>
+                                    <option value="dieses">Dit EZ</option>
+                                    <option value="bemols">B*** molle</option>
+                                    <option value="armures">armures</option>
+                                    <option value="points">points</option>
+                                    <option value="silences">silences</option>
                                 </select>
                                 <select class="form-control" ng-model="vm.noteHeigth">
                                     <option value="0">Hauteur</option>
                                     <option value="do1">do1</option>
                                     <option value="do2">do2</option>
                                     <option value="do3">do3</option>
+                                    <option value="re1">re1</option>
+                                    <option value="re2">re2</option>
+                                    <option value="mi1">mi1</option>
+                                    <option value="mi2">mi2</option>
+                                    <option value="fa1">fa1</option>
+                                    <option value="fa2">fa2</option>
                                     <option value="sol1">sol1</option>
                                     <option value="sol2">sol2</option>
                                     <option value="sol3">sol3</option>
+                                    <option value="la1">la1</option>
+                                    <option value="la2">la2</option>
+                                    <option value="la3">la3</option>
+                                    <option value="si1">si1</option>
+                                    <option value="si2">si2</option>
+                                    <option value="si3">si3</option>
+                                    <option value="silence">silence</option>
+                                    <option value="pause">pause</option>
+                                    <option value="demiPause">demi pause</option>
+                                    <option value="demiSoupir">demi soupir</option>
+                                    <option value="quartDeSoupir">quart de soupir</option>
+                                    <option value="dieses">dieses</option>
                                 </select>
-                                <button type="submit">bRRa</button>
+                                <button type="submit" class="btn btn-default btn-lg">
+                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                    Notes
+                                </button>
                             </form>
                         </span>
                     </span>
-                    <span>
-                        <button type="button" class="btn btn-default btn-lg">
-                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                            Notes
-                        </button>
-                    </span>
+                    <span></span>
 
                 </span>
-            </div>
-            <div class="star col-md-12">
-                <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
-
-                <!-- <span ng-repeat="note in "></span> -->
             </div>
         </div>
     </div>

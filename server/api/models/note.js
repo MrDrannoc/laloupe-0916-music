@@ -45,7 +45,6 @@ export default class Note {
                 heigthNote: req.body.heigthNote,
                 valueNote: req.body.valueNote,
                 orderNote: req.body.orderNote,
-                bar: req.body.bar
             },
             (err, note) => {
                 if (err) {

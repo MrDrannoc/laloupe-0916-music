@@ -86,10 +86,18 @@ function scoreEditingController(scoreService, barService, noteService, $location
 
         // Création de la note avec les valeurs saisies dans les select
 
+        if(this.score.bars[0].notes){
+          this.orderNote++;
+        } else {
+          this.orderNote=1;
+        }
+
         console.log("Id de la mesure utilisée  " + this.currentBar);
 
-        this.noteService.create(this.noteHeigth, this.noteValue, 1).then((res) => {
+        this.noteService.create(this.noteHeigth, this.noteValue, this.orderNote).then((res) => {
             this.currentNote = res.data._id;
+
+
 
             console.log("Id de la nouvelle note créée " + res.data._id);
 

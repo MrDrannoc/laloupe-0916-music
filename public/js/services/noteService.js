@@ -2,12 +2,11 @@ function noteService($http) {
 
     this.$http = $http;
 
-    this.create = (heigth, value, order, refBar) => {
+    this.create = (heigth, value, order) => {
         return this.$http.post('/api/notes', {
             heigthNote: heigth,
             valueNote: value,
-            orderNote: order,
-            bar: refBar,
+            orderNote: order
         });
     };
 
