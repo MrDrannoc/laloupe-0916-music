@@ -452,6 +452,11 @@ ul {
  height: 150px;
  width: 300px;
 }
+
+.noteDisplay .donot select, .noteDisplay .donot button {
+  width : 150px;
+  height : 200px;
+}
 /* Fin page édition d'une partition */
 
 /* User interface exercise */
