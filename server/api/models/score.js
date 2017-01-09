@@ -22,25 +22,27 @@ let model = mongoose.model('Score', scoreSchema);
 export default class Score {
 
     findAll(req, res) {
-        model.find({}, (err, scores) => {
+        model.find({})
+          .populate('bars')
+          .exec((err, scores) => {
                 if (err) {
                     res.sendStatus(403);
                 } else {
                     res.json(scores);
                 }
-            })
-            .populate('bars');
+            });
     }
 
     findById(req, res) {
-        model.findById(req.params.id, (err, score) => {
-                if (err || !score) {
-                    res.sendStatus(403);
-                } else {
-                    res.json(score);
-                }
-            })
-            .populate('bars');
+        model.findById(req.params.id)
+            .populate('bars')
+            .exec((err, score) => {
+                    if (err || !score) {
+                        res.sendStatus(403);
+                    } else {
+                        res.json(score);
+                    }
+                });
     }
 
     create(req, res) {
