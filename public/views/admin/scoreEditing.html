@@ -23,7 +23,22 @@
                     <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
                     <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
-                        <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
+                        <div class="noteDisplay">
+                            <div class="donot">
+                                <select class="" name="">
+                                    <option value="option">option</option>
+                                    <option value="option">option</option>
+                                    <option value="option">option</option>
+                                </select>
+                                <select class="" name="">
+                                    <option value="option">option</option>
+                                    <option value="option">option</option>
+                                    <option value="option">option</option>
+                                </select>
+                                <button type="button" name="button">Blub</button>
+                            </div>
+                            <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
+                        </div>
                     </span>
                 </div>
             </div>
