@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="col-lg-2">
-                <img src="../assets/img/elementsPages/ourson.png" alt="ourson"/>
+                <img src="../assets/img/elementsPages/ourson.png" alt="ourson" />
             </div>
         </div>
     </div>
@@ -20,8 +20,7 @@
         <div class="bloc4 col-md-12">
             <div class="row">
                 <div class="star col-md-12">
-                    <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
-
+                    <img src="../assets/img/elementsPartitions/cles/cleDeSol.png" />
                     <div class="noteDisplay">
                         <div class="donot">
                             <select class="form-control" ng-model="vm.chiffrage">
@@ -37,6 +36,8 @@
 
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
                         <div class="noteDisplay">
+                          <img src="../assets/img/elementsPages/add.svg" alt="buttonAdd">
+                          <img src="../assets/img/elementsPages/cancel.svg" alt="buttonCancel">
                             <div class="donot">
                                 <select class="form-control" ng-model="vm.noteValue">
                                     <option value="">Valeur</option>
@@ -89,7 +90,11 @@
                         </div>
                     </span>
                 </div>
+                <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" />
             </div>
+            </span>
         </div>
     </div>
+</div>
+</div>
 </div>

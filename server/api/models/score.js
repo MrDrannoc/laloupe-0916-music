@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
-import Bar from './bar.js';
-import Note from './note.js';
+import Note from '../models/note.js';
 
 const scoreSchema = new mongoose.Schema({
     nameScore: String,
