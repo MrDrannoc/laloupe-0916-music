@@ -20,6 +20,10 @@ let model = mongoose.model('Bar', barSchema);
 
 export default class Bar {
 
+    scheme() {
+        return barSchema;
+    }
+
     findAll(req, res) {
         model.find({}, (err, bars) => {
                 if (err) {

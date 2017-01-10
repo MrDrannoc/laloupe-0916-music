@@ -18,12 +18,11 @@ function noteService($http) {
         return this.$http.get('/api/notes/' + id);
     };
 
-    this.update = (id, heigth, value, order, refBar) => {
+    this.update = (id, heigth, value, order) => {
         return this.$http.put('/api/notes/' + id, {
           heigthNote: heigth,
           valueNote: value,
-          orderNote: order,
-          bar: refBar,
+          orderNote: order
         });
     };
 
