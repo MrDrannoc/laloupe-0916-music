@@ -24,6 +24,20 @@ function scoreController(scoreService, barService, noteService, $location, $rout
                     console.log("Ajout mesure dans partition");
                     this.$location.path('/score/editing/'+this.currentScore);
                 });
+                this.noteService.create("sol2", "noire", 1).then((res) => {
+                    this.currentNote = res.data._id;
+
+
+
+                    console.log("Id de la nouvelle note créée " + res.data._id);
+
+                    // Ajout de la note dans la mesure récupérée
+
+                    this.barService.addNoteToBar(this.currentBar, this.currentNote).then(() => {
+                        console.log("Ajout Note dans Mesure OK");
+                    });
+
+                });
             });
         });
         //

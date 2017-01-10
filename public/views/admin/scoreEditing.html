@@ -23,62 +23,67 @@
                     <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
 
                     <div class="noteDisplay">
-                      <div class="donot">
-                          <select class="form-control" ng-model="vm.chiffrage">
-                              <option value="4x4">4/4</option>
-                              <option value="3x4">3/4</option>
-                          </select>
-                          <button class="btn-primary" ng-click="vm.addChiffrage()" type="submit"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Chiffrage</button>
-                      </div>
-                      <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
-                  </div>
-
+                        <div class="donot">
+                            <select class="form-control" ng-model="vm.chiffrage">
+                                <option value="4x4">4/4</option>
+                                <option value="3x4">3/4</option>
+                            </select>
+                            <button class="btn-primary" ng-click="vm.addChiffrage()" type="submit">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Chiffrage</button>
+                        </div>
+                        <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
+                    </div>
 
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
                         <div class="noteDisplay">
                             <div class="donot">
                                 <select class="form-control" ng-model="vm.noteValue">
-                                  <option value="0">Valeur</option>
-                                  <option value="ronde">Ronde</option>
-                                  <option value="blanche">Blanche</option>
-                                  <option value="noire">Noire</option>
-                                  <option value="croche">Croche</option>
-                                  <option value="doubleCroche">Double Croche</option>
-                                  <option value="triolet">Triolet</option>
-                                  <option value="dieses">Dièse</option>
-                                  <option value="bemols">Bémol</option>
-                                  <option value="armures">Armures</option>
-                                  <option value="points">Points</option>
-                                  <option value="silences">Silences</option>
+                                    <option value="">Valeur</option>
+                                    <option value="ronde">Ronde</option>
+                                    <option value="blanche">Blanche</option>
+                                    <option value="noire">Noire</option>
+                                    <option value="croche">Croche</option>
+                                    <option value="doubleCroche">Double Croche</option>
+                                    <option value="triolet">Triolet</option>
+                                    <option value="dieses">Dièse</option>
+                                    <option value="bemols">Bémol</option>
+                                    <option value="armures">Armures</option>
+                                    <option value="points">Points</option>
+                                    <option value="silences">Silences</option>
                                 </select>
-                                <select class="form-control"  ng-model="vm.noteHeigth">
-                                  <option value="0">Hauteur</option>
-                                  <option value="do1">do1</option>
-                                  <option value="do2">do2</option>
-                                  <option value="do3">do3</option>
-                                  <option value="re1">re1</option>
-                                  <option value="re2">re2</option>
-                                  <option value="mi1">mi1</option>
-                                  <option value="mi2">mi2</option>
-                                  <option value="fa1">fa1</option>
-                                  <option value="fa2">fa2</option>
-                                  <option value="sol1">sol1</option>
-                                  <option value="sol2">sol2</option>
-                                  <option value="sol3">sol3</option>
-                                  <option value="la1">la1</option>
-                                  <option value="la2">la2</option>
-                                  <option value="la3">la3</option>
-                                  <option value="si1">si1</option>
-                                  <option value="si2">si2</option>
-                                  <option value="si3">si3</option>
-                                  <option value="pause">Pause</option>
-                                  <option value="demiPause">Demi-pause</option>
-                                  <option value="silence">Silence</option>
-                                  <option value="demiSoupir">Demi-soupir</option>
-                                  <option value="quartDeSoupir">Quart-de-soupir</option>
-                                  <option value="dieses">dieses</option>
+                                <select class="form-control" ng-model="vm.noteHeigth">
+                                    <option value="">Hauteur</option>
+                                    <option value="do1">do1</option>
+                                    <option value="do2">do2</option>
+                                    <option value="do3">do3</option>
+                                    <option value="re1">re1</option>
+                                    <option value="re2">re2</option>
+                                    <option value="mi1">mi1</option>
+                                    <option value="mi2">mi2</option>
+                                    <option value="fa1">fa1</option>
+                                    <option value="fa2">fa2</option>
+                                    <option value="sol1">sol1</option>
+                                    <option value="sol2">sol2</option>
+                                    <option value="sol3">sol3</option>
+                                    <option value="la1">la1</option>
+                                    <option value="la2">la2</option>
+                                    <option value="la3">la3</option>
+                                    <option value="si1">si1</option>
+                                    <option value="si2">si2</option>
+                                    <option value="si3">si3</option>
+                                    <option value="pause">Pause</option>
+                                    <option value="demiPause">Demi-pause</option>
+                                    <option value="silence">Silence</option>
+                                    <option value="demiSoupir">Demi-soupir</option>
+                                    <option value="quartDeSoupir">Quart-de-soupir</option>
+                                    <option value="dieses">dieses</option>
                                 </select>
-                                <button ng-click="vm.addNote()" class="btn btn-primary" type="button" name="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Note</button>
+                                <button ng-click="vm.addNote()" class="btn btn-primary" type="button" name="button">Ajouter la note -></button>
+                                <button ng-click="vm.editNote()" class="btn btn-primary" style="background-color : green" type="button" name="button">Modifier la note</button>
+                                <button ng-click="vm.deleteNote()" class="btn btn-primary" style="background-color : red" type="button" name="button">Supprimer la note</button>
+                            </div>
+                            <div>
                             </div>
                             <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
                         </div>

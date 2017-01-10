@@ -109,4 +109,8 @@ function scoreEditingController(scoreService, barService, noteService, $location
 
         });
     };
+
+    this.deleteNote = () => {
+      console.log("ALLO KIKOO " + this.noteHeigth)
+    }
 }

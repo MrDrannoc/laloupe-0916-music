@@ -5,7 +5,7 @@ import Bar from './bar.js';
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
     valueNote: String,
-    orderNote: String,
+    orderNote: Number,
     bar: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Bar'
