@@ -33,12 +33,21 @@
                         </div>
                         <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
                     </div>
-
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
                         <div class="noteDisplay">
-                          <img src="../assets/img/elementsPages/add.svg" alt="buttonAdd">
-                          <img src="../assets/img/elementsPages/cancel.svg" alt="buttonCancel">
                             <div class="donot">
+                              <div class="row">
+                                <div class="col-md-5">
+                                  <a href="" ng-click="vm.deleteNote()">
+                                  <img width="25%" src="../assets/img/elementsPages/cancel.svg" alt="buttonCancel">
+                                  </a>
+                                </div>
+                                <div class="col-md-5">
+                                  <a href="" ng-click="vm.addNote()">
+                                  <img width="25%" src="../assets/img/elementsPages/add.svg" alt="buttonAdd">
+                                  </a>
+                                </div>
+                              </div>
                                 <select class="form-control" ng-model="vm.noteValue">
                                     <option value="">Valeur</option>
                                     <option value="ronde">Ronde</option>
@@ -80,9 +89,7 @@
                                     <option value="quartDeSoupir">Quart-de-soupir</option>
                                     <option value="dieses">dieses</option>
                                 </select>
-                                <button ng-click="vm.addNote()" class="btn btn-primary" type="button" name="button">Ajouter la note -></button>
                                 <button ng-click="vm.editNote()" class="btn btn-primary" style="background-color : green" type="button" name="button">Modifier la note</button>
-                                <button ng-click="vm.deleteNote()" class="btn btn-primary" style="background-color : red" type="button" name="button">Supprimer la note</button>
                             </div>
                             <div>
                             </div>

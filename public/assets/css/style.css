@@ -440,7 +440,7 @@ ul {
  .noteDisplay {
    display : inline-block;
  }
- .noteDisplay:hover img {
+ .noteDisplay:hover .imgacacher {
   display: none;
 }
 .donot {
