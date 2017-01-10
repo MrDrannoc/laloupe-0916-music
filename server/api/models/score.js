@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
-import Bar from './bar.js';
-import Note from './note.js';
+import Note from '../models/note.js';
 
 const scoreSchema = new mongoose.Schema({
     nameScore: String,
@@ -33,14 +32,16 @@ export default class Score {
     }
 
     findById(req, res) {
-        model.findById(req.params.id, (err, score) => {
+        model.findById(req.params.id)
+            .populate('bars')
+            .exec((err, score) => {
+              console.log(err, score);
                 if (err || !score) {
                     res.sendStatus(403);
                 } else {
                     res.json(score);
                 }
-            })
-            .populate('bars');
+            });
     }
 
     create(req, res) {

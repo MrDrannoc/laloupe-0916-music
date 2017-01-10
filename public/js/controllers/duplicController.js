@@ -11,22 +11,32 @@ function duplicController(scoreService, barService, noteService, $location, $rou
       this.newName = this.nameScoreDuplic;
       this.scoreService.getOne(this.id).then((res)=>{
         this.copy = res.data;
+        this.originScoreId = res.data._id;
+        this.originScore = res.data;
+        console.log(this.originScore);
+        this.currentScore = "";
         this.copy.nameScore = this.newName;
         this.scoreService.create(this.copy.nameScore, this.copy.levelScore, this.copy.tempoScore, this.copy.wordingScore).then((res) => {
-
-            this.currentScore = res.data._id;
-            this.numBitBar = 0;
-            this.referenceValueBar = 0;
-            this.orderBar = 1;
-
-            this.barService.create(this.numBitBar, this.referenceValueBar, this.orderBar).then((res) => {
-
-                this.currentBar = res.data._id;
-                this.scoreService.addBarToScore(this.currentScore, this.currentBar).then(() => {
-                    console.log("Ajout mesure dans partition");
-                });
-            });
+            this.duplicScoreId = res.data._id;
+            this.duplicScore = res.data;
+            console.log(this.duplicScore);
         });
+        for(let i = 0; i < this.originScore.bars.length;i++){
+          this.barService.create(this.originScore.bars[i].numBitBar, this.originScore.bars[i].referenceValueBar, this.originScore.bars[i].orderBar).then((res) => {
+              this.currentBarId = res.data._id;
+              this.scoreService.addBarToScore(this.duplicScoreId,this.currentBarId).then((res) => {
+              });
+          });
+          for(let o = 0; o < this.originScore.bars[i].notes.length;o++){
+            this.noteService.getOne(this.originScore.bars[i].notes[o]).then((res) => {
+              this.noteService.create(res.data.heigthNote,res.data.valueNote,res.data.orderNote).then((res) => {
+                  console.log(res.data);
+                 this.barService.addNoteToBar(this.currentBarId, res.data).then((res) => {
+                });
+             });
+            });
+          }
+        }
       });
     };
     this.load = () => {
