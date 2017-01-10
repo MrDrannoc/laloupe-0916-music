@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="col-lg-2">
-                <img src="../assets/img/elementsPages/ourson.png" alt="ourson"/>
+                <img src="../assets/img/elementsPages/ourson.png" alt="ourson" />
             </div>
         </div>
     </div>
@@ -20,22 +20,21 @@
         <div class="bloc4 col-md-12">
             <div class="row">
                 <div class="star col-md-12">
-                    <img src="../assets/img/elementsPartitions/cles/cleDeSol.png"/>
-
+                    <img src="../assets/img/elementsPartitions/cles/cleDeSol.png" />
                     <div class="noteDisplay">
-                      <div class="donot">
-                          <select class="form-control" ng-model="vm.chiffrage">
+                        <div class="donot">
+                            <select class="form-control" ng-model="vm.chiffrage">
                               <option value="4x4">4/4</option>
                               <option value="3x4">3/4</option>
                           </select>
-                          <button class="btn-primary" ng-click="vm.addChiffrage()" type="submit"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Chiffrage</button>
-                      </div>
-                      <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
-                  </div>
-
-
+                            <button class="btn-primary" ng-click="vm.addChiffrage()" type="submit"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Chiffrage</button>
+                        </div>
+                        <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
+                    </div>
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
                         <div class="noteDisplay">
+                          <img src="../assets/img/elementsPages/add.svg" alt="buttonAdd">
+                          <img src="../assets/img/elementsPages/cancel.svg" alt="buttonCancel">
                             <div class="donot">
                                 <select class="form-control" ng-model="vm.noteValue">
                                   <option value="0">Valeur</option>
@@ -79,12 +78,12 @@
                                   <option value="dieses">dieses</option>
                                 </select>
                                 <button ng-click="vm.addNote()" class="btn btn-primary" type="button" name="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Note</button>
-                            </div>
-                            <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
-                        </div>
-                    </span>
                 </div>
+                <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" />
             </div>
+            </span>
         </div>
     </div>
+</div>
+</div>
 </div>
