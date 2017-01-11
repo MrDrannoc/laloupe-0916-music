@@ -1,15 +1,10 @@
 import mongoose from 'mongoose';
 import Score from './score.js';
-import Bar from './bar.js';
 
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
     valueNote: String,
     orderNote: Number,
-    bar: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Bar'
-    },
     score: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Score'
@@ -61,8 +56,7 @@ export default class Note {
         }, {
             heigthNote: req.body.heigthNote,
             valueNote: req.body.valueNote,
-            orderNote: req.body.orderNote,
-            bar: req.body.bar
+            orderNote: req.body.orderNote
         }, (err, note) => {
             if (err || !note) {
                 res.status(500).send(err.message);

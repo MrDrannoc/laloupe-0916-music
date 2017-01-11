@@ -14,7 +14,7 @@ module.exports = (app) => {
 
     router.post('/', score.create);
 
-    router.put('/score/', score.addBarToScore);
+    router.put('/score/', score.addNoteToScore);
 
     router.put('/:id', score.update);
 
