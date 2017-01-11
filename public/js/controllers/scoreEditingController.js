@@ -1,4 +1,4 @@
-function scoreEditingController(scoreService, barService, noteService, $location, $routeParams) {
+function scoreEditingController(scoreService, noteService, $location, $routeParams) {
     this.hide = $location.$$url.indexOf('/score/editing/') >= 0 ? true : false;
     this.scoreService = scoreService;
     this.noteService = noteService;
