@@ -13,6 +13,7 @@ angular.module('app', ['ngRoute'])
         .controller('userCreateController', userCreateController)
         .controller('userBlockController', userBlockController)
         .controller('duplicController', duplicController)
+        .controller('footerController', footerController)
         .config(routes)
         .run(loginStatus)
         ;
