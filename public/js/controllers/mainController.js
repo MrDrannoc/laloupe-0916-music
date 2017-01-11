@@ -1,5 +1,5 @@
-function mainController(todoService) {
-
+function mainController(todoService,$location) {
+      this.hide = $location.$$url.indexOf('/score/editing/') >= 0 ? true : false;
     this.todoService = todoService;
 
     this.load = () => {
