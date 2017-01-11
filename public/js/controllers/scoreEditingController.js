@@ -34,11 +34,13 @@ function scoreEditingController(scoreService, barService, noteService, $location
             for (let note of this.score.bars[0].notes) {
                 this.noteService.getOne(note).then((res) => {
                     this.noteCURRENT.push(res.data);
-                    console.log(this.noteCURRENT);
+                    console.log("Notes de la partition ", this.noteCURRENT);
+
                 })
             }
 
         });
+
 
     };
 
@@ -82,19 +84,13 @@ function scoreEditingController(scoreService, barService, noteService, $location
             this.score = res.data;
         });
 
-        this.currentBar = this.score.bars[0]._id;
-
         // Création de la note avec les valeurs saisies dans les select
 
-        if(this.score.bars[0].notes){
-          this.orderNote++;
-        } else {
-          this.orderNote=1;
+        if (this.score.notes) {
+            this.orderNote++;
         }
 
-        console.log("Id de la mesure utilisée  " + this.currentBar);
-
-        this.noteService.create(this.noteHeigth, this.noteValue, this.orderNote).then((res) => {
+        this.noteService.create(this.noteHeigth, this.noteValue, this.orderNote, this.referenceValueBar, this.orderBar).then((res) => {
             this.currentNote = res.data._id;
 
 
@@ -103,7 +99,7 @@ function scoreEditingController(scoreService, barService, noteService, $location
 
             // Ajout de la note dans la mesure récupérée
 
-            this.barService.addNoteToBar(this.currentBar, this.currentNote).then(() => {
+            this.scoreService.addNoteToScore(this.currentScore, this.currentNote).then(() => {
                 console.log("Ajout Note dans Mesure OK");
             });
 
@@ -111,6 +107,6 @@ function scoreEditingController(scoreService, barService, noteService, $location
     };
 
     this.deleteNote = () => {
-      console.log("ALLO KIKOO " + this.noteHeigth)
+        console.log("ALLO KIKOO " + this.noteHeigth)
     }
 }

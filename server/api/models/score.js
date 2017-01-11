@@ -4,12 +4,10 @@ import Note from '../models/note.js';
 const scoreSchema = new mongoose.Schema({
     nameScore: String,
     levelScore: String,
-    tempoScore: String,
+    tempoScore: Number,
     wordingScore: String,
-    bars: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Bar'
-    }],
+    numBitBar: Number,
+    referenceValueBar: Number,
     notes: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Note'
@@ -22,7 +20,7 @@ export default class Score {
 
     findAll(req, res) {
         model.find({})
-          .populate('bars')
+          .populate('notes')
           .exec((err, scores) => {
                 if (err) {
                     res.sendStatus(403);
@@ -34,7 +32,7 @@ export default class Score {
 
     findById(req, res) {
         model.findById(req.params.id)
-            .populate('bars')
+            .populate('notes')
             .exec((err, score) => {
                     if (err || !score) {
                         res.sendStatus(403);
@@ -49,7 +47,9 @@ export default class Score {
                 nameScore: req.body.nameScore,
                 levelScore: req.body.levelScore,
                 tempoScore: req.body.tempoScore,
-                wordingScore: req.body.wordingScore
+                wordingScore: req.body.wordingScore,
+                numBitBar: req.body.numBitBar,
+                referenceValueBar: req.body.referenceValueBar
             },
             (err, score) => {
                 if (err) {
@@ -67,7 +67,9 @@ export default class Score {
             nameScore: req.body.nameScore,
             levelScore: req.body.levelScore,
             tempoScore: req.body.tempoScore,
-            wordingScore: req.body.wordingScore
+            wordingScore: req.body.wordingScore,
+            numBitBar: req.body.numBitBar,
+            referenceValueBar: req.body.referenceValueBar
         }, (err, score) => {
             if (err || !score) {
                 res.status(500).send(err.message);
@@ -86,10 +88,10 @@ export default class Score {
             }
         });
     }
-    addBarToScore(req, res) {
+    addNoteToScore(req, res) {
         model.findByIdAndUpdate(req.body.score_id, {
                 $push: {
-                    bars: req.body.bar_id
+                    notes: req.body.note_id
                 }
             },
             function(err) {
@@ -101,10 +103,10 @@ export default class Score {
             });
     }
 
-    deleteBarFromScore(req, res) {
+    deleteNoteFromScore(req, res) {
         model.findByIdAndUpdate(score_id, {
                 $pull: {
-                    bars: bar_id
+                    notes: note_id
                 }
             },
             function(err) {

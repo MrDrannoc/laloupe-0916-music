@@ -6,10 +6,6 @@ const noteSchema = new mongoose.Schema({
     heigthNote: String,
     valueNote: String,
     orderNote: Number,
-    bar: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Bar'
-    },
     score: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Score'

@@ -15,7 +15,7 @@ function scoreController(scoreService, barService, noteService, $location, $rout
             this.referenceValueBar = 4;
             this.orderBar = 1;
 
-            this.barService.create(this.numBitBar, this.referenceValueBar, this.orderBar).then((res) => {
+            this.barService.create(this.numBitBar, ).then((res) => {
 
                 this.currentBar = res.data._id;
                 console.log(res.data._id);
