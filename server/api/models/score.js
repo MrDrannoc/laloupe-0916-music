@@ -3,7 +3,7 @@ import Note from '../models/note.js';
 
 const scoreSchema = new mongoose.Schema({
     nameScore: String,
-    levelScore: String,
+    levelScore: Number,
     tempoScore: Number,
     wordingScore: String,
     numBitBar: Number,

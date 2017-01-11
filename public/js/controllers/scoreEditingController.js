@@ -1,7 +1,6 @@
-function scoreEditingController(scoreService, barService, noteService, $location, $routeParams) {
+function scoreEditingController(scoreService, noteService, $location, $routeParams) {
 
     this.scoreService = scoreService;
-    this.barService = barService;
     this.noteService = noteService;
     this.$location = $location;
     this.currentScoreId = $routeParams.id;
