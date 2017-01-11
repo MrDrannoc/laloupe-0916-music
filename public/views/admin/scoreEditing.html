@@ -31,7 +31,7 @@
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                                 Chiffrage</button>
                         </div>
-                        <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
+                        <img src="../assets/img/elementsPartitions/chiffrage/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
                     </div>
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
                         <div class="noteDisplay">
@@ -39,12 +39,12 @@
                               <div class="row">
                                 <div class="col-md-5">
                                   <a href="" ng-click="vm.deleteNote()">
-                                  <img width="25%" src="../assets/img/elementsPages/cancel.svg" alt="buttonCancel">
+                                  <img width="35%" src="../assets/img/elementsPages/cancel.svg" alt="buttonCancel">
                                   </a>
                                 </div>
                                 <div class="col-md-5">
                                   <a href="" ng-click="vm.addNote()">
-                                  <img width="25%" src="../assets/img/elementsPages/add.svg" alt="buttonAdd">
+                                  <img width="35%" src="../assets/img/elementsPages/add.svg" alt="buttonAdd">
                                   </a>
                                 </div>
                               </div>
@@ -91,17 +91,12 @@
                                 </select>
                                 <button ng-click="vm.editNote()" class="btn btn-primary" style="background-color : green" type="button" name="button">Modifier la note</button>
                             </div>
-                            <div>
-                            </div>
-                            <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
+                            <img class="imgacacher" alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
                         </div>
                     </span>
                 </div>
                 <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" />
             </div>
-            </span>
         </div>
     </div>
-</div>
-</div>
 </div>
