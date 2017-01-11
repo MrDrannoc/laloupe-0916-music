@@ -29,13 +29,13 @@
                 <h2>Mes exercices</h2>
                 <div class="row" ng-repeat="score in vm.scores">
                     <div class="col-lg-2 col-lg-offset-1">
-                        {{score.levelScore}}
+                        {{score.levelScore == 1 ? "Facile" : score.levelScore == 2 ? "Intermédiare" : "Difficile"}}
                     </div>
                     <div class="col-lg-6">
                         <p>{{score.nameScore}}</p>
                     </div>
                     <div class="col-lg-2">
-                        <p>{{score.levelScore}}</p>
+                      <img width="20%" src={{score.levelScore == 1 ? "public/assets/img/elementsPages/easy.png" : score.levelScore == 2 ? "public/assets/img/elementsPages/medium.png" : "public/assets/img/elementsPages/hard.png"}} >
                     </div>
                 </div>
             </div>
