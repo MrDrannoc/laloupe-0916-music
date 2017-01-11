@@ -50,17 +50,18 @@
                               </div>
                                 <select class="form-control" ng-model="vm.noteValue">
                                     <option value="">Valeur</option>
-                                    <option value="ronde">Ronde</option>
-                                    <option value="blanche">Blanche</option>
-                                    <option value="noire">Noire</option>
-                                    <option value="croche">Croche</option>
-                                    <option value="doubleCroche">Double Croche</option>
-                                    <option value="triolet">Triolet</option>
-                                    <option value="dieses">Dièse</option>
-                                    <option value="bemols">Bémol</option>
-                                    <option value="armures">Armures</option>
-                                    <option value="points">Points</option>
-                                    <option value="silences">Silences</option>
+                                    <option value="4">Ronde</option>
+                                    <option value="2">Blanche</option>
+                                    <option value="1">Noire</option>
+                                    <option value="0.5">Croche</option>
+                                    <option value="0.25">Double Croche</option>
+                                    <option value="1.0">Triolet</option>
+                                    <option value="23">Bémol</option>
+                                    <option value="24">Dièses</option>
+                                    <option value="19">Armures bémols</option>
+                                    <option value="20">Armures dièses</option>
+                                    <option value="26">Points</option>
+                                    <option value="25">Barre</option>
                                 </select>
                                 <select class="form-control" ng-model="vm.noteHeigth">
                                     <option value="">Hauteur</option>
@@ -84,10 +85,25 @@
                                     <option value="si3">si3</option>
                                     <option value="pause">Pause</option>
                                     <option value="demiPause">Demi-pause</option>
-                                    <option value="silence">Silence</option>
+                                    <option value="soupir">Silence</option>
                                     <option value="demiSoupir">Demi-soupir</option>
                                     <option value="quartDeSoupir">Quart-de-soupir</option>
-                                    <option value="dieses">dieses</option>
+                                    <option value="barreDeFinMesure">Barre de fin</option>
+                                    <option value="si">armure siB</option>
+                                    <option value="simi">armure siMiB</option>
+                                    <option value="simila">armure siMiLaB</option>
+                                    <option value="similare">armure siMiLaReB</option>
+                                    <option value="similaresol">armure siMiLaReSolB</option>
+                                    <option value="similaresoldo">armure siMiLaReSolDoB</option>
+                                    <option value="similaresoldofa">armure siMiLaReSolDoFaB</option>
+                                    <option value="fa">armure fa#</option>
+                                    <option value="fado">armure faDo#</option>
+                                    <option value="fadosol">armure faDoSol#</option>
+                                    <option value="fadosolre">armure faDoSolRe#</option>
+                                    <option value="fadosolrela">armure faDoSolReLa#</option>
+                                    <option value="fadosolrelami">armure faDoSolReLaMi#</option>
+                                    <option value="fadosolrelamisi">armure faDoSolReLaMiSi#/option>
+
                                 </select>
                                 <button ng-click="vm.editNote()" class="btn btn-primary" style="background-color : green" type="button" name="button">Modifier la note</button>
                             </div>
