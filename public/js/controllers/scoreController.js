@@ -6,7 +6,7 @@ function scoreController(scoreService, noteService, $location, $routeParams) {
     this.referenceValueBar = 4;
 
     this.scoreCreate = (score) => {
-        this.scoreService.create(score.nameScore, score.levelScore, score.tempoScore, score.wordingScore, this.score.numBitBar, this.score.referenceValueBar).then((res) => {
+        this.scoreService.create(score.nameScore, score.levelScore, score.tempoScore, score.wordingScore, this.numBitBar, this.referenceValueBar).then((res) => {
 
             this.currentScore = res.data._id;
             console.log("PARTITION OK");

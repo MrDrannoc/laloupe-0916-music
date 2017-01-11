@@ -24,14 +24,14 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
             this.noteCURRENT = [];
-            this.numBitBar = this.score.bars[0].numBitBar;
-            this.referenceValueBar = this.score.bars[0].referenceValueBar;
-            console.log("Toutes les notes présentes sur la première mesure " + this.score.bars[0].notes);
+            this.numBitBar = this.score.numBitBar;
+            this.referenceValueBar = this.score.referenceValueBar;
+            console.log("Toutes les notes présentes sur la première mesure ", this.score.notes);
 
             // Requete sur la partition pour récupérer les notes la première mesure "score.bars[0]"
 
-            for (let note of this.score.bars[0].notes) {
-                this.noteService.getOne(note).then((res) => {
+            for (let note of this.score.notes) {
+                this.noteService.getOne(note._id).then((res) => {
                     this.noteCURRENT.push(res.data);
                     console.log("Notes de la partition ", this.noteCURRENT);
 
@@ -56,10 +56,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     // });
 
     this.addChiffrage = () => {
-        this.scoreService.getOne(this.currentScoreId).then((res) => {
-            this.score = res.data;
-        });
-        this.currentBar = this.score.bars[0]._id;
+
         if (this.chiffrage == "3x4") {
             this.numBitBar = 3;
             this.referenceValueBar = 4;
@@ -67,7 +64,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
             this.numBitBar = 4;
             this.referenceValueBar = 4;
         }
-        this.barService.update(this.currentBar, this.numBitBar, this.referenceValueBar).then(() => {
+        this.scoreService.update(this.currentScoreId, this.numBitBar, this.referenceValueBar).then(() => {
             console.log("Chiffrage ok " + res.data._id);
         });
     };
@@ -85,9 +82,6 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
 
         // Création de la note avec les valeurs saisies dans les select
 
-        if (this.score.notes) {
-            this.orderNote++;
-        }
 
         this.noteService.create(this.noteHeigth, this.noteValue, this.orderNote, this.referenceValueBar, this.orderBar).then((res) => {
             this.currentNote = res.data._id;

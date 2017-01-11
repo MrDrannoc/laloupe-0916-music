@@ -33,7 +33,7 @@ function scoreService($http) {
         });
     };
 
-    this.addNoteToScore = (scoreId, barId) => {
+    this.addNoteToScore = (scoreId, noteId) => {
         return this.$http.put('/api/scores/score/', {
             note_id: noteId,
             score_id: scoreId
