@@ -20,7 +20,7 @@
         <div class="bloc4 col-md-12">
             <div class="row">
                 <div class="star col-md-12">
-                    <img src="../assets/img/elementsPartitions/21/cleDeSol.png"/>
+                    <img class="imgacacher" src="../assets/img/elementsPartitions/21/cleDeSol.png"/>
                     <div class="noteDisplay">
                         <div class="donot">
                             <select class="form-control" ng-model="vm.chiffrage">
@@ -31,7 +31,7 @@
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                                 Chiffrage</button>
                         </div>
-                        <img src="../assets/img/elementsPartitions/22/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
+                        <img class="imgacacher" src="../assets/img/elementsPartitions/22/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
                     </div>
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
                         <div class="noteDisplay">
