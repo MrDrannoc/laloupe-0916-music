@@ -57,7 +57,7 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
         })
         .when('/score/delete', {
             templateUrl: 'views/admin/scoreDelete.html',
-            controller: 'loginController',
+            controller: 'scoreController',
             controllerAs: 'vm'
         })
         .when('/exercice', {

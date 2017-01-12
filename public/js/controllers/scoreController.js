@@ -1,6 +1,5 @@
-function scoreController(scoreService, barService, noteService, $location, $routeParams) {
+function scoreController(scoreService, noteService, $location, $routeParams) {
     this.scoreService = scoreService;
-    this.barService = barService;
     this.noteService = noteService;
     this.$location = $location;
 
@@ -44,12 +43,15 @@ function scoreController(scoreService, barService, noteService, $location, $rout
         // this.scoreService.addBarToScore(score._id,)
     };
 
-    this.scoreChoice = (id) => {
-        console.log(id)
-        this.$location.path('/score/editing/'+id);
+    this.scoreDelete = (id) => {
+        this.scoreService.delete(id).then(() => {
+            this.load();
+        });
     };
 
-
+    this.scoreChoice = (id) => {
+        this.$location.path('/score/editing/'+id);
+    };
 
     this.verificationdelapartition = () => {
       console.log($routeParams.id);
@@ -62,15 +64,4 @@ function scoreController(scoreService, barService, noteService, $location, $rout
     };
 
     this.load();
-
-    this.barCreate = () => {
-        this.barService.create(this.bar).then(() => {
-            this.load();
-        });
-    };
-    this.noteCreate = () => {
-        this.noteService.create(this.note).then(() => {
-            this.load();
-        });
-    };
-}
+  }

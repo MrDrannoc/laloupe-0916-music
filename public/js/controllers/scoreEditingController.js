@@ -35,7 +35,7 @@ function scoreEditingController(scoreService, barService, noteService, $location
                 this.noteService.getOne(note).then((res) => {
                     this.noteCURRENT.push(res.data);
                     console.log(this.noteCURRENT);
-                })
+                });
             }
 
         });
