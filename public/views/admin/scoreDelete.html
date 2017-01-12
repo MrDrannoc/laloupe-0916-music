@@ -26,32 +26,16 @@
     </div>
     <div class="container bloc3delete col-lg-6 col-lg-offset-3">
         <div class="formulaire col-lg-7 col-lg-offset-5">
-            <form class="form-horizontal col-lg-10 col-lg-offset-1">
+          <form class="form-horizontal col-lg-10 col-lg-offset-1">
                 <h6>Sélectionne un exercice</h6>
-                <div class="dropdown">
-                    <div class="col-lg-offset-2 ">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Exercices
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">Exercice 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Exercice 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Exercice 3</a>
-                            </li>
-                            <li>
-                                <a href="#">Exercice 4</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="select">
+                        <select class="form-control" ng-model='vm.idDelete'>
+                            <option ng-repeat="score in vm.scores" ng-value='score._id'>{{score.nameScore}}</option>
+                        </select>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-offset-3 ">
-                        <button type="submit" class="btn btn-default">Supprimer</button>
+                        <button ng-click='vm.scoreDelete(vm.idDelete)' type="submit" class="btn btn-default">Supprimer</button>
                     </div>
                 </div>
             </form>

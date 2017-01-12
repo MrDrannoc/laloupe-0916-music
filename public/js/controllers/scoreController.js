@@ -25,36 +25,23 @@ function scoreController(scoreService, noteService, $location, $routeParams) {
             });
         });
     };
-//
-// this.scoreService.addBarToScore(score._id,)
 
-this.scoreChoice = (id) => {
-    console.log(id)
-    this.$location.path('/score/editing/' + id);
-};
+    this.scoreDelete = (id) => {
+        this.scoreService.delete(id).then(() => {
+            this.load();
+        });
+    };
+
+    this.scoreChoice = (id) => {
+        this.$location.path('/score/editing/'+id);
+    };
 
 
+    this.load = () => {
+        this.scoreService.getAll().then((res) => {
+            this.scores = res.data;
+        });
+    };
 
-this.verificationdelapartition = () => {
-    console.log($routeParams.id);
-};
-
-this.load = () => {
-    this.scoreService.getAll().then((res) => {
-        this.scores = res.data;
-    });
-};
-
-this.load();
-
-this.barCreate = () => {
-    this.barService.create(this.bar).then(() => {
-        this.load();
-    });
-};
-this.noteCreate = () => {
-    this.noteService.create(this.note).then(() => {
-        this.load();
-    });
-};
-}
+    this.load();
+  }

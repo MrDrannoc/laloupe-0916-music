@@ -33,9 +33,8 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
             for (let note of this.score.notes) {
                 this.noteService.getOne(note._id).then((res) => {
                     this.noteCURRENT.push(res.data);
-                    console.log("Notes de la partition ", this.noteCURRENT);
-
-                })
+                    console.log(this.noteCURRENT);
+                });
             }
 
         });
