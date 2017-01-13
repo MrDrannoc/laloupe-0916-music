@@ -2,11 +2,12 @@ function noteService($http) {
 
     this.$http = $http;
 
-    this.create = (heigth, value, order) => {
+    this.create = (heigth, value, order, score) => {
         return this.$http.post('/api/notes', {
             heigthNote: heigth,
             valueNote: value,
-            orderNote: order
+            orderNote: order,
+            score: score
         });
     };
 
@@ -20,9 +21,16 @@ function noteService($http) {
 
     this.update = (id, heigth, value, order) => {
         return this.$http.put('/api/notes/' + id, {
-          heigthNote: heigth,
-          valueNote: value,
-          orderNote: order
+            heigthNote: heigth,
+            valueNote: value,
+            orderNote: order
+        });
+    };
+
+    this.getNoteWhereOrderGreaterThanX = (score_id, note_Order) => {
+        return this.$http.put('/api/notes/note', {
+            note_Order: note_Order,
+            score_id: score_id
         });
     };
 

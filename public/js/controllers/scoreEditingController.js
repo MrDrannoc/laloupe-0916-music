@@ -70,38 +70,46 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     };
 
 
-    this.addNote = () => {
+    this.addNote = (id) => {
 
         // Requete sur la partition pour récupérer la première mesure "score.bars[0]"
-
+        this.currentNoteId = id;
         console.log("Valeur de la note : " + this.noteValue + " | Hauteur de la note : " + this.noteHeigth);
 
-        this.scoreService.getOne(this.currentScoreId).then((res) => {
-            this.score = res.data;
-        });
 
-        // Création de la note avec les valeurs saisies dans les select
+        this.noteService.getOne(this.currentNoteId).then((res) => {
 
 
-        this.noteService.create(this.noteHeigth, this.noteValue, this.orderNote, this.referenceValueBar, this.orderBar).then((res) => {
-            this.currentNote = res.data._id;
+            // Incrémentation de l'ordre de la note
+            this.currentNoteOrder = res.data.orderNote + 1;
+            console.log("Ordre de cette putain de current note : " + this.currentNoteOrder)
 
 
+            this.noteService.getNoteWhereOrderGreaterThanX(this.currentScoreId, this.currentNoteOrder).then((res) => {
 
-            console.log("Id de la nouvelle note créée " + res.data._id);
+                // Création de la note avec les valeurs saisies dans les select
+                this.noteValue = Number(this.noteValue);
 
-            // Ajout de la note dans la mesure récupérée
+                this.noteService.create(this.noteHeigth, this.noteValue, this.currentNoteOrder).then((res) => {
 
-            this.scoreService.addNoteToScore(this.currentScore, this.currentNote).then(() => {
-                console.log("Ajout Note dans Mesure OK");
-            });
+                    this.currentNoteId = res.data._id;
 
-        });
+                    // Ajout de la note dans la mesure récupérée
+
+                    this.scoreService.addNoteToScore(this.currentScoreId, this.currentNoteId).then(() => {
+                    });
+
+                });
+
+
+            })
+        })
+
     };
 
     this.deleteNote = (id) => {
-      this.noteService.delete(id).then(() => {
-        this.delete();
-      });
+        this.noteService.delete(id).then(() => {
+            this.delete();
+        });
     };
 }
