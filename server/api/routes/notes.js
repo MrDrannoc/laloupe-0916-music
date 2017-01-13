@@ -14,6 +14,8 @@ module.exports = (app) => {
 
     router.post('/', note.create);
 
+    router.put('/note', note.getNoteWhereOrderGreaterThanX);
+
     router.put('/:id', note.update);
 
     router.delete('/:id', note.delete);
