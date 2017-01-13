@@ -11,7 +11,7 @@ function scoreController(scoreService, noteService, $location, $routeParams) {
             this.currentScore = res.data._id;
             console.log("PARTITION OK");
             this.orderNote = 1;
-            this.noteService.create("sol2", 1, 1).then((res) => {
+            this.noteService.create("sol2", 1, 1,this.currentScore).then((res) => {
                 this.currentNote = res.data._id;
                 console.log("Id de la nouvelle note créée " + res.data._id);
 

@@ -16,6 +16,7 @@ let model = mongoose.model('Note', noteSchema);
 export default class Note {
 
     findAll(req, res) {
+        console.log("ouplaboom");
         model.find({}, (err, notes) => {
             if (err) {
                 res.sendStatus(403);
@@ -40,6 +41,7 @@ export default class Note {
                 heigthNote: req.body.heigthNote,
                 valueNote: req.body.valueNote,
                 orderNote: req.body.orderNote,
+                score: req.body.score
             },
             (err, note) => {
                 if (err) {
@@ -74,5 +76,27 @@ export default class Note {
                 res.sendStatus(200);
             }
         });
+    }
+
+    getNoteWhereOrderGreaterThanX(req, res) {
+        let numTmp = req.body.note_Order;
+        model.update({
+                score: req.body.score_id,
+                orderNote: {
+                    $gt: numTmp
+                }
+            }, {
+                $inc: {
+                    orderNote: 1
+                }
+            },
+            { multi: true },
+            (err, notes) => {
+                if (err) {
+                    res.status(500).send(err.message);
+                } else {
+                    res.sendStatus(200);
+                }
+            });
     }
 }
