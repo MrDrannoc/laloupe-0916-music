@@ -95,15 +95,14 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
 
                     // Ajout de la note dans la mesure récupérée
 
-                    this.scoreService.addNoteToScore(this.currentScoreId, this.currentNoteId).then(() => {
-                    });
+                    this.scoreService.addNoteToScore(this.currentScoreId, this.currentNoteId).then(() => {});
 
                 });
 
 
             })
         })
-
+        this.load();
     };
 
     this.deleteNote = (id) => {
