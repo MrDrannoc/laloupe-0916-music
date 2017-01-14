@@ -1,6 +1,6 @@
 import express from 'express';
 import Score from '../models/score.js';
-/*import Auth from '../middlewares/authorization.js';*/
+import Auth from '../middlewares/authorization.js';
 
 let router = express.Router();
 
