@@ -60,21 +60,15 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
                 connected: checkIsAdmin
             }
         })
-        .when('/exercice', {
+        .when('/exercice/:id', {
             templateUrl: 'views/user/exercice.html',
-            controller: 'loginController',
-            controllerAs: 'vm',
-            resolve: {
-                connected: checkIsConnected
-            }
+            controller: 'exerciceController',
+            controllerAs: 'vm'
         })
         .when('/list/exercices', {
             templateUrl: 'views/user/listExercices.html',
-            controller: 'scoreController',
-            controllerAs: 'vm',
-            resolve: {
-                connected: checkIsConnected
-            }
+            controller: 'listExercicesController',
+            controllerAs: 'vm'
         })
         .otherwise({
             redirectTo: '/'
