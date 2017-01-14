@@ -77,9 +77,15 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
         });
     };
 
+    this.editNote = (data) => {
+        this.noteService.update(data._id, data).then(() => {
+            this.load();
+        });
+    };
+
     this.deleteNote = (id) => {
         this.noteService.delete(id).then(() => {
-            this.delete();
+            this.load();
         });
     };
 }
