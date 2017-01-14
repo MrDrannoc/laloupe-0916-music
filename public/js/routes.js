@@ -25,8 +25,6 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
         })
         .when('/dashboard', {
             templateUrl: 'views/admin/dashboard.html',
-            controller: 'loginController',
-            controllerAs: 'vm',
             resolve: {
                 connected: checkIsAdmin
             }
@@ -41,7 +39,7 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
         })
         .when('/score/create', {
             templateUrl: 'views/admin/scoreCreate.html',
-            controller: 'scoreController',
+            controller: 'scoreCreateController',
             controllerAs: 'vm',
             resolve: {
                 connected: checkIsAdmin
@@ -49,7 +47,7 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
         })
         .when('/score/edit', {
             templateUrl: 'views/admin/scoreEdit.html',
-            controller: 'scoreController',
+            controller: 'scoreEditController',
             controllerAs: 'vm',
             resolve: {
                 connected: checkIsAdmin
@@ -65,7 +63,7 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
         })
         .when('/score/delete', {
             templateUrl: 'views/admin/scoreDelete.html',
-            controller: 'scoreController',
+            controller: 'scoreDeleteController',
             controllerAs: 'vm',
             resolve: {
                 connected: checkIsAdmin
