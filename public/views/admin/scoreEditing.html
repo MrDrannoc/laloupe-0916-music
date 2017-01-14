@@ -2,14 +2,14 @@
     <div class="bloc1">
         <div class="row">
             <div class="col-lg-5">
-                <a href="#/dashboard">
+                <a href="#!/dashboard">
                     <button type="button" class="btn btn-default retourDashboard">
                         <span class="glyphicon glyphicon-home"></span>
                         Tableau de bord</button>
                 </a>
             </div>
             <div class="col-lg-2">
-                <img src="../assets/img/elementsPages/ourson.png" alt="ourson"/>
+                <img src="./assets/img/elementsPages/ourson.png" alt="ourson"/>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
         <div class="bloc4 col-md-12">
             <div class="row">
                 <div class="star col-md-12">
-                    <img class="imgacacher" src="../assets/img/elementsPartitions/21/cleDeSol.png"/>
+                    <img class="imgacacher" src="./assets/img/elementsPartitions/21/cleDeSol.png"/>
                     <div class="noteDisplay">
                         <div class="donot">
                             <select class="form-control" ng-model="vm.chiffrage">
@@ -31,7 +31,7 @@
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                                 Chiffrage</button>
                         </div>
-                        <img class="imgacacher" src="../assets/img/elementsPartitions/22/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
+                        <img class="imgacacher" src="./assets/img/elementsPartitions/22/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
                     </div>
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
                         <div class="noteDisplay">
@@ -39,12 +39,12 @@
                               <div class="row">
                                 <div class="col-md-5">
                                   <a href="" ng-click="vm.deleteNote(note._id)">
-                                  <img width="35%" src="../assets/img/elementsPages/cancel.svg" alt="buttonCancel">
+                                  <img width="35%" src="./assets/img/elementsPages/cancel.svg" alt="buttonCancel">
                                   </a>
                                 </div>
                                 <div class="col-md-5">
                                   <a href="" ng-click="vm.addNote(note._id)">
-                                  <img width="35%" src="../assets/img/elementsPages/add.svg" alt="buttonAdd">
+                                  <img width="35%" src="./assets/img/elementsPages/add.svg" alt="buttonAdd">
                                   </a>
                                 </div>
                               </div>
@@ -108,11 +108,11 @@
                                 </select>
                                 <button ng-click="vm.editNote()" class="btn btn-primary" style="background-color : green" type="button" name="button">Modifier la note</button>
                             </div>
-                            <img class="imgacacher" alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
+                            <img class="imgacacher" alt="{{note.valueNote}}" src="./assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
                         </div>
                     </span>
                 </div>
-                <img alt="{{note.valueNote}}" src="../assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
+                <img alt="{{note.valueNote}}" src="./assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
             </div>
         </div>
     </div>
