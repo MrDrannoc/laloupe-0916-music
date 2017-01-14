@@ -15,14 +15,6 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
                 connected: checkIsAdmin
             }
         })
-        .when('/admin/duplic', {
-            templateUrl: 'views/admin/adminDuplicScore.html',
-            controller: 'duplicController',
-            controllerAs: 'vm',
-            resolve: {
-                connected: checkIsAdmin
-            }
-        })
         .when('/dashboard', {
             templateUrl: 'views/admin/dashboard.html',
             resolve: {
