@@ -32,7 +32,7 @@
                         {{score.levelScore == 1 ? "Facile" : score.levelScore == 2 ? "Intermédiare" : "Difficile"}}
                     </div>
                     <div class="col-lg-6">
-                        <p>{{score.nameScore}}</p>
+                      <button ng-click="vm.choiceExercice(score._id)" class="btn btn-link" type="button" name="button">{{score.nameScore}}</button>
                     </div>
                     <div class="col-lg-2">
                       <img width="25%" src="../assets/img/elementsPages/{{score.levelScore == 1 ? 'easy' : score.levelScore == 2 ? 'medium' : 'hard'}}.png">

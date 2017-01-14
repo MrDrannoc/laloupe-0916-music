@@ -60,14 +60,14 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
             controller: 'scoreController',
             controllerAs: 'vm'
         })
-        .when('/exercice', {
+        .when('/exercice/:id', {
             templateUrl: 'views/user/exercice.html',
-            controller: 'loginController',
+            controller: 'exerciceController',
             controllerAs: 'vm'
         })
         .when('/list/exercices', {
             templateUrl: 'views/user/listExercices.html',
-            controller: 'scoreController',
+            controller: 'listExercicesController',
             controllerAs: 'vm'
         })
         .otherwise({
