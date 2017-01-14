@@ -183,6 +183,6 @@ export default class User {
             } else {
                 res.sendStatus(200);
             }
-        })
+        });
     }
 }
