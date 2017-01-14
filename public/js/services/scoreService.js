@@ -34,7 +34,14 @@ function scoreService($http) {
     };
 
     this.addNoteToScore = (scoreId, noteId) => {
-        return this.$http.put('/api/scores/score/', {
+        return this.$http.put('/api/scores/addNoteToScore/', {
+            note_id: noteId,
+            score_id: scoreId
+        });
+    };
+
+    this.deleteNoteFromScore = (scoreId, noteId) => {
+        return this.$http.put('/api/scores/deleteNoteFromScore/', {
             note_id: noteId,
             score_id: scoreId
         });
