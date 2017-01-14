@@ -11,10 +11,9 @@ const hashCode = (s) => s.split("").reduce((a, b) => {
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
-        required: true,
-        required: 'Email address is required',
+        required: [true,'Email address is required'],
         validate: [function(email) {
-            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
         }, 'Please fill a valid email address'],
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
         unique: true
@@ -81,15 +80,15 @@ export default class User {
                             } else {
                                 res.status(400).send('Incorrect password');
                             }
-                        };
+                        }
                     });
-                };
+                }
             });
         }
     }
 
     findAll(req, res) {
-        model.find({}, {
+        model.find({isAdmin:false}, {
             password: 0
         }, (err, users) => {
             if (err || !users) {
@@ -157,7 +156,7 @@ export default class User {
     }
 
     suspend(req, res) {
-        model.findById(req.params.id, {
+        model.find({_id:req.params.id, isAdmin:false}, {
             password: 0
         }, (err, user) => {
             if (err || !user) {
@@ -183,6 +182,6 @@ export default class User {
             } else {
                 res.sendStatus(200);
             }
-        })
+        });
     }
 }

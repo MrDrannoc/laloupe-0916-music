@@ -71,22 +71,22 @@ function algoRythme() {
     var tempo = 60 / partition.tempo;
 
     function callback() {
-      if (index > partition.mesures.length-1) {
-          clearTimeout(time);
-      }else{
-        console.log(partition.mesures[index].notes[sousIndex].valeur);
-        interval = ((partition.mesures[index].notes[sousIndex].valeur * 1000) * partition.valeursParMesure) * tempo;
-        sousIndex++;
-        if (sousIndex >= partition.mesures[index].notes.length) {
-            index++;
-            sousIndex = 0;
-        }
-        if (index > partition.mesures.length) {
+        if (index > partition.mesures.length - 1) {
             clearTimeout(time);
         } else {
-            time = setTimeout(callback, interval);
+            console.log(partition.mesures[index].notes[sousIndex].valeur);
+            interval = ((partition.mesures[index].notes[sousIndex].valeur * 1000) * partition.valeursParMesure) * tempo;
+            sousIndex++;
+            if (sousIndex >= partition.mesures[index].notes.length) {
+                index++;
+                sousIndex = 0;
+            }
+            if (index > partition.mesures.length) {
+                clearTimeout(time);
+            } else {
+                time = setTimeout(callback, interval);
+            }
         }
-      }
     }
 
     time = setTimeout(callback, interval);

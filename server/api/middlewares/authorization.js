@@ -24,7 +24,7 @@ export default {
     isAdministrator: (req, res, next) => {
         if (req.headers.authorization) {
             jsonwebtoken.verify(req.headers.authorization, token, (err, decoded) => {
-                if (decoded._doc && decoded._doc.isAdmin) {
+                if (decoded._doc && decoded._doc.isAdmin && !decoded._doc.suspendUser) {
                     next();
                 } else {
                     return res.sendStatus(403);
