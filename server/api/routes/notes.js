@@ -1,6 +1,6 @@
 import express from 'express';
 import Note from '../models/note.js';
-/*import Auth from '../middlewares/authorization.js';*/
+import Auth from '../middlewares/authorization.js';
 
 let router = express.Router();
 
@@ -12,14 +12,14 @@ module.exports = (app) => {
 
     router.get('/:id', note.findById);
 
-    router.post('/', note.create);
+    router.post('/', Auth.isAdministrator, note.create);
 
-    router.put('/note', note.getNoteWhereOrderGreaterThanX);
+    router.put('/note', Auth.isAdministrator, note.getNoteWhereOrderGreaterThanX);
 
-    router.put('/:id', note.update);
+    router.put('/:id', Auth.isAdministrator, note.update);
 
-    router.delete('/:id', note.delete);
+    router.delete('/:id', Auth.isAdministrator, note.delete);
 
-    app.use('/notes', /*Auth.hasAuthorization,*/ router);
+    app.use('/notes', Auth.hasAuthorization, router);
 
 };

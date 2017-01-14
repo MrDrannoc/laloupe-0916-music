@@ -79,8 +79,7 @@ export default class Note {
     }
 
     getNoteWhereOrderGreaterThanX(req, res) {
-        console.log("id lors de la requete : " + req.body.score_id);
-        let numTmp = req.body.note_Order;
+        let numTmp = Number(req.body.note_Order);
         model.update({
                 score: req.body.score_id,
                 orderNote: {
@@ -92,11 +91,12 @@ export default class Note {
                 }
             },
             { multi: true },
-            (err, notes) => {
+            (err, note) => {
+              console.log(note);
                 if (err) {
                     res.status(500).send(err.message);
                 } else {
-                    res.sendStatus(200);
+                    res.json(note);
                 }
             });
     }

@@ -33,7 +33,7 @@
                         </div>
                         <img class="imgacacher" src="./assets/img/elementsPartitions/22/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
                     </div>
-                    <span ng-repeat="note in vm.noteCURRENT | orderBy:'note.orderNote'">
+                    <span ng-repeat="note in vm.noteCURRENT | orderBy:'orderNote'">
                         <div class="noteDisplay">
                             <div class="donot">
                               <div class="row">
@@ -48,7 +48,7 @@
                                   </a>
                                 </div>
                               </div>
-                                <select class="form-control" ng-model="vm.noteValue">
+                                <select class="form-control" ng-model="note.noteValue">
                                     <option value="">Valeur</option>
                                     <option value="4">Ronde</option>
                                     <option value="2">Blanche</option>
@@ -63,7 +63,7 @@
                                     <option value="26">Points</option>
                                     <option value="25">Barre</option>
                                 </select>
-                                <select class="form-control" ng-model="vm.noteHeigth">
+                                <select class="form-control" ng-model="note.heigthNote">
                                     <option value="">Hauteur</option>
                                     <option value="do1">do1</option>
                                     <option value="do2">do2</option>
@@ -106,7 +106,7 @@
                                     <option value="fadosolrelamisi">armure faDoSolReLaMiSi#</option>
 
                                 </select>
-                                <button ng-click="vm.editNote()" class="btn btn-primary" style="background-color : green" type="button" name="button">Modifier la note</button>
+                                <button ng-click="vm.editNote(note)" class="btn btn-primary" style="background-color : green" type="button" name="button">Modifier la note</button>
                             </div>
                             <img class="imgacacher" alt="{{note.valueNote}}" src="./assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
                         </div>
