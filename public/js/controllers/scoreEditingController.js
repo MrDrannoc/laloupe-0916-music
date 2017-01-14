@@ -66,43 +66,15 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
 
 
     this.addNote = (id) => {
-
-        // Requete sur la partition pour récupérer la première mesure "score.bars[0]"
-        this.currentNoteId = id;
-        console.log("Valeur de la note : " + this.noteValue + " | Hauteur de la note : " + this.noteHeigth);
-
-
-        this.noteService.getOne(this.currentNoteId).then((res) => {
-
-
-            // Incrémentation de l'ordre de la note
-            this.currentNoteOrder = res.data.orderNote;
-
-
-
-            this.noteService.getNoteWhereOrderGreaterThanX(this.currentScoreId, this.currentNoteOrder).then((res) => {
-
-                // Création de la note avec les valeurs saisies dans les select
-                this.noteValue = Number(this.noteValue);
-
-                this.currentNoteOrder++;
-
-                this.noteService.create(this.noteHeigth, this.noteValue, this.currentNoteOrder,this.currentScoreId).then((res) => {
-
-                    this.currentNoteId = res.data._id;
-
-                    // Ajout de la note dans la mesure récupérée
-
-                    this.scoreService.addNoteToScore(this.currentScoreId, this.currentNoteId).then(() => {
+        this.noteService.getOne(id).then((res) => {
+            this.noteService.getNoteWhereOrderGreaterThanX(this.currentScoreId, res.data.orderNote).then((res2) => {
+                this.noteService.create('sol2', '1', res.data.orderNote+1, this.currentScoreId).then((res3) => {
+                    this.scoreService.addNoteToScore(this.currentScoreId, res3.data._id).then(() => {
                         this.load();
                     });
-
                 });
-
-
-            })
-        })
-
+            });
+        });
     };
 
     this.deleteNote = (id) => {
