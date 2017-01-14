@@ -3,72 +3,89 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
     $locationProvider.html5Mode(false).hashPrefix('');
     $routeProvider
         .when('/', {
-          templateUrl: 'views/login.html',
-          controller: 'loginController',
-          controllerAs: 'vm'
-            /*resolve: {
-                connected: checkIsConnected
-            }*/
+            templateUrl: 'views/login.html',
+            controller: 'loginController',
+            controllerAs: 'vm'
         })
-
         .when('/userCreate', {
             templateUrl: 'views/admin/userCreate.html',
             controller: 'userCreateController',
             controllerAs: 'vm',
-            // resolve: {
-            //    connected: checkIsConnected
-            // }
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .when('/admin/duplic', {
             templateUrl: 'views/admin/adminDuplicScore.html',
             controller: 'duplicController',
             controllerAs: 'vm',
-            // resolve: {
-            //    connected: checkIsConnected
-            // }
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .when('/dashboard', {
             templateUrl: 'views/admin/dashboard.html',
             controller: 'loginController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .when('/user/block', {
             templateUrl: 'views/admin/userBlock.html',
             controller: 'userBlockController',
             controllerAs: 'vm',
-            // resolve: {
-            //     connected: checkIsConnected
-            // }
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .when('/score/create', {
             templateUrl: 'views/admin/scoreCreate.html',
             controller: 'scoreController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .when('/score/edit', {
             templateUrl: 'views/admin/scoreEdit.html',
             controller: 'scoreController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .when('/score/editing/:id', {
             templateUrl: 'views/admin/scoreEditing.html',
             controller: 'scoreEditingController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .when('/score/delete', {
             templateUrl: 'views/admin/scoreDelete.html',
             controller: 'scoreController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsAdmin
+            }
         })
         .when('/exercice', {
             templateUrl: 'views/user/exercice.html',
             controller: 'loginController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .when('/list/exercices', {
             templateUrl: 'views/user/listExercices.html',
             controller: 'scoreController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            resolve: {
+                connected: checkIsConnected
+            }
         })
         .otherwise({
             redirectTo: '/'
@@ -126,6 +143,21 @@ const checkIsConnected = ($q, $http, $location, $window, $rootScope) => {
         // Not Authenticated
         deferred.reject();
         $location.url('/login');
+    });
+
+    return deferred.promise;
+};
+
+
+const checkIsAdmin = ($q, $http, $location, $window, $rootScope) => {
+    let deferred = $q.defer();
+
+    $http.get('/api/isadmin').then(() => {
+        $rootScope.$emit('loginStatusChanged', true);
+        deferred.resolve();
+    }).catch(() => {
+        $rootScope.$emit('loginStatusChanged');
+        deferred.reject();
     });
 
     return deferred.promise;

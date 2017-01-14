@@ -1,7 +1,6 @@
 angular.module('app', ['ngRoute'])
         .factory('sessionFactory', sessionFactory)
         .service('userService', userService)
-        .service('todoService', todoService)
         .service('scoreService', scoreService)
         .service('noteService', noteService)
         .controller('mainController', mainController)
