@@ -79,6 +79,7 @@ export default class Note {
     }
 
     getNoteWhereOrderGreaterThanX(req, res) {
+        console.log("id lors de la requete : " + req.body.score_id);
         let numTmp = req.body.note_Order;
         model.update({
                 score: req.body.score_id,

@@ -6,15 +6,11 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.currentScoreId = $routeParams.id;
 
 
-    this.scoreChoice = (id) => {
-        console.log(id)
-        this.$location.path('/score/editing/' + id);
-    };
 
 
 
     this.verificationdelapartition = () => {
-        console.log(this.currentScoreId);
+        console.log("Route param : ", $routeParams);
     };
 
     this.load = () => {
@@ -80,8 +76,8 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
 
 
             // Incrémentation de l'ordre de la note
-            this.currentNoteOrder = res.data.orderNote + 1;
-            console.log("Ordre de cette putain de current note : " + this.currentNoteOrder)
+            this.currentNoteOrder = res.data.orderNote;
+
 
 
             this.noteService.getNoteWhereOrderGreaterThanX(this.currentScoreId, this.currentNoteOrder).then((res) => {
@@ -89,20 +85,24 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
                 // Création de la note avec les valeurs saisies dans les select
                 this.noteValue = Number(this.noteValue);
 
-                this.noteService.create(this.noteHeigth, this.noteValue, this.currentNoteOrder).then((res) => {
+                this.currentNoteOrder++;
+
+                this.noteService.create(this.noteHeigth, this.noteValue, this.currentNoteOrder,this.currentScoreId).then((res) => {
 
                     this.currentNoteId = res.data._id;
 
                     // Ajout de la note dans la mesure récupérée
 
-                    this.scoreService.addNoteToScore(this.currentScoreId, this.currentNoteId).then(() => {});
+                    this.scoreService.addNoteToScore(this.currentScoreId, this.currentNoteId).then(() => {
+                        this.load();
+                    });
 
                 });
 
 
             })
         })
-        this.load();
+
     };
 
     this.deleteNote = (id) => {
