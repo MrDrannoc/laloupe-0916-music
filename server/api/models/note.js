@@ -58,8 +58,7 @@ export default class Note {
             _id: req.params.id
         }, {
             heigthNote: req.body.heigthNote,
-            valueNote: req.body.valueNote,
-            orderNote: req.body.orderNote
+            valueNote: req.body.valueNote
         }, (err, note) => {
             if (err || !note) {
                 res.status(500).send(err.message);

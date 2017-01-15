@@ -60,8 +60,8 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
         });
     };
 
-    this.editNote = (data) => {
-        this.noteService.update(data._id, data).then(() => {
+    this.editNote = (id) => {
+        this.noteService.update(id, this.noteHeigth, this.noteValue).then(() => {
             this.load();
         });
     };
