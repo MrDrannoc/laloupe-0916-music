@@ -104,9 +104,9 @@ export default class Score {
     }
 
     deleteNoteFromScore(req, res) {
-        model.findByIdAndUpdate(score_id, {
+        model.findByIdAndUpdate(req.body.score_id, {
                 $pull: {
-                    notes: note_id
+                    notes: req.body.note_id
                 }
             },
             function(err) {

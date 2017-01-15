@@ -23,8 +23,15 @@ function noteService($http) {
         return this.$http.put('/api/notes/' + id, note);
     };
 
-    this.getNoteWhereOrderGreaterThanX = (score_id, note_Order) => {
-        return this.$http.put('/api/notes/note', {
+    this.getNoteWhereOrderGreaterThanXAndInc = (score_id, note_Order) => {
+        return this.$http.put('/api/notes/incNote', {
+            note_Order: note_Order,
+            score_id: score_id
+        });
+    };
+
+    this.getNoteWhereOrderGreaterThanXAndDec = (score_id, note_Order) => {
+        return this.$http.put('/api/notes/decNote', {
             note_Order: note_Order,
             score_id: score_id
         });

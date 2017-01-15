@@ -79,7 +79,7 @@ export default class Note {
         });
     }
 
-    getNoteWhereOrderGreaterThanX(req, res) {
+    getNoteWhereOrderGreaterThanXAndInc(req, res) {
         let numTmp = Number(req.body.note_Order);
         model.update({
                 score: req.body.score_id,
@@ -90,10 +90,35 @@ export default class Note {
                 $inc: {
                     orderNote: 1
                 }
+            }, {
+                multi: true
             },
-            { multi: true },
             (err, note) => {
-              console.log(note);
+                console.log(note);
+                if (err) {
+                    res.status(500).send(err.message);
+                } else {
+                    res.json(note);
+                }
+            });
+    }
+
+    getNoteWhereOrderGreaterThanXAndDec(req, res) {
+        let numTmp = Number(req.body.note_Order);
+        model.update({
+                score: req.body.score_id,
+                orderNote: {
+                    $gt: numTmp
+                }
+            }, {
+                $inc: {
+                    orderNote: -1
+                }
+            }, {
+                multi: true
+            },
+            (err, note) => {
+                console.log(note);
                 if (err) {
                     res.status(500).send(err.message);
                 } else {

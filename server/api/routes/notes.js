@@ -14,7 +14,9 @@ module.exports = (app) => {
 
     router.post('/', note.create);
 
-    router.put('/note', note.getNoteWhereOrderGreaterThanX);
+    router.put('/incNote', note.getNoteWhereOrderGreaterThanXAndInc);
+
+    router.put('/decNote', note.getNoteWhereOrderGreaterThanXAndDec);
 
     router.put('/:id', note.update);
 

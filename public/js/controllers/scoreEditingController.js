@@ -5,44 +5,35 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.$location = $location;
     this.currentScoreId = $routeParams.id;
 
-
-
-
-
     this.verificationdelapartition = () => {
         console.log("Route param : ", $routeParams);
     };
 
     this.load = () => {
 
-        // Requete sur la partition pour récupérer les notes la première mesure "score.bars[0]"
+        // Requete sur la partition pour récupérer les notes
 
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
             this.noteCURRENT = [];
             this.numBitBar = this.score.numBitBar;
             this.referenceValueBar = this.score.referenceValueBar;
-            console.log("Toutes les notes présentes sur la première mesure ", this.score.notes);
+            console.log("Toutes les notes présentes", this.score.notes);
 
-            // Requete sur la partition pour récupérer les notes la première mesure "score.bars[0]"
+            // Ajout des notes de la partition dans le tableau noteCURRENT
 
             for (let note of this.score.notes) {
                 this.noteService.getOne(note._id).then((res) => {
                     this.noteCURRENT.push(res.data);
-                    console.log(this.noteCURRENT);
                 });
             }
-
+            console.log(this.noteCURRENT);
         });
 
 
     };
 
     this.load();
-
-    // this.noteService.create(this.note).then(() => {
-    //     this.load();
-    // });
 
     this.addChiffrage = () => {
 
@@ -53,17 +44,15 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
             this.numBitBar = 4;
             this.referenceValueBar = 4;
         }
-        this.scoreService.update(this.currentScoreId, this.numBitBar, this.referenceValueBar).then(() => {
-            console.log("Chiffrage ok " + res.data._id);
-        });
+        this.scoreService.update(this.currentScoreId, this.numBitBar, this.referenceValueBar).then(() => {});
     };
 
 
     this.addNote = (id) => {
         this.noteService.getOne(id).then((res) => {
-            this.noteService.getNoteWhereOrderGreaterThanX(this.currentScoreId, res.data.orderNote).then((res2) => {
-                this.noteService.create(this.noteHeigth, this.noteValue, res.data.orderNote+1, this.currentScoreId).then((res3) => {
-                    this.scoreService.addNoteToScore(this.currentScoreId, res3.data._id).then(() => {
+            this.noteService.getNoteWhereOrderGreaterThanXAndInc(this.currentScoreId, res.data.orderNote).then(() => {
+                this.noteService.create(this.noteHeigth, this.noteValue, res.data.orderNote + 1, this.currentScoreId).then((res2) => {
+                    this.scoreService.addNoteToScore(this.currentScoreId, res2.data._id).then(() => {
                         this.load();
                     });
                 });
@@ -78,8 +67,14 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     };
 
     this.deleteNote = (id) => {
-        this.noteService.delete(id).then(() => {
-            this.load();
+        this.noteService.getOne(id).then((res) => {
+            this.noteService.getNoteWhereOrderGreaterThanXAndDec(this.currentScoreId, res.data.orderNote).then(() => {
+                this.scoreService.deleteNoteFromScore(this.currentScoreId, res.data._id).then(() => {
+                    this.noteService.delete(res.data._id).then(() => {
+                        this.load();
+                    });
+                });
+            });
         });
     };
 }
