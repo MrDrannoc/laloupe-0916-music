@@ -44,7 +44,7 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
             //     connected: checkIsAdmin
             // }
         })
-        .when('/score/editing/:id', {
+        .when('/score/editing/:scoreId', {
             templateUrl: 'views/admin/scoreEditing.html',
             controller: 'scoreEditingController',
             controllerAs: 'vm'
@@ -60,7 +60,7 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
             //     connected: checkIsAdmin
             // }
         })
-        .when('/exercice/:id', {
+        .when('/exercice/:exerciceId', {
             templateUrl: 'views/user/exercice.html',
             controller: 'exerciceController',
             controllerAs: 'vm'

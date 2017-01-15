@@ -2,7 +2,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams) 
     this.scoreService = scoreService;
     this.noteService = noteService;
     this.$location = $location;
-    this.currentScoreId = $routeParams.id;
+    this.currentScoreId = $routeParams.exerciceId;
 
     this.load = () => {
 

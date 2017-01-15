@@ -2,8 +2,8 @@ function scoreEditController(scoreService, $location) {
     this.scoreService = scoreService;
     this.$location = $location;
 
-    this.scoreChoice = (id) => {
-        this.$location.path('/score/editing/'+id);
+    this.scoreChoice = (scoreId) => {
+        this.$location.path('/score/editing/'+ scoreId);
     };
 
     this.load = () => {

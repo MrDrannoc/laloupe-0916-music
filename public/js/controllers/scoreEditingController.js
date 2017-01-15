@@ -3,7 +3,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.scoreService = scoreService;
     this.noteService = noteService;
     this.$location = $location;
-    this.currentScoreId = $routeParams.id;
+    this.currentScoreId = $routeParams.scoreId;
 
     this.verificationdelapartition = () => {
         console.log("Route param : ", $routeParams);

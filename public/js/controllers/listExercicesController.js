@@ -3,8 +3,8 @@ function listExercicesController(scoreService, noteService, $location, $routePar
     this.noteService = noteService;
     this.$location = $location;
 
-    this.choiceExercice = (id)  => {
-      this.$location.path('/exercice/' + id);
+    this.choiceExercice = (exerciceId)  => {
+      this.$location.path('/exercice/' + exerciceId);
     };
 
     this.load = () => {
