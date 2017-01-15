@@ -40,12 +40,6 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
 
     this.load();
 
-    this.barCreate = () => {
-        this.barService.create(this.bar).then(() => {
-            this.load();
-        });
-    };
-
     // this.noteService.create(this.note).then(() => {
     //     this.load();
     // });
@@ -68,7 +62,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.addNote = (id) => {
         this.noteService.getOne(id).then((res) => {
             this.noteService.getNoteWhereOrderGreaterThanX(this.currentScoreId, res.data.orderNote).then((res2) => {
-                this.noteService.create('sol2', '1', res.data.orderNote+1, this.currentScoreId).then((res3) => {
+                this.noteService.create(this.noteHeigth, this.noteValue, res.data.orderNote+1, this.currentScoreId).then((res3) => {
                     this.scoreService.addNoteToScore(this.currentScoreId, res3.data._id).then(() => {
                         this.load();
                     });

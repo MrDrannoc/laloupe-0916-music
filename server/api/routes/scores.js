@@ -12,16 +12,28 @@ module.exports = (app) => {
 
     router.get('/:id', score.findById);
 
-    router.post('/', Auth.isAdministrator, score.create);
+    router.post('/', score.create);
 
-    router.put('/addNoteToScore/', Auth.isAdministrator, score.addNoteToScore);
+    router.put('/addNoteToScore/', score.addNoteToScore);
 
-    router.put('/deleteNoteFromScore/', Auth.isAdministrator, score.deleteNoteFromScore);
+    router.put('/deleteNoteFromScore/', score.deleteNoteFromScore);
 
-    router.put('/:id', Auth.isAdministrator, score.update);
+    router.put('/:id', score.update);
 
-    router.delete('/:id', Auth.isAdministrator, score.delete);
+    router.delete('/:id', score.delete);
 
-    app.use('/scores', Auth.hasAuthorization, router);
+    app.use('/scores', router);
+
+    // router.post('/', Auth.isAdministrator, score.create);
+    //
+    // router.put('/addNoteToScore/', Auth.isAdministrator, score.addNoteToScore);
+    //
+    // router.put('/deleteNoteFromScore/', Auth.isAdministrator, score.deleteNoteFromScore);
+    //
+    // router.put('/:id', Auth.isAdministrator, score.update);
+    //
+    // router.delete('/:id', Auth.isAdministrator, score.delete);
+    //
+    // app.use('/scores', Auth.hasAuthorization, router);
 
 };

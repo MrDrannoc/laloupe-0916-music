@@ -3,7 +3,7 @@ import Score from './score.js';
 
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
-    valueNote: Number,
+    valueNote: String,
     orderNote: Number,
     score: {
         type: mongoose.Schema.Types.ObjectId,
