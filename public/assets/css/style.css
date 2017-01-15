@@ -1,548 +1,546 @@
 * {
-  margin  : 0;
-  padding : 0;
+    margin: 0;
+    padding: 0;
 }
+
 
 /* navbar AND footer */
 
 nav {
-  color            : white;
-  background-color : #9933CC!important;
-  font-family      : 'Grand Hotel',
-                     cursive;
+    color: white;
+    background-color: #9933CC!important;
+    font-family: 'Grand Hotel', cursive;
 }
 
 nav .container-fluid .part1 .navbar-brand {
-  margin  : 0;
-  padding : 0;
+    margin: 0;
+    padding: 0;
 }
 
 nav .container-fluid .part1 .navbar-brand img {
-  width      : 50px;
-  margin-top : 8%;
+    width: 50px;
+    margin-top: 8%;
 }
 
 nav .container-fluid .part2 h1 {
-  margin-left    : 30px;
-  padding-bottom : 2%;
-  line-height    : 45%;
+    margin-left: 30px;
+    padding-bottom: 2%;
+    line-height: 45%;
 }
 
 nav .container-fluid .part3 a img {
-  width       : 45px;
-  padding-top : 8%;
+    width: 45px;
+    padding-top: 8%;
 }
 
+
 /* fin de navbar */
+
 
 /* dashboard */
 
 .container-main {
-  margin-top : 10%;
+    margin-top: 10%;
 }
 
-.body p,
-.container-main .firstBlock .header h3,
-.container-main .secondBlock .header h3 {
-  color       : white;
-  font-family : 'Grand Hotel',
-                cursive;
+.body p, .container-main .firstBlock .header h3, .container-main .secondBlock .header h3 {
+    color: white;
+    font-family: 'Grand Hotel', cursive;
 }
 
-.container-main .firstBlock .header h3,
-.container-main .secondBlock .header h3 {
-  font-size : 40px;
+.container-main .firstBlock .header h3, .container-main .secondBlock .header h3 {
+    font-size: 40px;
 }
 
 .body p {
-  font-size : 23px;
+    font-size: 23px;
 }
 
-.container-main .body,
-.firstBlockBody,
-.footerFirstBlock,
-.footerSecondBlock,
-.footerThirdBlock,
-.secondBlockBody,
-.thirdBlockBody {
-  margin  : 0;
-  padding : 0;
+.container-main .body, .firstBlockBody, .footerFirstBlock, .footerSecondBlock, .footerThirdBlock, .secondBlockBody, .thirdBlockBody {
+    margin: 0;
+    padding: 0;
 }
 
 .firstBlock .header {
-  background-color : #c386fd;
+    background-color: #c386fd;
 }
 
 .firstBlock .firstBlockBody {
-  background-color : #b060ff;
+    background-color: #b060ff;
 }
 
 .firstBlock .secondBlockBody {
-  background-color : #a479ff;
+    background-color: #a479ff;
 }
 
 .secondBlock .header {
-  background-color : #7bc28a;
+    background-color: #7bc28a;
 }
 
 .secondBlock .firstBlockBody {
-  background-color : #68bc80;
+    background-color: #68bc80;
 }
 
 .secondBlock .secondBlockBody {
-  background-color : #55b06b;
+    background-color: #55b06b;
 }
 
 .secondBlock .thirdBlockBody {
-  background-color : #40a65c;
+    background-color: #40a65c;
 }
 
 .backButtonDashboard {
-  margin-top : 5%;
+    margin-top: 5%;
 }
+
 
 /* end dashboard */
 
 .navbar {
-  margin : 0;
+    margin: 0;
 }
 
 #contact {
-  color     : white;
-  font-size : 2em;
+    color: white;
+    font-size: 2em;
 }
 
 .envelope {
-  margin-left : 20%;
-  color       : white;
+    margin-left: 20%;
+    color: white;
 }
 
 .envelope:hover {
-  color : black;
+    color: black;
 }
 
 #realisation {
-  color     : white;
-  font-size : 2em;
+    color: white;
+    font-size: 2em;
 }
 
 .school {
-  color : white;
+    color: white;
 }
 
 .school:hover {
-  color : black;
+    color: black;
 }
 
 .logoSchool {
-  width       : 2em;
-  margin-left : 40%;
-  color       : white;
+    width: 2em;
+    margin-left: 40%;
+    color: white;
 }
 
 #credits {
-  padding-right : 3%;
-  color         : white;
-  font-size     : 2em;
+    padding-right: 3%;
+    color: white;
+    font-size: 2em;
 }
 
 .credits {
-  width       : 2em;
-  margin-left : 18%;
-  color       : white;
+    width: 2em;
+    margin-left: 18%;
+    color: white;
 }
 
 .credits:hover {
-  color : black;
+    color: black;
 }
+
 
 /* Fin de footer */
 
+
 /* creation utilisateur, blocage utilisateur */
+
 
 /* bloc 1 (ourson) */
 
 .container .bloc1 {
-  margin-top  : 5%;
-  margin-left : 4%;
+    margin-top: 5%;
+    margin-left: 4%;
 }
 
 .retourDashboard {
-  margin-top  : 5%;
-  color       : black;
-  font-family : 'Grand Hotel';
-  font-size   : 2em;
+    margin-top: 5%;
+    color: black;
+    font-family: 'Grand Hotel';
+    font-size: 2em;
 }
+
 
 /* fin du bloc 1 */
 
 ul {
-  margin-left  : 0;
-  padding-left : 0;
-  list-style   : none;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
 }
+
 
 /* bloc 2 (discours de l'ourson) */
 
 .container .bloc2 {
-  width      : 70%;
-  margin-top : 0.5%;
+    width: 70%;
+    margin-top: 0.5%;
 }
 
 .row .paragrapheOurson {
-  color            : white;
-  background-color : #9933CC;
+    color: white;
+    background-color: #9933CC;
 }
 
 .row .paragrapheOurson h2 {
-  text-align      : center;
-  text-decoration : underline;
-  font-family     : 'Grand Hotel',
-                    cursive;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Grand Hotel', cursive;
 }
 
 .row .paragrapheOurson p {
-  text-align : center;
-  font-size  : 1.5em;
+    text-align: center;
+    font-size: 1.5em;
 }
 
+
 /* fin du bloc 2 */
+
 
 /* bloc 3 données utilisateur */
 
 .bloc3 {
-  width             : 570px;
-  height            : 344px;
-  margin-top        : 2%;
-  background-image  : url(/assets/img/elementsPages/backgroundCreationUser.jpg);
-  background-repeat : no-repeat;
+    width: 570px;
+    height: 344px;
+    margin-top: 2%;
+    background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
+    background-repeat: no-repeat;
 }
 
 .bloc3blocage {
-  width             : 570px;
-  height            : 344px;
-  margin-top        : 2%;
-  background-image  : url(/assets/img/elementsPages/backgroundBlockUser.png);
-  background-repeat : no-repeat;
+    width: 570px;
+    height: 344px;
+    margin-top: 2%;
+    background-image: url(/assets/img/elementsPages/backgroundBlockUser.png);
+    background-repeat: no-repeat;
 }
 
-.bloc3 .formulaire,
-.bloc3blocage .formulaire {
-  top              : 5%;
-  height           : 90%;
-  background-image : linear-gradient(
-                       rgba(255, 255, 255, 0.5),
-                       rgba(255, 255, 255, 0.5)
-                     );
+.bloc3 .formulaire, .bloc3blocage .formulaire {
+    top: 5%;
+    height: 90%;
+    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
-.bloc3 .form-horizontal,
-.bloc3blocage .form-horizontal {
-  height           : 90%;
-  margin-top       : 5%;
-  padding-top      : 4%;
-  padding-right    : 5%;
-  padding-bottom   : 2%;
-  padding-left     : 5%;
-  background-color : white;
+.bloc3 .form-horizontal, .bloc3blocage .form-horizontal {
+    height: 90%;
+    margin-top: 5%;
+    padding-top: 4%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    background-color: white;
 }
 
 .bloc3blocage .form-horizontal h6 {
-  font-family : 'Grand Hotel',
-                cursive;
-  font-size   : 1.5em;
+    font-family: 'Grand Hotel', cursive;
+    font-size: 1.5em;
 }
 
-.bloc3 button,
-.bloc3blocage button {
-  color            : white;
-  background-color : #9933CC;
+.bloc3 button, .bloc3blocage button {
+    color: white;
+    background-color: #9933CC;
 }
 
-.bloc3 button:hover,
-.bloc3blocage button:hover {
-  color            : #f3e5f5;
-  background-color : #aa66cc;
+.bloc3 button:hover, .bloc3blocage button:hover {
+    color: #f3e5f5;
+    background-color: #aa66cc;
 }
+
 
 /* fin du bloc3 */
 
+
 /* fin de creation utilisateur */
+
 
 /* page login */
 
 .pageLogin .bloc1 {
-  width             : 570px;
-  height            : 344px;
-  margin-top        : 17%;
-  margin-left       : 25%;
-  background-image  : url(/assets/img/elementsPages/backgroundCreationUser.jpg);
-  background-repeat : no-repeat;
+    width: 570px;
+    height: 344px;
+    margin-top: 17%;
+    margin-left: 25%;
+    background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
+    background-repeat: no-repeat;
 }
 
 .pageLogin .bloc1 .sousBloc1 {
-  top              : 12%;
-  height           : 70%;
-  background-image : linear-gradient(
-                       rgba(255, 255, 255, 0.5),
-                       rgba(255, 255, 255, 0.5)
-                     );
+    top: 12%;
+    height: 70%;
+    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
 .pageLogin .bloc1 .sousBloc1 h2 {
-  text-align  : center;
-  font-family : 'Grand Hotel',
-                cursive;
+    text-align: center;
+    font-family: 'Grand Hotel', cursive;
 }
 
 .pageLogin .bloc1 .sousBloc1 button {
-  margin-left      : 25%;
-  color            : white;
-  background-color : #9933CC;
+    margin-left: 25%;
+    color: white;
+    background-color: #9933CC;
 }
 
 .pageLogin .bloc1 .sousBloc1 form {
-  margin-top : 5%;
+    margin-top: 5%;
 }
 
 .pageLogin .bloc1 .sousBloc1 button:hover {
-  color            : #f3e5f5;
-  background-color : #aa66cc;
+    color: #f3e5f5;
+    background-color: #aa66cc;
 }
 
 .pageLogin .bloc1 p {
-  margin-top : 57%;
-  text-align : center;
-  font-size  : 12px;
+    margin-top: 57%;
+    text-align: center;
+    font-size: 12px;
 }
 
+
 /* fin de page login */
+
 
 /* Page supprimer et éditer un exercice */
 
 .bloc3delete {
-  width             : 570px;
-  height            : 344px;
-  margin-top        : 2%;
-  background-image  : url(/assets/img/elementsPages/backgroundSuppressionExercice.png);
-  background-repeat : no-repeat;
+    width: 570px;
+    height: 344px;
+    margin-top: 2%;
+    background-image: url(/assets/img/elementsPages/backgroundSuppressionExercice.png);
+    background-repeat: no-repeat;
 }
 
 .bloc3edit {
-  width             : 570px;
-  height            : 344px;
-  margin-top        : 2%;
-  background-image  : url(/assets/img/elementsPages/backgroundEditionExercice.png);
-  background-repeat : no-repeat;
+    width: 570px;
+    height: 344px;
+    margin-top: 2%;
+    background-image: url(/assets/img/elementsPages/backgroundEditionExercice.png);
+    background-repeat: no-repeat;
 }
 
-.bloc3delete .formulaire,
-.bloc3edit .formulaire {
-  top              : 5%;
-  height           : 90%;
-  background-image : linear-gradient(
-                       rgba(255, 255, 255, 0.5),
-                       rgba(255, 255, 255, 0.5)
-                     );
+.bloc3delete .formulaire, .bloc3edit .formulaire {
+    top: 5%;
+    height: 90%;
+    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
-.bloc3delete .form-horizontal,
-.bloc3edit .form-horizontal {
-  height           : 90%;
-  margin-top       : 5%;
-  padding          : 10%;
-  background-color : white;
+.bloc3delete .form-horizontal, .bloc3edit .form-horizontal {
+    height: 90%;
+    margin-top: 5%;
+    padding: 10%;
+    background-color: white;
 }
 
-.bloc3delete .form-horizontal h6,
-.bloc3edit .form-horizontal h6 {
-  font-family : 'Grand Hotel',
-                cursive;
-  font-size   : 1.5em;
+.bloc3delete .form-horizontal h6, .bloc3edit .form-horizontal h6 {
+    font-family: 'Grand Hotel', cursive;
+    font-size: 1.5em;
 }
 
-.bloc3delete button,
-.bloc3edit button {
-  color            : white;
-  background-color : #9933CC;
+.bloc3delete button, .bloc3edit button {
+    color: white;
+    background-color: #9933CC;
 }
 
-.bloc3delete .formulaire .form-group button,
-.bloc3edit .formulaire .form-group button {
-  margin-top : 65%;
+.bloc3delete .formulaire .form-group button, .bloc3edit .formulaire .form-group button {
+    margin-top: 65%;
 }
 
-.bloc3delete button:hover,
-.bloc3edit button:hover {
-  color            : #f3e5f5;
-  background-color : #aa66cc;
+.bloc3delete button:hover, .bloc3edit button:hover {
+    color: #f3e5f5;
+    background-color: #aa66cc;
 }
+
 
 /* page création d'une partition */
 
+
 /* bloc2 */
 
-.bloc2 .row h1,
-.container .formulaire h2 {
-  text-align  : center;
-  font-family : 'Grand Hotel',
-                cursive;
+.bloc2 .row h1, .container .formulaire h2 {
+    text-align: center;
+    font-family: 'Grand Hotel', cursive;
 }
 
 .bloc2 .row p {
-  text-align : justify;
+    text-align: justify;
 }
 
+
 /* fin de bloc2 */
+
 
 /* bloc3 */
 
 .grosBloc .formulaire {
-  top              : 1%;
-  height           : 87%;
-  background-image : linear-gradient(
-                       rgba(255, 255, 255, 0.5),
-                       rgba(255, 255, 255, 0.5)
-                     );
+    top: 1%;
+    height: 87%;
+    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
 .grosBloc .formulaire .caracteristiquePartition .form-horizontal {
-  margin-left : 5%;
+    margin-left: 5%;
 }
 
 .container .grosBloc {
-  height            : 440px;
-  margin-top        : 2%;
-  background-image  : url(/assets/img/elementsPages/background_partitionCreate.png);
-  background-repeat : no-repeat;
-  background-size   : cover;
+    height: 440px;
+    margin-top: 2%;
+    background-image: url(/assets/img/elementsPages/background_partitionCreate.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .grosBloc .formulaire form {
-  padding          : 6%;
-  background-color : white;
+    padding: 6%;
+    background-color: white;
 }
+
 
 /* fin de bloc3 */
 
 .oursonlist {
-  margin-top : 120px;
+    margin-top: 120px;
 }
 
 .star {
-  background-image : url(/assets/img/elementsPartitions/portee/portee.png);
+    background-image: url(/assets/img/elementsPartitions/portee/portee.png);
 }
+
 
 /* Fin page création d'une partition */
 
+
 /* Page édition d'une partition */
 
- .noteDisplay {
-   display : inline-block;
- }
- .noteDisplay:hover .imgacacher {
-  display: none;
+#delNote {
+  margin-left: -15%;
 }
+
+#addNote {
+  margin-left: -5%;
+}
+
+.noteDisplay {
+    display: inline-block;
+}
+
+.noteDisplay:hover .imgacacher {
+    display: none;
+}
+
 .donot {
-  display: none;
+    display: none;
 }
+
 .noteDisplay:hover .donot {
- display: flex;
- flex-direction: column;
- height: 150px;
- width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 300px;
 }
 
 .noteDisplay .donot select, .noteDisplay .donot button {
-  width : 150px;
-  height : 200px;
+    width: 150px;
+    height: 200px;
 }
+
+
 /* Fin page édition d'une partition */
+
 
 /* User interface exercise */
 
 .container .bloc2user {
-  margin-top       : 1%;
-  background-color : #9933CC;
+    margin-top: 1%;
+    background-color: #9933CC;
 }
 
 .bloc2user h1 {
-  color       : white;
-  text-align  : center;
-  font-family : 'Grand Hotel',
-                cursive;
+    color: white;
+    text-align: center;
+    font-family: 'Grand Hotel', cursive;
 }
 
 .bloc2user .paragrapheOursonUser p {
-  color      : white;
-  text-align : justify;
+    color: white;
+    text-align: justify;
 }
 
 .container .bloc3user {
-  margin-top       : 2%;
-  margin-bottom    : 2%;
-  background-color : #9933CC;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: #9933CC;
 }
 
 .bloc3user .row {
-  height     : 130px;
-  margin-top : 2%;
+    height: 130px;
+    margin-top: 2%;
 }
 
-.titleExercise h1,
-.titleTrack h2 {
-  color       : white;
-  text-align  : center;
-  font-family : 'Grand Hotel',
-                cursive;
+.titleExercise h1, .titleTrack h2 {
+    color: white;
+    text-align: center;
+    font-family: 'Grand Hotel', cursive;
 }
 
 .titleExercise h1 {
-  font-size : 70px;
+    font-size: 70px;
 }
 
 .titleTrack h2 {
-  font-size : 50px;
+    font-size: 50px;
 }
 
 footer .bloc3user .dropdown {
-  margin-top  : 13%;
-  margin-left : 20%;
+    margin-top: 13%;
+    margin-left: 20%;
 }
 
 .bloc3user .dropdown ul li {
-  margin : 2%;
+    margin: 2%;
 }
 
 .bloc3user .buttonPlaying button {
-  left        : -5%;
-  width       : 25%;
-  height      : 60px;
-  margin      : 1%;
-  font-size   : 40px;
-  line-height : 0.99;
+    left: -5%;
+    width: 25%;
+    height: 60px;
+    margin: 1%;
+    font-size: 40px;
+    line-height: 0.99;
 }
 
 .bloc3user .measure {
-  margin-top  : 5%;
-  margin-left : 22%;
+    margin-top: 5%;
+    margin-left: 22%;
 }
 
 .metronome img {
-  width : 60%;
+    width: 60%;
 }
 
 .metronome {
-  margin-bottom : 2%;
-  margin-left   : 90%;
+    margin-bottom: 2%;
+    margin-left: 90%;
 }
 
+
 /* fin de user inferface exercice */
+
 
 /* listExercice */
 
 .bloc3-exo {
-  padding-top : 3%;
+    padding-top: 3%;
 }
+
 
 /* fin de listExercice */

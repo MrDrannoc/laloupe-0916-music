@@ -31,23 +31,26 @@
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                                 Chiffrage</button>
                         </div>
-                        <img class="imgacacher" src="./assets/img/elementsPartitions/22/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
+                        <img class="imgacacher" src="./assets/img/elementsPartitions/22/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png"/>
                     </div>
                     <span ng-repeat="note in vm.noteCURRENT | orderBy:'orderNote'">
                         <div class="noteDisplay">
                             <div class="donot">
-                              <div class="row">
-                                <div class="col-md-5">
-                                  <a href="" ng-click="vm.deleteNote(note._id)">
-                                  <img width="35%" src="./assets/img/elementsPages/cancel.svg" alt="buttonCancel">
-                                  </a>
-                                </div>
-                                <div class="col-md-5">
-                                  <a href="" ng-click="vm.addNote(note._id)">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <a href="" ng-click="vm.deleteNote(note._id)" id="delNote">
+                                            <img width="38%" src="./assets/img/elementsPages/cancel.svg" alt="buttonCancel">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <!-- <a href="" ng-click="vm.addNote(note._id)">
                                   <img width="35%" src="./assets/img/elementsPages/add.svg" alt="buttonAdd">
-                                  </a>
+                                  </a> -->
+                                        <a href="" ng-click="vm.addNote(note._id)" id="addNote">
+                                            <img width="38%" src="./assets/img/elementsPages/addNote.png" alt="buttonAdd">
+                                        </a>
+                                    </div>
                                 </div>
-                              </div>
                                 <select class="form-control" ng-model="vm.noteValue">
                                     <option value="">Valeur</option>
                                     <option value="4">Ronde</option>
