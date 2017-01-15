@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import Score from './score.js';
 
+
 const noteSchema = new mongoose.Schema({
     heigthNote: String,
     valueNote: String,
