@@ -14,6 +14,7 @@ angular.module('app', ['ngRoute'])
         .controller('footerController', footerController)
         .controller('listExercicesController', listExercicesController)
         .controller('exerciceController', exerciceController)
+        .controller('duplicController', duplicController)
         .config(routes)
         .run(loginStatus)
         ;

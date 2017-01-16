@@ -10,55 +10,63 @@ const routes = ($routeProvider, $httpProvider, $locationProvider) => {
             templateUrl: 'views/admin/userCreate.html',
             controller: 'userCreateController',
             controllerAs: 'vm'
-            // resolve: {
-            //     connected: checkIsAdmin
-            // }
+                // resolve: {
+                //     connected: checkIsAdmin
+                // }
+        })
+        .when('/admin/duplic', {
+            templateUrl: 'views/admin/adminDuplicScore.html',
+            controller: 'duplicController',
+            controllerAs: 'vm',
+          //  resolve: {
+          //      connected: checkIsAdmin
+          //  }
         })
         .when('/dashboard', {
             templateUrl: 'views/admin/dashboard.html'
-            // resolve: {
-            //     connected: checkIsAdmin
-            // }
+                // resolve: {
+                //     connected: checkIsAdmin
+                // }
         })
         .when('/user/block', {
             templateUrl: 'views/admin/userBlock.html',
             controller: 'userBlockController',
             controllerAs: 'vm'
-            // resolve: {
-            //     connected: checkIsAdmin
-            // }
+                // resolve: {
+                //     connected: checkIsAdmin
+                // }
         })
         .when('/score/create', {
             templateUrl: 'views/admin/scoreCreate.html',
             controller: 'scoreCreateController',
             controllerAs: 'vm'
-            // resolve: {
-            //     connected: checkIsAdmin
-            // }
+                // resolve: {
+                //     connected: checkIsAdmin
+                // }
         })
         .when('/score/edit', {
             templateUrl: 'views/admin/scoreEdit.html',
             controller: 'scoreEditController',
             controllerAs: 'vm'
-            // resolve: {
-            //     connected: checkIsAdmin
-            // }
+                // resolve: {
+                //     connected: checkIsAdmin
+                // }
         })
         .when('/score/editing/:scoreId', {
             templateUrl: 'views/admin/scoreEditing.html',
             controller: 'scoreEditingController',
             controllerAs: 'vm'
-            // resolve: {
-            //     connected: checkIsAdmin
-            // }
+                // resolve: {
+                //     connected: checkIsAdmin
+                // }
         })
         .when('/score/delete', {
             templateUrl: 'views/admin/scoreDelete.html',
             controller: 'scoreDeleteController',
             controllerAs: 'vm'
-            // resolve: {
-            //     connected: checkIsAdmin
-            // }
+                // resolve: {
+                //     connected: checkIsAdmin
+                // }
         })
         .when('/exercice/:exerciceId', {
             templateUrl: 'views/user/exercice.html',
