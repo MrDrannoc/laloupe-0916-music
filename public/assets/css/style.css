@@ -437,7 +437,7 @@ ul {
     display: none;
 }
 
-.donot {
+.donot, .donotChiffrage {
     display: none;
 }
 
@@ -446,14 +446,27 @@ ul {
     flex-direction: column;
     height: 150px;
     width: 300px;
-}
+    margin-top: 100px;
+  }
 
 .noteDisplay .donot select, .noteDisplay .donot button {
     width: 150px;
     height: 200px;
 }
 
+.noteDisplay:hover .donotChiffrage {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 70px;
+    margin-top: 100px;
 
+}
+
+.noteDisplay .donotChiffrage select, .noteDisplay .donotChiffrage button {
+    width: 70px;
+    height: 150px;
+}
 /* Fin page édition d'une partition */
 
 

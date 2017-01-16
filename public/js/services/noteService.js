@@ -19,11 +19,8 @@ function noteService($http) {
         return this.$http.get('/api/notes/' + id);
     };
 
-    this.update = (id, heigthNote,valueNote) => {
-        return this.$http.put('/api/notes/' + id, {
-          heigthNote:heigthNote,
-          valueNote:valueNote
-        });
+    this.update = (id, note) => {
+        return this.$http.put('/api/notes/' + id, note);
     };
 
     this.getNoteWhereOrderGreaterThanXAndInc = (score_id, note_Order) => {
