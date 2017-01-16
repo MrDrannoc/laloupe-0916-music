@@ -495,7 +495,7 @@ ul {
 }
 
 .bloc3user .row {
-    height: 130px;
+    height: 50px;
     margin-top: 2%;
 }
 
@@ -503,14 +503,15 @@ ul {
     color: white;
     text-align: center;
     font-family: 'Grand Hotel', cursive;
+    margin: 0;
 }
 
 .titleExercise h1 {
-    font-size: 70px;
+    font-size: 50px;
 }
 
 .titleTrack h2 {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 footer .bloc3user .dropdown {
@@ -522,29 +523,13 @@ footer .bloc3user .dropdown {
     margin: 2%;
 }
 
-.bloc3user .buttonPlaying button {
-    left: -5%;
-    width: 25%;
+.buttonPlaying button {
+    width: 200px;
     height: 60px;
     margin: 1%;
     font-size: 40px;
     line-height: 0.99;
 }
-
-.bloc3user .measure {
-    margin-top: 5%;
-    margin-left: 22%;
-}
-
-.metronome img {
-    width: 60%;
-}
-
-.metronome {
-    margin-bottom: 2%;
-    margin-left: 90%;
-}
-
 
 /* fin de user inferface exercice */
 
