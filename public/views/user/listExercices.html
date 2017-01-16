@@ -1,9 +1,16 @@
 <div class="container listExercices">
     <div class="row">
+      <div class="bloc1">
+          <div class="row">
+              <div class="col-md-2 col-md-offset-5">
+                  <img src="./assets/img/elementsPages/ourson.png" alt="ourson" />
+              </div>
+          </div>
+      </div>
         <div class="bloc2">
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-6 paragrapheOurson">
-                    <h2>Bonjour Johan</h2>
+                <div class="col-md-5 col-md-offset-6 paragrapheOurson" >
+                    <h2>Bonjour {{vm.user.firstname}}</h2>
                     <p>
                         Choisis dans la liste un exercice et commence ton entrainement.
                     </p>
@@ -11,16 +18,16 @@
             </div>
         </div>
         <div class="bloc3-exo">
-            <div class="col-lg-10 col-lg-offset-1 paragrapheOurson">
+            <div class="col-md-10 col-md-offset-1 paragrapheOurson">
                 <h2>Mes exercices</h2>
                 <div class="row" ng-repeat="score in vm.scores | orderBy:'levelScore'">
-                    <div class="col-lg-2 col-lg-offset-1">
+                    <div class="col-md-2 col-md-offset-1">
                         {{score.levelScore == 1 ? "Facile" : score.levelScore == 2 ? "Intermédiare" : "Difficile"}}
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-md-6">
                       <button ng-click="vm.choiceExercice(score._id)" class="btn btn-link" type="button" name="button">{{score.nameScore}}</button>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-md-2">
                       <img width="25%" src="./assets/img/elementsPages/{{score.levelScore == 1 ? 'easy' : score.levelScore == 2 ? 'medium' : 'hard'}}.png">
                     </div>
                 </div>
