@@ -54,7 +54,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <select class="form-control" ng-model="vm.noteValue">
+                                <select class="form-control" ng-model="note.valueNote" ng-change='vm.editNote(note)'>
                                     <option value="">Valeur</option>
                                     <option value="4">Ronde</option>
                                     <option value="2">Blanche</option>
@@ -69,7 +69,7 @@
                                     <option value="26">Points</option>
                                     <option value="25">Barre</option>
                                 </select>
-                                <select class="form-control" ng-model="vm.noteHeigth">
+                                <select class="form-control" ng-model="note.heigthNote" ng-change='vm.editNote(note)'>
                                     <option value="">Hauteur</option>
                                     <option value="do1">do1</option>
                                     <option value="do2">do2</option>
@@ -110,9 +110,7 @@
                                     <option value="fadosolrela">armure faDoSolReLa#</option>
                                     <option value="fadosolrelami">armure faDoSolReLaMi#</option>
                                     <option value="fadosolrelamisi">armure faDoSolReLaMiSi#</option>
-
                                 </select>
-                                <button ng-click="vm.editNote(note._id)" class="btn btn-primary" style="background-color : green" type="button" name="button">Modifier la note</button>
                             </div>
                             <img class="imgacacher" alt="{{note.valueNote}}" src="./assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
                         </div>

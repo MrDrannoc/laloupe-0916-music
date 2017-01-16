@@ -51,7 +51,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.addNote = (id) => {
         this.noteService.getOne(id).then((res) => {
             this.noteService.getNoteWhereOrderGreaterThanXAndInc(this.currentScoreId, res.data.orderNote).then(() => {
-                this.noteService.create(this.noteHeigth, this.noteValue, res.data.orderNote + 1, this.currentScoreId).then((res2) => {
+                this.noteService.create('sol2', '1', res.data.orderNote + 1, this.currentScoreId).then((res2) => {
                     this.scoreService.addNoteToScore(this.currentScoreId, res2.data._id).then(() => {
                         this.load();
                     });
@@ -60,21 +60,23 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
         });
     };
 
-    this.editNote = (id) => {
-        this.noteService.update(id, this.noteHeigth, this.noteValue).then(() => {
+    this.editNote = (note) => {
+        this.noteService.update(note._id, note).then(() => {
             this.load();
         });
     };
 
     this.deleteNote = (id) => {
-        this.noteService.getOne(id).then((res) => {
-            this.noteService.getNoteWhereOrderGreaterThanXAndDec(this.currentScoreId, res.data.orderNote).then(() => {
-                this.scoreService.deleteNoteFromScore(this.currentScoreId, res.data._id).then(() => {
-                    this.noteService.delete(res.data._id).then(() => {
-                        this.load();
+        if (this.noteCURRENT.length > 1) {
+            this.noteService.getOne(id).then((res) => {
+                this.noteService.getNoteWhereOrderGreaterThanXAndDec(this.currentScoreId, res.data.orderNote).then(() => {
+                    this.scoreService.deleteNoteFromScore(this.currentScoreId, res.data._id).then(() => {
+                        this.noteService.delete(res.data._id).then(() => {
+                            this.load();
+                        });
                     });
                 });
             });
-        });
+        }
     };
 }
