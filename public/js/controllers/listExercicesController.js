@@ -1,4 +1,5 @@
-function listExercicesController(scoreService, noteService, $location, $routeParams) {
+function listExercicesController(scoreService, noteService, $location, $routeParams, sessionFactory) {
+    this.user = sessionFactory.user
     this.scoreService = scoreService;
     this.noteService = noteService;
     this.$location = $location;
