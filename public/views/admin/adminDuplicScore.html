@@ -15,11 +15,10 @@
     </div>
     <div class="bloc2">
         <div class="row">
-            <div class="col-md-5 col-md-offset-6 paragrapheOurson">
+            <div class="col-md-8 col-md-offset-4 paragrapheOurson">
                 <h2>Pierre</h2>
                 <p>
-                    Selectionne un exercice dans la liste.<br>
-                    Clique sur "duplicer" pour le duplicer.
+                    Selectionne un exercice dans la liste et clique sur "dupliquer" pour le dupliquer.
                 </p>
             </div>
         </div>
@@ -30,12 +29,12 @@
                 <h6>Sélectionne une partition</h6>
                 <div class="select">
                     <select class="form-control" ng-model="vm.id">
-                        <option value="" disabled>Selectionner l'exercice a duplicer</option>
+                        <option value="" disabled>Selectionner l'exercice a dupliquer</option>
                         <option ng-repeat="score in vm.scores" ng-value="score._id">{{score.nameScore}}</option>
                     </select>
                     <input id="textinput" ng-model='vm.nameScoreDuplic' name="textinput" placeholder="Nom de la duplication" class="form-control input-md" type="text">
                 </div>
-                <button ng-click="vm.duplic()" class="btn btn-default">Duplicer</button>
+                <button ng-click="vm.duplic()" class="btn btn-default">Dupliquer</button>
             </form>
         </div>
     </div>
