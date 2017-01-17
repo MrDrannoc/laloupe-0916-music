@@ -8,6 +8,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
 
     this.verificationdelapartition = () => {
         console.log("Route param : ", $routeParams);
+        MIDIjs.play('./assets/midi/bobby_sharp_unchain_my_heart.mid');
     };
 
     this.load = () => {
