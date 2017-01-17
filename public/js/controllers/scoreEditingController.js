@@ -5,12 +5,13 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.$location = $location;
     this.currentScoreId = $routeParams.scoreId;
 
+
     this.verificationdelapartition = () => {
         console.log("Route param : ", $routeParams);
     };
 
     this.load = () => {
-
+      this.hide = $location.$$url.indexOf('/score/editing/') >= 0;
         // Requete sur la partition pour récupérer les notes
 
         this.scoreService.getOne(this.currentScoreId).then((res) => {
