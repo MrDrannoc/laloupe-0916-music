@@ -8,7 +8,7 @@ module.exports = (app) => {
 
     var user = new User();
 
-    app.get('/loggedin', Auth.hasAuthorization, (req, res, next) => {
+  app.get('/loggedin', Auth.hasAuthorization, (req, res, next) => {
         res.sendStatus(200);
     });
 

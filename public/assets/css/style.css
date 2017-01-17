@@ -8,7 +8,7 @@
 
 nav {
     color: white;
-    background-color: #9933CC!important;
+    background-color: #1893f7!important;
     font-family: 'Grand Hotel', cursive;
 }
 
@@ -30,7 +30,7 @@ nav .container-fluid .part2 h1 {
 
 nav .container-fluid .part3 a img {
     width: 45px;
-    padding-top: 8%;
+    padding-top: 12%;
 }
 
 
@@ -53,7 +53,7 @@ nav .container-fluid .part3 a img {
 }
 
 .body p {
-    font-size: 23px;
+    font-size: 38px;
 }
 
 .container-main .body, .firstBlockBody, .footerFirstBlock, .footerSecondBlock, .footerThirdBlock, .secondBlockBody, .thirdBlockBody {
@@ -62,31 +62,31 @@ nav .container-fluid .part3 a img {
 }
 
 .firstBlock .header {
-    background-color: #c386fd;
+    background-color: #B40200;
 }
 
 .firstBlock .firstBlockBody {
-    background-color: #b060ff;
+    background-color: #DB0300;
 }
 
 .firstBlock .secondBlockBody {
-    background-color: #a479ff;
+    background-color: #CE0300;
 }
 
 .secondBlock .header {
-    background-color: #7bc28a;
+    background-color: #40a65c;
 }
 
 .secondBlock .firstBlockBody {
-    background-color: #68bc80;
+    background-color: #7bc28a;
 }
 
 .secondBlock .secondBlockBody {
-    background-color: #55b06b;
+    background-color: #68bc80;
 }
 
 .secondBlock .thirdBlockBody {
-    background-color: #40a65c;
+    background-color: #55b06b;
 }
 
 .backButtonDashboard {
@@ -159,7 +159,7 @@ nav .container-fluid .part3 a img {
 /* bloc 1 (ourson) */
 
 .container .bloc1 {
-    margin-top: 5%;
+    margin-top: 8%;
     margin-left: 4%;
 }
 
@@ -189,7 +189,7 @@ ul {
 
 .row .paragrapheOurson {
     color: white;
-    background-color: #9933CC;
+    background-color: #1893f7;
 }
 
 .row .paragrapheOurson h2 {
@@ -248,7 +248,7 @@ ul {
 
 .bloc3 button, .bloc3blocage button {
     color: white;
-    background-color: #9933CC;
+    background-color: #1893f7;
 }
 
 .bloc3 button:hover, .bloc3blocage button:hover {
@@ -288,7 +288,7 @@ ul {
 .pageLogin .bloc1 .sousBloc1 button {
     margin-left: 25%;
     color: white;
-    background-color: #9933CC;
+    background-color: #1893f7;
 }
 
 .pageLogin .bloc1 .sousBloc1 form {
@@ -348,7 +348,7 @@ ul {
 
 .bloc3delete button, .bloc3edit button {
     color: white;
-    background-color: #9933CC;
+    background-color: #1893f7;
 }
 
 .bloc3delete .formulaire .form-group button, .bloc3edit .formulaire .form-group button {
@@ -494,7 +494,7 @@ ul {
 .container .bloc3user {
     margin-top: 2%;
     margin-bottom: 2%;
-    background-color: #9933CC;
+    background-color: #1893f7;
 }
 
 .bloc3user .row {
