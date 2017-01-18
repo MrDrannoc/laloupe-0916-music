@@ -12,36 +12,61 @@ nav {
     font-family: 'Grand Hotel', cursive;
 }
 
-nav .container-fluid .part1 .navbar-brand {
+nav .container-fluid .partLogoNavbar .navbar-brand {
+    margin: auto;
+    height: 68.75px;
+    padding: 0!important;
+}
+
+nav .container-fluid .partLogoNavbar .navbar-brand img {
+    width: 50px;
+    margin-top: 20%;
+}
+
+nav .container-fluid .partNameNavbar .navbar-brand {
+    margin: auto;
+    padding: auto;
+}
+
+nav .container-fluid .partLogOutNavbar .navbar-brand {
+    margin: auto;
+    height: 68.75px;
+    padding: 0!important;
+}
+
+nav .container-fluid .partLogOutNavbar a img {
+    width: 50px;
+    margin-top: 20%;
+}
+
+
+/* Footer */
+
+nav .container-fluid .partContactFooter .navbar-brand {
     margin: 0;
     padding: 0;
 }
 
-nav .container-fluid .part1 .navbar-brand img {
+nav .container-fluid .partContactFooter .navbar-brand img {
     width: 50px;
     margin-top: 2%;
 }
 
-nav .container-fluid .part2 h1 {
-    margin-left: 30px;
-    padding-bottom: 2%;
-}
-
-nav .part2 {
+nav .partWcsFooter {
     padding-top: 15px;
 }
 
-nav .part3 {
-  margin: auto;
+nav .partCreditsFooter {
+    margin: auto;
 }
 
-nav .container-fluid .part3 a img {
+nav .container-fluid .partCreditsFooter a img {
     width: 45px;
     padding-top: 2%;
 }
 
 
-/* fin de navbar */
+/* fin de navbar et footer */
 
 
 /* dashboard */
