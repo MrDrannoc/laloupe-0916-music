@@ -18,7 +18,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
             this.noteCURRENT = [];
-            this.numBitBar = this.score.numBitBar;
+            this.numBeatBar = this.score.numBeatBar;
             this.referenceValueBar = this.score.referenceValueBar;
             console.log("Toutes les notes présentes", this.score.notes);
 
@@ -40,13 +40,13 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.addChiffrage = () => {
 
         if (this.chiffrage == "3x4") {
-            this.numBitBar = 3;
+            this.numBeatBar = 3;
             this.referenceValueBar = 4;
         } else {
-            this.numBitBar = 4;
+            this.numBeatBar = 4;
             this.referenceValueBar = 4;
         }
-        this.scoreService.update(this.currentScoreId, this.numBitBar, this.referenceValueBar).then(() => {});
+        this.scoreService.update(this.currentScoreId, this.numBeatBar, this.referenceValueBar).then(() => {});
     };
 
 

@@ -34,10 +34,10 @@
                     <div class="star col-md-12">
                         <img class="imgacacher" src="assets/img/elementsPartitions/0/cleDeSol.png" />
                         <div class="noteDisplay">
-                            <img src="assets/img/elementsPartitions/0/{{vm.numBitBar}}x{{vm.referenceValueBar}}.png" />
+                            <img src="assets/img/elementsPartitions/0/{{vm.numBeatBar}}x{{vm.referenceValueBar}}.png" />
                         </div>
                         <span ng-repeat="note in vm.noteCURRENT | orderBy:'orderNote'">
-                          <div class="noteDisplay"><img alt="{{note.valueNote}}" src="assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{140*note.valueNote}}' height='300' /></div>
+                          <div class="noteDisplay"><img alt="{{note.valueNote}}" src="assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{140*note.valueNote}}' height='300' ng-click='vm.wrongNote()'/></div>
                       </span>
                     </div>
                 </div>

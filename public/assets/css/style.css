@@ -572,6 +572,9 @@ footer .bloc3user .dropdown {
     z-index: 2;
     margin-left: 123px;
     margin-top: 100px;
+    width: 140px;
+    height: 188px;
+    opacity: 0;
 }
 
 .noTransition {
