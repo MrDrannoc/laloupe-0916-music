@@ -26,6 +26,7 @@ nav .container-fluid .partLogoNavbar .navbar-brand img {
 
 .titleSite {
     font-family: 'Grand Hotel', cursive;
+    padding-bottom:2px;
 }
 
 nav .container-fluid .partLogOutNavbar .navbar-brand {
@@ -592,6 +593,24 @@ footer .bloc3user .dropdown {
 
 
 /* listExercice */
+
+.paragrapheOurson {
+padding-bottom:10px;
+}
+
+#listExercice {
+padding-bottom:5px;
+}
+
+#levelExercice {
+font-size:16px;
+padding-top: 5px;
+}
+
+#nameExercice {
+font-size:16px;
+color:white;
+}
 
 .bloc3-exo {
     padding-top: 3%;

@@ -20,12 +20,12 @@
         <div class="bloc3-exo">
             <div class="col-md-10 col-md-offset-1 paragrapheOurson">
                 <h2>Mes exercices</h2>
-                <div class="row" ng-repeat="score in vm.scores | orderBy:'levelScore'">
-                    <div class="col-md-2 col-md-offset-1">
+                <div id="listExercice" class="row" ng-repeat="score in vm.scores | orderBy:'levelScore'">
+                    <div id="levelExercice" class="col-md-2 col-md-offset-1">
                         {{score.levelScore == 1 ? "Facile" : score.levelScore == 2 ? "Intermédiare" : "Difficile"}}
                     </div>
                     <div class="col-md-6">
-                      <button ng-click="vm.choiceExercice(score._id)" class="btn btn-link" type="button" name="button">{{score.nameScore}}</button>
+                      <button id="nameExercice" ng-click="vm.choiceExercice(score._id)" class="btn btn-link" type="button" name="button">{{score.nameScore}}</button>
                     </div>
                     <div class="col-md-2">
                       <img width="25%" src="./assets/img/elementsPages/{{score.levelScore == 1 ? 'easy' : score.levelScore == 2 ? 'medium' : 'hard'}}.png">
