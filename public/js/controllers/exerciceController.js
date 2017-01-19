@@ -3,6 +3,33 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
     this.noteService = noteService;
     this.$location = $location;
     this.currentScoreId = $routeParams.exerciceId;
+    function algoRythme(mesureValeur,tempoScore,allNotes) {
+        var time;
+        var index = 0;
+        var interval = 0;
+        var tempo = 60 / tempoScore;
+
+        function callback() {
+            if (index > allNotes.length - 1) {
+                console.log("FIN");
+                clearTimeout(time);
+            } else {
+              console.log(allNotes[index].valueNote);
+              
+                interval = (allNotes[index].valueNote * 1000)  * tempo;
+                time = setTimeout(callback, interval);
+                index++;
+            }
+        }
+        time = setTimeout(callback, interval);
+    }
+    this.play = () => {
+        this.scoreService.getOne(this.currentScoreId).then((res) => {
+            console.log(res.data);
+            this.allNotes = res.data.notes;
+            algoRythme(res.data.numBitBar,res.data.tempoScore,this.allNotes);
+        });
+    };
 
     this.load = () => {
 

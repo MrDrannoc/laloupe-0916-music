@@ -1,136 +1,137 @@
 <div ng-controller="footerController as vm">
-<footer ng-hide="vm.hide">
-    <nav class="navbar  navbar-inverse navbar-fixed-bottom">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="part1 col-lg-2 col-md-2 col-sm-1">
-                    <p id="contact" class="navbar-text">Contact
-                        <a href="mailto:p.l.ledru@gmail.com">
-                            <span class="glyphicon glyphicon-envelope envelope" aria-hidden="true"></span>
-                        </a>
-                    </p>
-                </div>
-                <div class="part2 col-lg-5 col-lg-offset-2 col-md-7 col-md-offset-1 col-sm-8 col-sm-offset-1">
-                    <p id="realisation" class="navbar-text">Site réalisé par les élèves de la
-                        <a class="school" href="http://www.wildcodeschool.fr/" target="_blank">Wild Code School
-                            <img class="logoSchool" src="./assets/img/elementsPages/wild.png" alt="school logo"/></a>
-                    </p>
-                </div>
-                <div class="part3 col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-1 col-sm-1 col-xs-1">
-                    <p id="credits" class="navbar-text">Crédits
-                        <a href="" data-toggle="modal" data-target="#modalCredits">
-                            <span class="glyphicon glyphicon-user credits" aria-hidden="true"></span>
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Modal Credit -->
-    <div class="modal fade" id="modalCredits" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content container-fluid">
-                <h3 class="text-center">L'équipe de Développement</h3><br>
+    <footer ng-hide="vm.hide">
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
-                        <a href="https://fr.linkedin.com/in/adrien-floor-23b9bb129" target="_blank"><img src="./assets/img/elementsPages/adrien.jpg" alt="" class="img-circle img-responsive"></a>
-                    </div>
-                </div><br>
-                <h4 class="text-center">Adrien Floor</h4><br>
-                <div class="row">
-                    <div class="col-xs-4 col-xs-offset-3">
-                        <p>
-                            <a class="" target="_blank" href="https://fr.linkedin.com/in/adrien-floor-23b9bb129"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
-                            Linkedin
+                    <div class="partContactFooter col-xs-2 col-md-2 col-lg-1">
+                        <p id="contact" class="navbar-text">Contact
+                            <a href="mailto:p.l.ledru@gmail.com">
+                              <span class="glyphicon glyphicon-envelope envelope" aria-hidden="true"></span>
+                            </a>
                         </p>
                     </div>
-                    <div class="col-xs-4">
-                        <p>
-                            <a class="" target="_blank" href="https://github.com/AdrienFloor"><img src="./assets/img/elementsPages/github-logo.png" alt="github"/></a>
-                            Github
+                    <div class="partWcsFooter col-xs-8 col-md-8 col-lg-10">
+                        <p id="realisation" class="text-center">
+                            Site réalisé par les élèves de la
+                            <a class="school" href="http://www.wildcodeschool.fr/" target="_blank">Wild Code School</a>
+                            <img class="logoSchool" src="./assets/img/elementsPages/wild.png" alt="school logo"/>
                         </p>
                     </div>
-                </div><br>
-
-                <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
-                        <a href="https://fr.linkedin.com/in/pierre-gaillard-088a1594/en" target="_blank"><img src="./assets/img/elementsPages/pierre.jpg" alt="" class="img-circle img-responsive"></a>
-                    </div>
-                </div><br>
-                <h4 class="text-center">Pierre Gaillard</h4><br>
-                <div class="row">
-                    <div class="col-xs-4 col-xs-offset-3">
-                        <p>
-                            <a class="" target="_blank" href="https://fr.linkedin.com/in/pierre-gaillard-088a1594/en"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
-                            Linkedin
-                        </p>
-                    </div>
-                    <div class="col-xs-4">
-                        <p>
-                            <a class="" target="_blank" href="https://github.com/pierregaillard1986"><img src="./assets/img/elementsPages/github-logo.png" alt="github"/></a>
-                            Github
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
-                        <a href="https://fr.linkedin.com/in/johan-helias/en" target="_blank"><img src="./assets/img/elementsPages/johan.jpg" alt="" class="img-circle img-responsive"></a>
-                    </div>
-                </div><br>
-                <h4 class="text-center">Johan Hélias</h4><br>
-                <div class="row">
-                    <div class="col-xs-4 col-xs-offset-3">
-                        <p>
-                            <a class="" target="_blank" href="https://fr.linkedin.com/in/johan-helias/en"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
-                            Linkedin
-                        </p>
-                    </div>
-                    <div class="col-xs-4">
-                        <p>
-                            <a class="" target="_blank" href="https://github.com/medaak"><img src="./assets/img/elementsPages/github-logo.png" alt="github"/></a>
-                            Github
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
-                        <a href="https://fr.linkedin.com/in/benjamin-hoeffler-49ba01128/en" target="_blank"><img src="./assets/img/elementsPages/benjamin.jpg" alt="" class="img-circle img-responsive"></a>
-                    </div>
-                </div><br>
-                <h4 class="text-center">Benjamin Hoeffler</h4><br>
-                <div class="row">
-                    <div class="col-xs-4 col-xs-offset-3">
-                        <p>
-                            <a class="" target="_blank" href="https://fr.linkedin.com/in/benjamin-hoeffler-49ba01128/en"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
-                            Linkedin
-                        </p>
-                    </div>
-                    <div class="col-xs-4">
-                        <p>
-                            <a class="" target="_blank" href="https://github.com/theben67"><img src="./assets/img/elementsPages/github-logo.png" alt="github"/></a>
-                            Github
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
-                        <a href="https://www.linkedin.com/in/caroline-foucault-209b8a103?" target="_blank"><img src="./assets/img/elementsPages/caro.jpg" alt="" class="img-circle img-responsive"></a>
-                    </div>
-                </div><br>
-                <h4 class="text-center">Caroline Foucault</h4><br>
-                <div class="row">
-                    <div class="col-xs-4 col-xs-offset-3">
-                        <p>
-                            <a class="" target="_blank" href="https://www.linkedin.com/in/caroline-foucault-209b8a103?"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
-                            Linkedin
+                    <div class="partCreditsFooter col-xs-2 col-md-2 col-lg-1 text-center pagination-centered">
+                        <p id="credits" class="navbar-text">Crédits
+                            <a href="" data-toggle="modal" data-target="#modalCredits">
+                                <span class="glyphicon glyphicon-user credits" aria-hidden="true"></span>
+                            </a>
                         </p>
                     </div>
                 </div>
             </div>
+        </nav>
+
+        <!-- Modal Credit -->
+        <div class="modal fade" id="modalCredits" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content container-fluid">
+                    <h3 class="text-center">L'équipe de Développement</h3><br>
+                    <div class="row">
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <a href="https://fr.linkedin.com/in/adrien-floor-23b9bb129" target="_blank"><img src="./assets/img/elementsPages/adrien.jpg" alt="" class="img-circle img-responsive"></a>
+                        </div>
+                    </div><br>
+                    <h4 class="text-center">Adrien Floor</h4><br>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-3">
+                            <p>
+                                <a class="" target="_blank" href="https://fr.linkedin.com/in/adrien-floor-23b9bb129"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
+                                Linkedin
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p>
+                                <a class="" target="_blank" href="https://github.com/AdrienFloor"><img src="./assets/img/elementsPages/github-logo.png" alt="github"/></a>
+                                Github
+                            </p>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <a href="https://fr.linkedin.com/in/pierre-gaillard-088a1594/en" target="_blank"><img src="./assets/img/elementsPages/pierre.jpg" alt="" class="img-circle img-responsive"></a>
+                        </div>
+                    </div><br>
+                    <h4 class="text-center">Pierre Gaillard</h4><br>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-3">
+                            <p>
+                                <a class="" target="_blank" href="https://fr.linkedin.com/in/pierre-gaillard-088a1594/en"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
+                                Linkedin
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p>
+                                <a class="" target="_blank" href="https://github.com/pierregaillard1986"><img src="./assets/img/elementsPages/github-logo.png" alt="github"/></a>
+                                Github
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <a href="https://fr.linkedin.com/in/johan-helias/en" target="_blank"><img src="./assets/img/elementsPages/johan.jpg" alt="" class="img-circle img-responsive"></a>
+                        </div>
+                    </div><br>
+                    <h4 class="text-center">Johan Hélias</h4><br>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-3">
+                            <p>
+                                <a class="" target="_blank" href="https://fr.linkedin.com/in/johan-helias/en"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
+                                Linkedin
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p>
+                                <a class="" target="_blank" href="https://github.com/medaak"><img src="./assets/img/elementsPages/github-logo.png" alt="github"/></a>
+                                Github
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <a href="https://fr.linkedin.com/in/benjamin-hoeffler-49ba01128/en" target="_blank"><img src="./assets/img/elementsPages/benjamin.jpg" alt="" class="img-circle img-responsive"></a>
+                        </div>
+                    </div><br>
+                    <h4 class="text-center">Benjamin Hoeffler</h4><br>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-3">
+                            <p>
+                                <a class="" target="_blank" href="https://fr.linkedin.com/in/benjamin-hoeffler-49ba01128/en"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
+                                Linkedin
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p>
+                                <a class="" target="_blank" href="https://github.com/theben67"><img src="./assets/img/elementsPages/github-logo.png" alt="github"/></a>
+                                Github
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <a href="https://www.linkedin.com/in/caroline-foucault-209b8a103?" target="_blank"><img src="./assets/img/elementsPages/caro.jpg" alt="" class="img-circle img-responsive"></a>
+                        </div>
+                    </div><br>
+                    <h4 class="text-center">Caroline Foucault</h4><br>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-3">
+                            <p>
+                                <a class="" target="_blank" href="https://www.linkedin.com/in/caroline-foucault-209b8a103?"><img src="./assets/img/elementsPages/linkedin-logo.png" alt="linkedin"/></a>
+                                Linkedin
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </div>
