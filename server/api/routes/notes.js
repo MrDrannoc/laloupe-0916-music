@@ -14,7 +14,7 @@ module.exports = (app) => {
 
     router.post('/', Auth.isAdministrator, note.create);
 
-    router.put('/note', Auth.isAdministrator, note.getNoteWhereOrderGreaterThanXAndInc);
+    router.put('/incNote', Auth.isAdministrator, note.getNoteWhereOrderGreaterThanXAndInc);
 
     router.put('/decNote', Auth.isAdministrator, note.getNoteWhereOrderGreaterThanXAndDec);
 
