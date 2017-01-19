@@ -20,8 +20,8 @@ export default class Score {
 
     findAll(req, res) {
         model.find({})
-          .populate('notes')
-          .exec((err, scores) => {
+            .populate('notes')
+            .exec((err, scores) => {
                 if (err) {
                     res.sendStatus(403);
                 } else {
@@ -34,12 +34,12 @@ export default class Score {
         model.findById(req.params.id)
             .populate('notes')
             .exec((err, score) => {
-                    if (err || !score) {
-                        res.sendStatus(403);
-                    } else {
-                        res.json(score);
-                    }
-                });
+                if (err || !score) {
+                    res.sendStatus(403);
+                } else {
+                    res.json(score);
+                }
+            });
     }
 
     create(req, res) {
@@ -68,6 +68,20 @@ export default class Score {
             levelScore: req.body.levelScore,
             tempoScore: req.body.tempoScore,
             wordingScore: req.body.wordingScore,
+        }, (err, score) => {
+            if (err || !score) {
+                res.status(500).send(err.message);
+            } else {
+                res.json(score);
+            }
+        });
+    }
+
+
+    updateChiffrage(req, res) {
+        model.update({
+            _id: req.params.id
+        }, {
             numBeatBar: req.body.numBeatBar,
             referenceValueBar: req.body.referenceValueBar
         }, (err, score) => {

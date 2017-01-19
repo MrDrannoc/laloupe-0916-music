@@ -18,6 +18,8 @@ module.exports = (app) => {
 
     router.put('/deleteNoteFromScore/', Auth.isAdministrator, score.deleteNoteFromScore);
 
+    router.put('/updateChiffrage/:id', Auth.isAdministrator, score.updateChiffrage);
+
     router.put('/:id', Auth.isAdministrator, score.update);
 
     router.delete('/:id', Auth.isAdministrator, score.delete);

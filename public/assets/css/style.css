@@ -26,7 +26,7 @@ nav .container-fluid .partLogoNavbar .navbar-brand img {
 
 .titleSite {
     font-family: 'Grand Hotel', cursive;
-    padding-bottom:2px;
+    padding-bottom: 2px;
 }
 
 nav .container-fluid .partLogOutNavbar .navbar-brand {
@@ -100,22 +100,29 @@ nav .partContactFooter .navbar-text {
 
 .firstBlock .header {
     background-color: #0B577F;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .firstBlock .firstBlockBody {
     background-color: #149CE5;
+    border-bottom-left-radius: 10px;
 }
 
 .firstBlock .secondBlockBody {
     background-color: #1182BF;
+    border-bottom-right-radius: 10px;
 }
 
 .secondBlock .header {
     background-color: #40a65c;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .secondBlock .firstBlockBody {
     background-color: #7bc28a;
+    border-bottom-left-radius: 10px;
 }
 
 .secondBlock .secondBlockBody {
@@ -124,6 +131,7 @@ nav .partContactFooter .navbar-text {
 
 .secondBlock .thirdBlockBody {
     background-color: #55b06b;
+    border-bottom-right-radius: 10px;
 }
 
 .backButtonDashboard {
@@ -234,6 +242,7 @@ ul {
 .row .paragrapheOurson {
     color: white;
     background-color: #1893f7;
+    border-radius: 10px;
 }
 
 .row .paragrapheOurson h2 {
@@ -257,6 +266,7 @@ ul {
     width: 570px;
     height: 344px;
     margin-top: 2%;
+    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
     background-repeat: no-repeat;
 }
@@ -265,6 +275,7 @@ ul {
     width: 570px;
     height: 344px;
     margin-top: 2%;
+    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundBlockUser.png);
     background-repeat: no-repeat;
 }
@@ -314,6 +325,7 @@ ul {
     height: 344px;
     margin-top: 17%;
     margin-left: 25%;
+    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
     background-repeat: no-repeat;
 }
@@ -360,6 +372,7 @@ ul {
     width: 570px;
     height: 344px;
     margin-top: 2%;
+    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundSuppressionExercice.png);
     background-repeat: no-repeat;
 }
@@ -368,6 +381,7 @@ ul {
     width: 570px;
     height: 344px;
     margin-top: 2%;
+    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundEditionExercice.png);
     background-repeat: no-repeat;
 }
@@ -433,6 +447,7 @@ ul {
 .grosBloc .formulaire {
     top: 1%;
     height: 95%;
+    border-radius: 10px;
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
@@ -443,6 +458,7 @@ ul {
 .container .grosBloc {
     height: 400px;
     margin-top: 2%;
+    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/background_partitionCreate.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -595,21 +611,21 @@ footer .bloc3user .dropdown {
 /* listExercice */
 
 .paragrapheOurson {
-padding-bottom:10px;
+    padding-bottom: 10px;
 }
 
 #listExercice {
-padding-bottom:5px;
+    padding-bottom: 5px;
 }
 
 #levelExercice {
-font-size:16px;
-padding-top: 5px;
+    font-size: 16px;
+    padding-top: 5px;
 }
 
 #nameExercice {
-font-size:16px;
-color:white;
+    font-size: 16px;
+    color: white;
 }
 
 .bloc3-exo {

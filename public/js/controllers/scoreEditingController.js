@@ -37,6 +37,13 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
 
     this.load();
 
+    this.editScore = () => {
+      console.log(this.name, this.level, this.tempo, this.wording);
+      this.scoreService.update(this.currentScoreId, this.name, this.level, this.tempo, this.wording).then(() => {
+        this.load();
+      });
+    };
+
     this.addChiffrage = () => {
 
         if (this.chiffrage == "3x4") {
@@ -46,7 +53,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
             this.numBeatBar = 4;
             this.referenceValueBar = 4;
         }
-        this.scoreService.update(this.currentScoreId, this.numBeatBar, this.referenceValueBar).then(() => {});
+        this.scoreService.updateChiffrage(this.currentScoreId, this.numBeatBar, this.referenceValueBar).then(() => {});
     };
 
 
@@ -82,10 +89,5 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
         }
     };
 
-    this.editScore = () => {
-      console.log("kikoo");
-        this.scoreService.update(this.currentScoreId, this.name,  this.level, this.tempo, this.wording).then(() => {
-            this.load();
-        });
-    };
-}
+
+  }

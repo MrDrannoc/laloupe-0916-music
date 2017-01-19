@@ -21,12 +21,17 @@ function scoreService($http) {
         return this.$http.get('/api/scores/' + id);
     };
 
-    this.update = (id, name, level, tempo, wording, numBeatBar, referenceValueBar) => {
+    this.update = (id, name, level, tempo, wording) => {
         return this.$http.put('/api/scores/' + id, {
             nameScore: name,
             levelScore: level,
             tempoScore: tempo,
-            wordingScore: wording,
+            wordingScore: wording
+        });
+    };
+
+    this.updateChiffrage = (id, numBeatBar, referenceValueBar) => {
+        return this.$http.put('/api/scores/updateChiffrage/' + id, {
             numBeatBar: numBeatBar,
             referenceValueBar: referenceValueBar
 
