@@ -23,20 +23,15 @@ nav .container-fluid .partLogoNavbar .navbar-brand img {
     margin-top: 20%;
 }
 
-nav .container-fluid .partNameNavbar .navbar-brand {
-    margin: auto;
-    padding: auto;
-}
-
 nav .container-fluid .partLogOutNavbar .navbar-brand {
-    margin: auto;
     height: 68.75px;
     padding: 0!important;
 }
 
 nav .container-fluid .partLogOutNavbar a img {
     width: 50px;
-    margin-top: 20%;
+    margin-top: 10px;
+    margin-left: 60%;
 }
 
 
@@ -56,13 +51,17 @@ nav .partWcsFooter {
     padding-top: 15px;
 }
 
-nav .partCreditsFooter {
-    margin: auto;
-}
-
 nav .container-fluid .partCreditsFooter a img {
     width: 45px;
     padding-top: 2%;
+}
+
+nav .partCreditsFooter .navbar-text {
+    margin-left: 35px;
+}
+
+nav .partContactFooter .navbar-text {
+    margin-left: 0;
 }
 
 
@@ -568,18 +567,18 @@ footer .bloc3user .dropdown {
     margin: 2%;
 }
 
-.redBar{
+.redBar {
     position: absolute;
     z-index: 2;
-    margin-left : 123px;
+    margin-left: 123px;
     margin-top: 100px;
 }
 
 .noTransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
 
 
