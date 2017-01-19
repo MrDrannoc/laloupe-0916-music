@@ -4,41 +4,44 @@
             <div class="col-md-5">
                 <a href="#!/list/exercices">
                     <button type="button" class="btn btn-default retourDashboard">
-                    <span class="glyphicon glyphicon-home"></span>
-                    Liste des Exercices</button>
+                        <span class="glyphicon glyphicon-home"></span>
+                        Liste des Exercices</button>
                 </a>
             </div>
             <div class="col-md-2">
-                <img src="./assets/img/elementsPages/ourson.png" alt="ourson" />
+                <img src="./assets/img/elementsPages/ourson.png" alt="ourson"/>
             </div>
         </div>
     </div>
-    <div class="col-md-12 bloc3user">
-        <div class="row">
-            <div class="col-md-4 titleExercise">
+    <div class="row">
+        <div class=" col-md-push-3 col-md-6 bloc3user">
+            <br>
+            <div class="titleExercise">
                 <h1>{{vm.score.nameScore}}</h1>
             </div>
-            <div class="col-md-8 titleTrack">
-                <h2>{{vm.score.wordingScore}}</h2>
+            <br>
+            <div class="titleTrack">
+                <p>{{vm.score.wordingScore}}</p>
             </div>
         </div>
     </div>
     <div class="text-center">
-        <button ng-click="vm.play()" type="button" class="btn btn-lg" ng-class='vm.isPlaying ? vm.beatAtStart>0 ? "btn-success" : "btn-danger" : "btn-primary"'><span class='glyphicon glyphicon-play'></span>&nbsp;{{vm.isPlaying ? vm.beatAtStart>0 ? "Départ dans " + vm.beatAtStart + ' pulse' + (vm.beatAtStart>1?"s":"") : "Lecture en cours..." : "Lecture"}}</button>
+        <button ng-click="vm.play()" type="button" class="btn btn-lg" ng-class='vm.isPlaying ? vm.beatAtStart>0 ? "btn-success" : "btn-danger" : "btn-primary"'>
+            <span class='glyphicon glyphicon-play'></span>&nbsp;{{vm.isPlaying ? vm.beatAtStart>0 ? "Départ dans " + vm.beatAtStart + ' pulse' + (vm.beatAtStart>1?"s":"") : "Lecture en cours..." : "Lecture"}}</button>
     </div>
     <div class="container">
         <div class="row">
             <div class="bloc4 col-md-12">
                 <div class="row">
-                  <img class="redBar" src="assets/img/elementsPartitions/redBar1.jpg" alt="" ng-click='vm.pulseControl()' />
+                    <img class="redBar" src="assets/img/elementsPartitions/redBar1.jpg" alt="" ng-click='vm.pulseControl()'/>
                     <div class="star col-md-12">
-                        <img class="imgacacher" src="assets/img/elementsPartitions/0/cleDeSol.png" />
+                        <img class="imgacacher" src="assets/img/elementsPartitions/0/cleDeSol.png"/>
                         <div class="noteDisplay">
-                            <img src="assets/img/elementsPartitions/0/{{vm.numBeatBar}}x{{vm.referenceValueBar}}.png" />
+                            <img src="assets/img/elementsPartitions/0/{{vm.numBeatBar}}x{{vm.referenceValueBar}}.png"/>
                         </div>
                         <span ng-repeat="note in vm.noteCURRENT | orderBy:'orderNote'">
-                          <div class="noteDisplay"><img alt="{{note.valueNote}}" src="assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{140*note.valueNote}}' height='300' ng-click='vm.wrongNote()'/></div>
-                      </span>
+                            <div class="noteDisplay"><img alt="{{note.valueNote}}" src="assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{140*note.valueNote}}' height='300' ng-click='vm.wrongNote()'/></div>
+                        </span>
                     </div>
                 </div>
             </div>

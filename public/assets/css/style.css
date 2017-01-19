@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto Slab', serif;
 }
 
 
@@ -26,6 +27,10 @@ nav .container-fluid .partLogoNavbar .navbar-brand img {
 nav .container-fluid .partNameNavbar .navbar-brand {
     margin: auto;
     padding: auto;
+}
+
+.titleSite {
+    font-family: 'Grand Hotel', cursive;
 }
 
 nav .container-fluid .partLogOutNavbar .navbar-brand {
@@ -94,15 +99,15 @@ nav .container-fluid .partCreditsFooter a img {
 }
 
 .firstBlock .header {
-    background-color: #B40200;
+    background-color: #0B577F;
 }
 
 .firstBlock .firstBlockBody {
-    background-color: #DB0300;
+    background-color: #149CE5;
 }
 
 .firstBlock .secondBlockBody {
-    background-color: #CE0300;
+    background-color: #1182BF;
 }
 
 .secondBlock .header {
@@ -292,7 +297,7 @@ ul {
 
 .bloc3 button:hover, .bloc3blocage button:hover {
     color: #f3e5f5;
-    background-color: #aa66cc;
+    background-color: #17ADFF;
 }
 
 
@@ -336,7 +341,7 @@ ul {
 
 .pageLogin .bloc1 .sousBloc1 button:hover {
     color: #f3e5f5;
-    background-color: #aa66cc;
+    background-color: #17ADFF;
 }
 
 .pageLogin .bloc1 p {
@@ -396,7 +401,7 @@ ul {
 
 .bloc3delete button:hover, .bloc3edit button:hover {
     color: #f3e5f5;
-    background-color: #aa66cc;
+    background-color: #17ADFF;
 }
 
 
@@ -540,23 +545,21 @@ ul {
 }
 
 .bloc3user .row {
-    height: 50px;
-    margin-top: 2%;
-}
-
-.titleExercise h1, .titleTrack h2 {
-    color: white;
-    text-align: center;
-    font-family: 'Grand Hotel', cursive;
-    margin: 0;
+    margin-top: 3%;
 }
 
 .titleExercise h1 {
-    font-size: 50px;
+    text-align: center;
+    color: white;
+    font-family: 'Grand Hotel', cursive;
+    margin: 0;
+    font-size: 40px;
+    margin-top: -10px;
 }
 
-.titleTrack h2 {
-    font-size: 30px;
+.titleTrack {
+    color: white;
+    font-size: 18px;
 }
 
 footer .bloc3user .dropdown {
@@ -568,10 +571,10 @@ footer .bloc3user .dropdown {
     margin: 2%;
 }
 
-.redBar{
+.redBar {
     position: absolute;
     z-index: 2;
-    margin-left : 123px;
+    margin-left: 123px;
     margin-top: 100px;
     width: 140px;
     height: 188px;
@@ -579,10 +582,10 @@ footer .bloc3user .dropdown {
 }
 
 .noTransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
 
 
