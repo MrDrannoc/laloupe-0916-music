@@ -6,7 +6,7 @@ const scoreSchema = new mongoose.Schema({
     levelScore: Number,
     tempoScore: Number,
     wordingScore: String,
-    numBitBar: Number,
+    numBeatBar: Number,
     referenceValueBar: Number,
     notes: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -48,7 +48,7 @@ export default class Score {
                 levelScore: req.body.levelScore,
                 tempoScore: req.body.tempoScore,
                 wordingScore: req.body.wordingScore,
-                numBitBar: req.body.numBitBar,
+                numBeatBar: req.body.numBeatBar,
                 referenceValueBar: req.body.referenceValueBar
             },
             (err, score) => {
@@ -68,7 +68,7 @@ export default class Score {
             levelScore: req.body.levelScore,
             tempoScore: req.body.tempoScore,
             wordingScore: req.body.wordingScore,
-            numBitBar: req.body.numBitBar,
+            numBeatBar: req.body.numBeatBar,
             referenceValueBar: req.body.referenceValueBar
         }, (err, score) => {
             if (err || !score) {

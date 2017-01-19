@@ -3,47 +3,12 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
     this.noteService = noteService;
     this.$location = $location;
     this.currentScoreId = $routeParams.exerciceId;
-    function algoRythme(mesureValeur,tempoScore,allNotes) {
-        var time;
-        var index = 0;
-        var interval = 0;
-        var tempo = 60 / tempoScore;
-
-        function callback() {
-            if (index > allNotes.length - 1) {
-                console.log("FIN");
-                clearTimeout(time);
-            } else {
-              console.log(allNotes[index].valueNote);
-              
-                interval = (allNotes[index].valueNote * 1000)  * tempo;
-                time = setTimeout(callback, interval);
-                index++;
-            }
-        }
-        time = setTimeout(callback, interval);
-    }
-    this.play = () => {
-        this.scoreService.getOne(this.currentScoreId).then((res) => {
-            console.log(res.data);
-            this.allNotes = res.data.notes;
-            algoRythme(res.data.numBitBar,res.data.tempoScore,this.allNotes);
-        });
-    };
-
     this.load = () => {
-
-        // Requete sur la partition pour récupérer les notes la première mesure "score.bars[0]"
-
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
             this.noteCURRENT = [];
-            this.numBitBar = this.score.numBitBar;
+            this.numBeatBar = this.score.numBeatBar;
             this.referenceValueBar = this.score.referenceValueBar;
-            //console.log("Toutes les notes présentes sur la première mesure ", this.score.notes);
-
-            // Requete sur la partition pour récupérer les notes la première mesure "score.bars[0]"
-
             for (let note of this.score.notes) {
                 this.noteService.getOne(note._id).then((res) => {
                     this.noteCURRENT.push(res.data);
@@ -54,28 +19,30 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                     }
                 });
             }
-
         });
-
-
     };
     this.load();
     this.isPlaying = false;
     this.pulseControl = () => {
         console.log('L\'exercice n\'a pas débuté !');
     };
+    this.wrongNote = () => {
+        if (this.isPlaying) {
+            this.errors++;
+        }
+    }
     this.play = () => {
         if (!this.isPlaying) {
             this.isPlaying = true;
             this.tempo = this.score.tempoScore;
-            this.beatAtStart = this.score.numBitBar;
+            this.beatAtStart = this.score.numBeatBar;
             $interval(() => {
                 this.beatAtStart--;
                 if (this.beatAtStart >= 0) {
                     //Play a beat
                     console.log('I beat one time');
                 }
-            }, 1 * 60 / this.tempo * 1000, this.score.numBitBar + 1).then(() => {
+            }, 1 * 60 / this.tempo * 1000, this.score.numBeatBar).then(() => {
                 angular.element('.redBar').css('transition', '0s linear').css('margin-left', '123px').css('margin-top', '100px');
                 let containerWidth = angular.element('.star').width(),
                     containerHeight = Math.floor((angular.element('.star').height() - 300) / 300),
@@ -84,8 +51,14 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                     totalWidth = 0,
                     lineWidth = [0],
                     lineDuration = [0],
-                    totalDuration = 0;
-                playAt = [];
+                    totalDuration = 0,
+                    playAt = [],
+                    pulses = [],
+                    beat = 0,
+                    microtimeStart = new Date().getTime(),
+                    start = microtimeStart;
+                this.errors = 0;
+                this.endTime = 0;
                 let c = 0;
                 for (let note of this.noteCURRENT) {
                     playAt.push({
@@ -103,11 +76,38 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                     lineWidth[lineNumber] = currentLen;
                     totalDuration += note.valueNote * 60 / this.tempo * 1000;
                     lineDuration[lineNumber] += note.valueNote * 60 / this.tempo;
+                    beat += Number(note.valueNote);
+                    for (let i = beat; i >= 1; i--) {
+                        beat--;
+                        pulses.push({
+                            start: start,
+                            end: start + (60 / this.tempo * 1000),
+                            validated: false
+                        });
+                        start += (60 / this.tempo * 1000);
+                    }
                 }
                 let last = 0,
                     current = 0;
                 this.pulseControl = () => {
                     console.log('L\'exercice a débuté :)');
+                    let clickAt = new Date().getTime();
+                    if (pulses.filter((p) => {
+                            return !p.validated && p.start < clickAt && p.end > clickAt;
+                        }).length == 1) {
+                        console.log('PERFECT !');
+                        pulses.map((p) => {
+                            if (!p.validated && p.start < clickAt && p.end > clickAt) {
+                                p.validated = true;
+                            }
+                            return p;
+                        });
+                    } else {
+                        console.log(':\'( T\'ES NUL LA LOUTRE ! (' + pulses.filter((p) => {
+                            return !p.validated && p.start < clickAt && p.end > clickAt;
+                        }).length + ' validés)');
+                        this.errors++;
+                    }
                 };
                 for (var i = 0; i <= containerHeight; i++) {
                     $timeout(() => {
@@ -119,15 +119,21 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                             }
                         }, (lineDuration[current]) * 1000);
                     }, last * 1000);
-                    last += lineDuration[i] + 0.1;
+                    last += lineDuration[i] + 0.05;
                 }
-                for (let note of playAt) {
-                    $timeout(() => {
-                        console.log('Now listening : ' + note.note);
-                    }, note.when);
-                }
+                // for (let note of playAt) {
+                //     $timeout(() => {
+                //         console.log('Now listening : ' + note.note);
+                //         MIDIjs.play(note.note);
+                //     }, note.when);
+                // }
                 $timeout(() => {
                     this.isPlaying = false;
+                    this.errors += pulses.filter((p) => {
+                        return !p.validated;
+                    }).length;
+                    this.endTime = new Date().getTime() - microtimeStart;
+                    console.log(this.errors, this.endTime, pulses);
                 }, totalDuration);
             });
         }

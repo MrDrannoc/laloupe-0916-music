@@ -2,13 +2,13 @@ function scoreService($http) {
 
     this.$http = $http;
 
-    this.create = (name, level, tempo, wording, numBitBar, referenceValueBar) => {
+    this.create = (name, level, tempo, wording, numBeatBar, referenceValueBar) => {
         return this.$http.post('/api/scores', {
             nameScore: name,
             levelScore: level,
             tempoScore: tempo,
             wordingScore: wording,
-            numBitBar: numBitBar,
+            numBeatBar: numBeatBar,
             referenceValueBar: referenceValueBar
         });
     };
@@ -21,13 +21,13 @@ function scoreService($http) {
         return this.$http.get('/api/scores/' + id);
     };
 
-    this.update = (id, name, level, tempo, wording, numBitBar, referenceValueBar) => {
+    this.update = (id, name, level, tempo, wording, numBeatBar, referenceValueBar) => {
         return this.$http.put('/api/scores/' + id, {
             nameScore: name,
             levelScore: level,
             tempoScore: tempo,
             wordingScore: wording,
-            numBitBar: numBitBar,
+            numBeatBar: numBeatBar,
             referenceValueBar: referenceValueBar
 
         });
