@@ -7,6 +7,7 @@ function duplicController(scoreService, noteService, $location, $routeParams) {
 
 
     this.duplic = (name) => {
+      console.log("COUCOU");
         this.newName = this.nameScoreDuplic;
         this.scoreService.getOne(this.id).then((res) => {
             this.copy = res.data;
@@ -21,7 +22,9 @@ function duplicController(scoreService, noteService, $location, $routeParams) {
                 this.noteService.getOne(this.originScore.notes[o]._id).then((res1) => {
                     this.noteService.create(res1.data.heigthNote, res1.data.valueNote, res1.data.orderNote).then((res2) => {
                         this.currentNoteId = res2.data._id;
-                        this.scoreService.addNoteToScore(this.duplicScoreId, res2.data._id).then((res) => {});
+                        this.scoreService.addNoteToScore(this.duplicScoreId, res2.data._id).then((res) => {
+                                          this.$location.path('/score/editing/' + this.duplicScoreId);
+                        });
                     });
                 });
             }
