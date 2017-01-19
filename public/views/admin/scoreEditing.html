@@ -1,20 +1,64 @@
 <div class="container">
     <div class="bloc1">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-2 col-md-offset-5">
+                <img src="./assets/img/elementsPages/ourson.png" alt="ourson"/>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-5">
                 <a href="#!/dashboard">
-                    <button type="button" class="btn btn-default retourDashboard">
+                    <button style="margin-left:-50px" type="button" class="btn btn-default retourDashboard">
                         <span class="glyphicon glyphicon-home"></span>
                         Tableau de bord</button>
                 </a>
             </div>
-            <div class="col-md-2">
-                <img src="./assets/img/elementsPages/ourson.png" alt="ourson"/>
-            </div>
         </div>
     </div>
 </div>
-<button class="btn btn-default" ng-click="vm.verificationdelapartition()">Edition l'exercice</button>
+
+<div class="row">
+    <p>
+        {{vm.score.nameScore}}
+        {{vm.score.tempoScore}}
+        Niveau
+        {{vm.score.levelScore}}
+        {{vm.score.wordingScore}}
+    </p>
+</div>
+
+<div class="row">
+<form class="form-horizontal ">
+    <div class="row">
+    <div class="form-group col-md-12">
+        <input id="textinput" ng-model='vm.nameScore' name="textinput" placeholder="{{vm.score.nameScore}}" class="form-control input-md" type="text">
+    </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <select id="selectLevel" ng-model='vm.levelScore' name="selectbasic" class="form-control">
+                <option value="" disabled>NIVEAU DE L'EXERCICE</option>
+                <option value="1">Facile</option>
+                <option value="2">Intermédiaire</option>
+                <option value="3">Expert</option>
+            </select>
+        </div>
+      </div>
+        <div class="row">
+        <div class="form-group col-md-12">
+            <input ng-model='vm.tempoScore' name="textinput" placeholder="{{vm.score.tempoScore}}" class="form-control input-md" type="text">
+        </div>
+        </div>
+        <div class="row">
+        <div class="form-group col-md-12">
+            <textarea id="textarea" class="form-control" ng-model='vm.wordingScore' name="textarea" placeholder="{{vm.score.wordingScore}}"></textarea>
+        </div>
+        </div>
+    <button ng-click='vm.editScore()' class="btn btn-default col-md-2 col-md-offset-5">Editer l'exercice</button>
+</form>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="bloc4 col-md-12">

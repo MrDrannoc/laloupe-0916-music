@@ -81,4 +81,11 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
             });
         }
     };
+
+    this.editScore = () => {
+      console.log("kikoo");
+        this.scoreService.update(this.currentScoreId, this.name,  this.level, this.tempo, this.wording).then(() => {
+            this.load();
+        });
+    };
 }
