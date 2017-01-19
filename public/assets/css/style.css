@@ -523,12 +523,18 @@ footer .bloc3user .dropdown {
     margin: 2%;
 }
 
-.buttonPlaying button {
-    width: 200px;
-    height: 60px;
-    margin: 1%;
-    font-size: 40px;
-    line-height: 0.99;
+.redBar{
+    position: absolute;
+    z-index: 2;
+    margin-left : 123px;
+    margin-top: 100px;
+}
+
+.noTransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
 /* fin de user inferface exercice */
