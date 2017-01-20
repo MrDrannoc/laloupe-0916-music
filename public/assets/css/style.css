@@ -147,7 +147,7 @@ nav .partContactFooter .navbar-text {
 
 #contact {
     color: white;
-    font-size: 2em;
+    font-size: 1.6em;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -163,7 +163,7 @@ nav .partContactFooter .navbar-text {
 
 #realisation {
     color: white;
-    font-size: 2em;
+    font-size: 1.6em;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -186,7 +186,7 @@ nav .partContactFooter .navbar-text {
 #credits {
     padding-right: 3%;
     color: white;
-    font-size: 2em;
+    font-size: 1.6em;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -216,7 +216,7 @@ nav .partContactFooter .navbar-text {
 }
 
 .retourDashboard {
-    margin-top: 5%;
+    margin-top: -3px;
     color: black;
     font-family: 'Grand Hotel';
     font-size: 2em;
@@ -253,7 +253,7 @@ ul {
 
 .paragrapheOurson p {
     text-align: center!important;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 
@@ -266,7 +266,6 @@ ul {
     width: 570px;
     height: 344px;
     margin-top: 2%;
-    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
     background-repeat: no-repeat;
 }
@@ -275,7 +274,6 @@ ul {
     width: 570px;
     height: 344px;
     margin-top: 2%;
-    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundBlockUser.png);
     background-repeat: no-repeat;
 }
@@ -325,7 +323,6 @@ ul {
     height: 344px;
     margin-top: 17%;
     margin-left: 25%;
-    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
     background-repeat: no-repeat;
 }
@@ -357,9 +354,9 @@ ul {
 }
 
 .pageLogin .bloc1 p {
-    margin-top: 57%;
+    margin-top: 52%;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -372,7 +369,6 @@ ul {
     width: 570px;
     height: 344px;
     margin-top: 2%;
-    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundSuppressionExercice.png);
     background-repeat: no-repeat;
 }
@@ -381,7 +377,6 @@ ul {
     width: 570px;
     height: 344px;
     margin-top: 2%;
-    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/backgroundEditionExercice.png);
     background-repeat: no-repeat;
 }
@@ -467,7 +462,6 @@ ul {
 .container .grosBloc {
     height: 400px;
     margin-top: 2%;
-    border-radius: 10px;
     background-image: url(/assets/img/elementsPages/background_partitionCreate.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -577,6 +571,7 @@ ul {
 .container .bloc3user {
     margin-top: 2%;
     margin-bottom: 2%;
+    border-radius: 10px;
     background-color: #1893f7;
 }
 
