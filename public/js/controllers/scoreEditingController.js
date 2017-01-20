@@ -12,11 +12,12 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     };
 
     this.load = () => {
-      this.hide = $location.$$url.indexOf('/score/editing/') >= 0;
+        this.hide = $location.$$url.indexOf('/score/editing/') >= 0;
         // Requete sur la partition pour récupérer les notes
 
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
+              console.log(this.score);
             this.noteCURRENT = [];
             this.numBeatBar = this.score.numBeatBar;
             this.referenceValueBar = this.score.referenceValueBar;
@@ -38,10 +39,13 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.load();
 
     this.editScore = () => {
-      console.log(this.name, this.level, this.tempo, this.wording);
-      this.scoreService.update(this.currentScoreId, this.name, this.level, this.tempo, this.wording).then(() => {
-        this.load();
-      });
+        if (this.score.nameScore === undefined || this.score.levelScore === undefined || this.score.tempoScore === undefined || this.score.wordingScore === undefined) {
+            alert("Partition non mise à jour, certains champs n'ont pas été complété");
+        } else {
+            this.scoreService.update(this.currentScoreId, this.score.nameScore, this.score.levelScore, this.score.tempoScore, this.score.wordingScore).then(() => {
+                this.load();
+            });
+        }
     };
 
     this.addChiffrage = () => {
@@ -90,4 +94,4 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     };
 
 
-  }
+}
