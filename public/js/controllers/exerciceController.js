@@ -36,6 +36,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
             this.isPlaying = true;
             this.tempo = this.score.tempoScore;
             this.beatAtStart = this.score.numBeatBar;
+            this.metronome();
             $interval(() => {
                 this.beatAtStart--;
                 if (this.beatAtStart >= 0) {
@@ -139,5 +140,18 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
         }
     };
 
-
+    this.metronome = () => {
+        let time = 60 / this.score.tempoScore * 1000,
+            aiguille = angular.element('#wand');
+        $interval(() => {
+            aiguille.css('animation', "halfTempRight " + time / 1000 + "s infinite linear");
+            aiguille.css('transform', 'rotate(-20deg)');
+        }, time * 2);
+        $timeout(() => {
+            $interval(() => {
+                aiguille.css('animation', "halfTempLeft " + time / 1000 + "s infinite linear");
+                aiguille.css('transform', 'rotate(20deg)');
+            }, time * 2);
+        }, time);
+    };
 }
