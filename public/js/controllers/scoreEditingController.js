@@ -33,11 +33,11 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.editScore = () => {
         if (this.score.nameScore === undefined || this.score.levelScore === undefined || this.score.tempoScore === undefined || this.score.wordingScore === undefined) {
             // alert("Partition non mise à jour, certains champs n'ont pas été complété");
-            ngToast.create('a toast message...');
+            ngToast.create('Erreur');
         } else {
             this.scoreService.update(this.currentScoreId, this.score.nameScore, this.score.levelScore, this.score.tempoScore, this.score.wordingScore).then(() => {
                 this.load();
-                            ngToast.create('a toast message...');
+                            ngToast.create('Changement validé');
             });
         }
     };

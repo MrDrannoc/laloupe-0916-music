@@ -1,4 +1,4 @@
-function userBlockController(userService) {
+function userBlockController(userService,ngToast) {
 
     this.userService = userService;
 
@@ -12,6 +12,7 @@ function userBlockController(userService) {
 
     this.suspend = (id) => {
         this.userService.suspend(id).then(() => {
+          ngToast.create('Utilisateur suspendu');
             this.load();
         });
     };

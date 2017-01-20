@@ -4,7 +4,12 @@
     font-family: 'Roboto Slab', serif;
 }
 
-
+.toast{
+  width:15%;
+  margin-left: 60%;
+  position: absolute;
+  z-index: 1;
+}
 /* navbar AND footer */
 
 nav {
