@@ -5,19 +5,12 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     this.$location = $location;
     this.currentScoreId = $routeParams.scoreId;
 
-
-    this.verificationdelapartition = () => {
-        console.log("Route param : ", $routeParams);
-        MIDIjs.play('./assets/midi/bobby_sharp_unchain_my_heart.mid');
-    };
-
     this.load = () => {
         this.hide = $location.$$url.indexOf('/score/editing/') >= 0;
         // Requete sur la partition pour récupérer les notes
 
         this.scoreService.getOne(this.currentScoreId).then((res) => {
             this.score = res.data;
-              console.log(this.score);
             this.noteCURRENT = [];
             this.numBeatBar = this.score.numBeatBar;
             this.referenceValueBar = this.score.referenceValueBar;
@@ -30,7 +23,6 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
                     this.noteCURRENT.push(res.data);
                 });
             }
-            console.log(this.noteCURRENT);
         });
 
 
