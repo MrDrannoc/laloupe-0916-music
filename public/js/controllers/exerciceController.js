@@ -44,6 +44,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                     console.log('I beat one time');
                 }
             }, 1 * 60 / this.tempo * 1000, this.score.numBeatBar).then(() => {
+              angular.element('.redBar').css('opacity', '1');
                 angular.element('.redBar').css('transition', '0s linear').css('margin-left', '123px').css('margin-top', '100px');
                 let containerWidth = angular.element('.star').width(),
                     containerHeight = Math.floor((angular.element('.star').height() - 300) / 300),

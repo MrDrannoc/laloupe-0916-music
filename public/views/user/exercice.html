@@ -42,14 +42,14 @@
         <div class="row">
             <div class="bloc4 col-md-12">
                 <div class="row">
-                    <img class="redBar" src="assets/img/elementsPartitions/redBar1.jpg" alt="" ng-click='vm.pulseControl()'/>
+                    <img class="redBar" src="assets/img/elementsPartitions/sylvainLaBarre1.jpg" alt="" ng-click='vm.pulseControl()'/>
                     <div class="star col-md-12">
                         <img class="imgacacher" src="assets/img/elementsPartitions/0/cleDeSol.png"/>
                         <div class="noteDisplay">
                             <img src="assets/img/elementsPartitions/0/{{vm.numBeatBar}}x{{vm.referenceValueBar}}.png"/>
                         </div>
                         <span ng-repeat="note in vm.noteCURRENT | orderBy:'orderNote'">
-                            <div class="noteDisplay"><img alt="{{note.valueNote}}" src="assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{140*note.valueNote}}' height='300' ng-click='vm.wrongNote()'/></div>
+                            <div class="noteDisplay"><img alt="{{note.valueNote}}" src="assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{note.valueNote < 5 ? 140*note.valueNote : ""}}' height='{{note.valueNote < 5 ? 300 : ""}}' ng-click='vm.wrongNote()'/></div>
                         </span>
                     </div>
                 </div>
