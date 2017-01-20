@@ -614,7 +614,7 @@ footer .bloc3user .dropdown {
     margin-top: 100px;
     width: 140px;
     height: 188px;
-    opacity: 0;
+    opacity: 0.5;
 }
 
 .noTransition {
