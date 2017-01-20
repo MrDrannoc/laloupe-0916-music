@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute','ngToast'])
         .factory('sessionFactory', sessionFactory)
         .service('userService', userService)
         .service('scoreService', scoreService)

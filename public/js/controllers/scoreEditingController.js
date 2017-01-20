@@ -1,4 +1,4 @@
-function scoreEditingController(scoreService, noteService, $location, $routeParams) {
+function scoreEditingController(scoreService, noteService, $location, $routeParams, ngToast) {
     this.hide = $location.$$url.indexOf('/score/editing/') >= 0 ? true : false;
     this.scoreService = scoreService;
     this.noteService = noteService;
@@ -32,10 +32,12 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
 
     this.editScore = () => {
         if (this.score.nameScore === undefined || this.score.levelScore === undefined || this.score.tempoScore === undefined || this.score.wordingScore === undefined) {
-            alert("Partition non mise à jour, certains champs n'ont pas été complété");
+            // alert("Partition non mise à jour, certains champs n'ont pas été complété");
+            ngToast.create('a toast message...');
         } else {
             this.scoreService.update(this.currentScoreId, this.score.nameScore, this.score.levelScore, this.score.tempoScore, this.score.wordingScore).then(() => {
                 this.load();
+                            ngToast.create('a toast message...');
             });
         }
     };

@@ -25,5 +25,8 @@
     "package.json",
     "_includes",
     "_layouts"
-  ]
+  ],
+  "resolutions": {
+    "angular": "1.6.1"
+  }
 }
