@@ -1,3 +1,17 @@
+/*Function metronome*/
+@keyframes halfTempRight {
+    100% {
+        transform: rotateZ(20deg);
+    }
+}
+
+@keyframes halfTempLeft {
+    100% {
+        transform: rotateZ(-20deg);
+    }
+}
+
+ /*end function metronome*/
 * {
     margin: 0;
     padding: 0;
@@ -632,5 +646,34 @@ footer .bloc3user .dropdown {
     padding-top: 3%;
 }
 
-
 /* fin de listExercice */
+
+
+/*metronome*/
+@keyframes halfTempRight {
+    100% {
+        transform: rotateZ(20deg);
+    }
+}
+
+@keyframes halfTempLeft {
+    100% {
+        transform: rotateZ(-20deg);
+    }
+}
+
+.metronome{
+  margin-top: 4%;
+}
+
+.fullBody{
+  width: 51%;
+}
+#wand {
+  width: 8%;
+    position: absolute;
+    top: -1%;
+    left: 24%;
+}
+
+/*fin du métronome*/
