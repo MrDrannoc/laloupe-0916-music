@@ -1,11 +1,11 @@
-function userCreateController (userService) {
+function userCreateController (userService,ngToast) {
 
     this.userService = userService;
 
     this.create = () => {
         this.userService.create(this.user).then(() => {
             this.user = {prenom:"",nom:"",email:"",motdepasse:""};
-            alert("utilisateur créé avec succès");
+            ngToast.create('Utilisateur créé');
         });
     };
 
