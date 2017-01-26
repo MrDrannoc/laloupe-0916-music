@@ -68,6 +68,7 @@ function scoreEditingController(scoreService, noteService, $location, $routePara
     };
 
     this.editNote = (note) => {
+      console.log(angular.element("#toto").children().not('.hidden')[0]) 
         this.noteService.update(note._id, note).then(() => {
             this.load();
         });

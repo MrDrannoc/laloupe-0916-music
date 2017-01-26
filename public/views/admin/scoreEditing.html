@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                                 <select class="form-control" ng-model="note.valueNote" ng-change='vm.editNote(note)'>
-                                    <option value="">Valeur</option>
+
                                     <option value="4">Ronde</option>
                                     <option value="2">Blanche</option>
                                     <option value="1">Noire</option>
@@ -98,53 +98,52 @@
                                     <option value="25">Barre</option>
                                 </select>
                                 <select class="form-control" ng-model="note.heigthNote" ng-change='vm.editNote(note)'>
-                                    <option value="">Hauteur</option>
-                                    <option value="do1">do1</option>
-                                    <option value="do2">do2</option>
-                                    <option value="do3">do3</option>
-                                    <option value="re1">re1</option>
-                                    <option value="re2">re2</option>
-                                    <option value="mi1">mi1</option>
-                                    <option value="mi2">mi2</option>
-                                    <option value="fa1">fa1</option>
-                                    <option value="fa2">fa2</option>
-                                    <option value="sol1">sol1</option>
-                                    <option value="sol2">sol2</option>
-                                    <option value="sol3">sol3</option>
-                                    <option value="la1">la1</option>
-                                    <option value="la2">la2</option>
-                                    <option value="la3">la3</option>
-                                    <option value="si1">si1</option>
-                                    <option value="si2">si2</option>
-                                    <option value="si3">si3</option>
-                                    <option value="pause">Pause</option>
-                                    <option value="demiPause">Demi-pause</option>
-                                    <option value="soupir">Silence</option>
-                                    <option value="demiSoupir">Demi-soupir</option>
-                                    <option value="quartDeSoupir">Quart-de-soupir</option>
-                                    <option value="barreDeMesure">Barre de mesure</option>
-                                    <option value="barreDeFinMesure">Barre de fin</option>
-                                    <option value="si">armure siB</option>
-                                    <option value="simi">armure siMiB</option>
-                                    <option value="simila">armure siMiLaB</option>
-                                    <option value="similare">armure siMiLaReB</option>
-                                    <option value="similaresol">armure siMiLaReSolB</option>
-                                    <option value="similaresoldo">armure siMiLaReSolDoB</option>
-                                    <option value="similaresoldofa">armure siMiLaReSolDoFaB</option>
-                                    <option value="fa">armure fa#</option>
-                                    <option value="fado">armure faDo#</option>
-                                    <option value="fadosol">armure faDoSol#</option>
-                                    <option value="fadosolre">armure faDoSolRe#</option>
-                                    <option value="fadosolrela">armure faDoSolReLa#</option>
-                                    <option value="fadosolrelami">armure faDoSolReLaMi#</option>
-                                    <option value="fadosolrelamisi">armure faDoSolReLaMiSi#</option>
+
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="do1">do1</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="do2">do2</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="do3">do3</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="re1">re1</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="re2">re2</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="mi1">mi1</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="mi2">mi2</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="fa1">fa1</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="fa2">fa2</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="sol1">sol1</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="sol2">sol2</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="sol3">sol3</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="la1">la1</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="la2">la2</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="la3">la3</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="si1">si1</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="si2">si2</option>
+                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25">si3</option>
+                                    <option ng-show="note.valueNote==4" value="pause">Pause</option>
+                                    <option ng-show="note.valueNote==2" value="demiPause">Demi-pause</option>
+                                    <option ng-show="note.valueNote==='1'" value="soupir">Silence</option>
+                                    <option ng-show="note.valueNote==0.5" value="demiSoupir">Demi-soupir</option>
+                                    <option ng-show="note.valueNote==0.25" value="quartDeSoupir">Quart-de-soupir</option>
+                                    <option ng-show="note.valueNote == 25" value="barreDeMesure">Barre de mesure</option>
+                                    <option ng-show="note.valueNote == 25" value="barreDeFinMesure">Barre de fin</option>
+                                    <option ng-show="note.valueNote == 19" value="si"> siB</option>
+                                    <option ng-show="note.valueNote == 19" value="simi"> siMiB</option>
+                                    <option ng-show="note.valueNote == 19" value="simila"> siMiLaB</option>
+                                    <option ng-show="note.valueNote == 19" value="similare"> siMiLaReB</option>
+                                    <option ng-show="note.valueNote == 19" value="similaresol"> siMiLaReSolB</option>
+                                    <option ng-show="note.valueNote == 19" value="similaresoldo"> siMiLaReSolDoB</option>
+                                    <option ng-show="note.valueNote == 19" value="similaresoldofa"> siMiLaReSolDoFaB</option>
+                                    <option ng-show="note.valueNote == 20" value="fa"> fa#</option>
+                                    <option ng-show="note.valueNote == 20" value="fado"> faDo#</option>
+                                    <option ng-show="note.valueNote == 20" value="fadosol"> faDoSol#</option>
+                                    <option ng-show="note.valueNote == 20" value="fadosolre"> faDoSolRe#</option>
+                                    <option ng-show="note.valueNote == 20" value="fadosolrela"> faDoSolReLa#</option>
+                                    <option ng-show="note.valueNote == 20" value="fadosolrelami"> faDoSolReLaMi#</option>
+                                    <option ng-show="note.valueNote == 20" value="fadosolrelamisi"> faDoSolReLaMiSi#</option>
                                 </select>
                             </div>
-                            <img class="imgacacher" alt="{{note.valueNote}}" src="./assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
+                            <img class="imgacacher" alt="{{note.valueNote}}" src="./assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{note.valueNote < 5 ? 140*note.valueNote : ""}}' height='{{note.valueNote < 5 ? 300 : ""}}'/>
                         </div>
                     </span>
                 </div>
-                <img alt="{{note.valueNote}}" src="./assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png"/>
             </div>
         </div>
     </div>
