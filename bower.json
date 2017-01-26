@@ -10,7 +10,9 @@
     "jquery": "^2.2.2",
     "angular": "^1.6",
     "angular-route": "^1.6",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "ngToast": "ngtoast#^2.0.0",
+    "angular-sanitize": "^1.6.1"
   },
   "ignore": [
     "**/.*",
