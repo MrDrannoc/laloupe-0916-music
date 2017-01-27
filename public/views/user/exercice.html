@@ -38,7 +38,7 @@
         <button ng-click="vm.play()" type="button" class="btn btn-lg" ng-class='vm.isPlaying ? vm.beatAtStart>0 ? "btn-success" : "btn-danger" : "btn-primary"'>
             <span class='glyphicon glyphicon-play'></span>&nbsp;{{vm.isPlaying ? vm.beatAtStart>0 ? "Départ dans " + vm.beatAtStart + ' pulse' + (vm.beatAtStart>1?"s":"") : "Lecture en cours..." : "Lecture"}}</button>
     </div>
-    <toast class="toast"></toast>
+
     <div class="container">
         <div class="row">
             <div class="bloc4 col-md-12">
@@ -57,4 +57,41 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Win-->
+    <div class="modal fade" id="myModalWin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel1">Bravo, exercice correctement effectué !</h5>
+                </div>
+                <div class="modal-body">
+                    <img src="./assets/img/elementsPages/ourson.png" alt="panda" />
+                    <p> Aucune faute dans cet exercice !</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal LOose-->
+    <div class="modal fade" id="myModalLoose" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel2">Dommage, essaye encore !</h5>
+                </div>
+                <div class="modal-body">
+                  <img src="./assets/img/elementsPages/ourson.png" alt="panda" />
+                  <p>Tu as fait {{vm.errors}} faute(s) dans cet exercice.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

@@ -629,7 +629,7 @@ footer .bloc3user .dropdown {
     margin-top: 100px;
     width: 140px;
     height: 188px;
-    opacity: 0;
+    opacity: 0.5;
 }
 
 .noTransition {
@@ -637,6 +637,12 @@ footer .bloc3user .dropdown {
     -moz-transition: none !important;
     -o-transition: none !important;
     transition: none !important;
+}
+
+#myModalWin , #myModalLoose {
+  text-align: center;
+  color: black;
+  font-family: 'Grand Hotel', cursive;
 }
 
 
