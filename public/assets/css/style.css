@@ -638,10 +638,53 @@ footer .bloc3user .dropdown {
     transition: none !important;
 }
 
-#myModalWin , #myModalLoose {
+#myModalWin, #myModalLoose {
   text-align: center;
   color: black;
   font-family: 'Grand Hotel', cursive;
+}
+
+
+.green {
+    z-index: 5;
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    top: 15%;
+    left: -35%;
+    background-color: #4ED99C;
+    position: absolute;
+    border-radius : 300px 300px 300px 300px;
+    opacity: 0.95;
+}
+
+.green p {
+  text-align: center;
+  color: white;
+  font-family: 'Grand Hotel', cursive;
+  font-size: 3em;
+  margin-top: 40%;
+}
+
+.red {
+  z-index: 5;
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    top: 15%;
+    left: -35%;
+    background-color: #F73F52;
+    position: absolute;
+    border-radius : 300px 300px 300px 300px;
+    opacity: 0.95;
+}
+
+.red p {
+  text-align: center;
+  color: white;
+  font-family: 'Grand Hotel', cursive;
+  font-size: 3em;
+  margin-top: 40%;
 }
 
 

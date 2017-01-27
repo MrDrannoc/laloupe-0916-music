@@ -103,6 +103,15 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                         pulses.map((p) => {
                             if (!p.validated && p.start < clickAt && p.end > clickAt) {
                                 p.validated = true;
+                                angular.element('#flash').addClass('green');
+                                $timeout(function() {
+                                  angular.element('#flash').removeClass("green");
+                                }, 300);
+                                angular.element('#flash').html('<p>'+['Super','YES','Bravo'][(Math.floor(Math.random() * (3 - 1 + 1)) + 1)-1]+' !</p>');
+                                $timeout(function() {
+                                  angular.element('#flash').html("");
+                                }, 300);
+
                             }
                             return p;
                         });
@@ -111,6 +120,15 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                             return !p.validated && p.start < clickAt && p.end > clickAt;
                         }).length + ' validés)');
                         this.errors++;
+                        angular.element('#flash').addClass('red');
+                        $timeout(function() {
+                          angular.element('#flash').removeClass("red");
+                        }, 300);
+                        angular.element('#flash').html('<p>'+['Dommage','Manqué','Non'][(Math.floor(Math.random() * (3 - 1 + 1)) + 1)-1]+' !</p>');
+                        $timeout(function() {
+                          angular.element('#flash').html("");
+                        }, 300);
+
                     }
                 };
                 for (var i = 0; i <= containerHeight; i++) {
