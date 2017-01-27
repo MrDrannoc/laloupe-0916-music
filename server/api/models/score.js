@@ -1,5 +1,24 @@
 import mongoose from 'mongoose';
 import Note from '../models/note.js';
+var Midi = require('jsmidgen');
+var fs = require('fs');
+var btoa = require('btoa');
+
+function noteiconv(note) {
+    let iconv = {
+        "do": "c",
+        "si": "b",
+        "la": "a",
+        "so": "g",
+        "fa": "f",
+        "mi": "e",
+        "re": "d"
+    }
+    if (note.substr(-1) <= 3 && note.substr(-1) >= 1 && ['do', 're', 'mi', 'fa', 'so', 'la', 'si'].indexOf(note.substring(0, 2)) != -1) {
+        note = iconv[note.substring(0, 2)] + note.substr(-1);
+    }
+    return note;
+}
 
 const scoreSchema = new mongoose.Schema({
     nameScore: String,
@@ -38,6 +57,30 @@ export default class Score {
                     res.sendStatus(403);
                 } else {
                     res.json(score);
+                }
+            });
+    }
+
+    generateMidi(req, res) {
+        model.findById(req.params.id)
+            .populate('notes')
+            .exec((err, score) => {
+                if (err || !score) {
+                    res.sendStatus(403);
+                } else {
+                    var file = new Midi.File();
+                    var track = new Midi.Track();
+                    file.addTrack(track);
+                    track.setTempo(score.tempoScore);
+                    score.notes.sort(function(a, b) {
+                        return (a.orderNote > b.orderNote) ? 1 : ((b.orderNote > a.orderNote) ? -1 : 0);
+                    }).forEach(function(note) {
+                        if (note.valueNote < 5) {
+                            track.addNote(0, noteiconv(note.heigthNote), (128 * note.valueNote));
+                        }
+                    });
+                    let b64mid = btoa(file.toBytes());
+                    res.send(b64mid);
                 }
             });
     }

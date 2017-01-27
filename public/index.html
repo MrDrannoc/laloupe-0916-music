@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr" ng-app='app'>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="./assets/img/elementsPages/pictoPandanote.png">
-        <title>Happy Rythme</title>
-        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="vendor/ngtoast/dist/ngToast.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <!-- <script src='http://www.midijs.net/lib/midi.js'></script> -->
-    </head>
-    <body>
-        <ng-include src="'views/navbar.html'"></ng-include>
-        <div id="mainView" class="container">
-            <ng-view></ng-view>
-        </div>
-        <ng-include src="'views/footer.html'"></ng-include>
-        <script src="vendor/jquery/dist/jquery.min.js"></script>
-        <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="vendor/angular/angular.min.js"></script>
-        <script src="vendor/angular-route/angular-route.min.js"></script>
-        <script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
-        <script src="vendor/ngToast/dist/ngToast.min.js"></script>
-        <script src="js/factories/sessionFactory.js"></script>
-        <script src="js/services/userService.js"></script>
-        <script src="js/services/scoreService.js"></script>
-        <script src="js/services/noteService.js"></script>
-        <script src="js/controllers/navbarController.js"></script>
-        <script src="js/controllers/loginController.js"></script>
-        <script src="js/controllers/scoreEditController.js"></script>
-        <script src="js/controllers/scoreCreateController.js"></script>
-        <script src="js/controllers/scoreDeleteController.js"></script>
-        <script src="js/controllers/scoreEditingController.js"></script>
-        <script src="js/controllers/userCreateController.js"></script>
-        <script src="js/controllers/userBlockController.js"></script>
-        <script src="js/controllers/footerController.js"></script>
-        <script src="js/controllers/listExercicesController.js"></script>
-        <script src="js/controllers/exerciceController.js"></script>
-        <script src="js/controllers/duplicController.js"></script>
-        <script src="js/routes.js"></script>
-        <script src="js/app.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./assets/img/elementsPages/pictoPandanote.png">
+    <title>Happy Rythme</title>
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/ngtoast/dist/ngToast.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- polyfill -->
+    <script src="./inc/shim/Base64.js" type="text/javascript"></script>
+    <script src="./inc/shim/Base64binary.js" type="text/javascript"></script>
+    <script src="./inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+    <script src="./inc/shim/WebMIDIAPI.js" type="text/javascript"></script>
+    <!-- jasmid package -->
+    <script src="../inc/jasmid/stream.js"></script>
+    <script src="../inc/jasmid/midifile.js"></script>
+    <script src="../inc/jasmid/replayer.js"></script>
+    <!-- midi.js package -->
+    <script src="./js/midi/audioDetect.js" type="text/javascript"></script>
+    <script src="./js/midi/gm.js" type="text/javascript"></script>
+    <script src="./js/midi/loader.js" type="text/javascript"></script>
+    <script src="./js/midi/plugin.audiotag.js" type="text/javascript"></script>
+    <script src="./js/midi/plugin.webaudio.js" type="text/javascript"></script>
+    <script src="./js/midi/plugin.webmidi.js" type="text/javascript"></script>
+    <script src="./js/midi/player.js" type="text/javascript"></script>
+	  <script src="./js/midi/synesthesia.js" type="text/javascript"></script>
+    <!-- utils -->
+    <script src="./js/util/dom_request_xhr.js" type="text/javascript"></script>
+    <script src="./js/util/dom_request_script.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <ng-include src="'views/navbar.html'"></ng-include>
+    <div id="mainView" class="container">
+        <ng-view></ng-view>
+    </div>
+    <ng-include src="'views/footer.html'"></ng-include>
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="vendor/ngToast/dist/ngToast.min.js"></script>
+    <script src="js/factories/sessionFactory.js"></script>
+    <script src="js/services/userService.js"></script>
+    <script src="js/services/scoreService.js"></script>
+    <script src="js/services/noteService.js"></script>
+    <script src="js/controllers/navbarController.js"></script>
+    <script src="js/controllers/loginController.js"></script>
+    <script src="js/controllers/scoreEditController.js"></script>
+    <script src="js/controllers/scoreCreateController.js"></script>
+    <script src="js/controllers/scoreDeleteController.js"></script>
+    <script src="js/controllers/scoreEditingController.js"></script>
+    <script src="js/controllers/userCreateController.js"></script>
+    <script src="js/controllers/userBlockController.js"></script>
+    <script src="js/controllers/footerController.js"></script>
+    <script src="js/controllers/listExercicesController.js"></script>
+    <script src="js/controllers/exerciceController.js"></script>
+    <script src="js/controllers/duplicController.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
 </html>

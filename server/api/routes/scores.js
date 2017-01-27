@@ -10,6 +10,8 @@ module.exports = (app) => {
 
     router.get('/', score.findAll);
 
+    router.get('/gimmidi/:id', score.generateMidi);
+
     router.get('/:id', score.findById);
 
     router.post('/', Auth.isAdministrator, score.create);

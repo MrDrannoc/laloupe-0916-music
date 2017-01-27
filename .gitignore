@@ -3,3 +3,4 @@ node_modules/
 public/vendor/**
 public/vendor_old/**
 npm-debug.log*
+public/mid/**

@@ -1,4 +1,4 @@
-function exerciceController(scoreService, noteService, $location, $routeParams, $timeout, $interval, $scope, ngToast) {
+function exerciceController(scoreService, noteService, $location, $routeParams, $timeout, $interval, $scope, ngToast, $http) {
     this.scoreService = scoreService;
     this.noteService = noteService;
     this.$location = $location;
@@ -33,120 +33,129 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
     }
     this.play = () => {
         if (!this.isPlaying) {
-            this.isPlaying = true;
-            this.tempo = this.score.tempoScore;
-            this.beatAtStart = this.score.numBeatBar;
-            this.metronome();
-            $interval(() => {
-                this.beatAtStart--;
-                if (this.beatAtStart >= 0) {
-                    //Play a beat
-                    console.log('I beat one time');
-                }
-            }, 1 * 60 / this.tempo * 1000, this.score.numBeatBar).then(() => {
-                angular.element('.redBar').css('opacity', '1');
-                angular.element('.redBar').css('transition', '0s linear').css('margin-left', '123px').css('margin-top', '100px');
-                let containerWidth = angular.element('.star').width(),
-                    containerHeight = Math.floor((angular.element('.star').height() - 300) / 300),
-                    currentLen = 101,
-                    lineNumber = 0,
-                    totalWidth = 0,
-                    lineWidth = [0],
-                    lineDuration = [0],
-                    totalDuration = 0,
-                    playAt = [],
-                    pulses = [],
-                    beat = 0,
-                    microtimeStart = new Date().getTime(),
-                    start = microtimeStart;
-                this.errors = 0;
-                this.endTime = 0;
-                let c = 0;
-                for (let note of this.noteCURRENT) {
-                    if (note.valueNote < 5) {
-                        playAt.push({
-                            when: totalDuration,
-                            note: 'assets/midi/' + note.valueNote + '/' + note.heigthNote + '.mid'
-                        });
-                        currentLen += note.valueNote * 140;
-                        totalWidth += note.valueNote * 140;
-                        c++;
-                        if (currentLen > containerWidth) {
-                            currentLen = note.valueNote * 140;
-                            lineNumber++;
-                            lineDuration[lineNumber] = 0;
-                        }
-                        lineWidth[lineNumber] = currentLen;
-                        totalDuration += note.valueNote * 60 / this.tempo * 1000;
-                        lineDuration[lineNumber] += note.valueNote * 60 / this.tempo;
-                        beat += Number(note.valueNote);
-                        for (let i = beat; i >= 1; i--) {
-                            beat--;
-                            pulses.push({
-                                start: start,
-                                end: start + (60 / this.tempo * 1000),
-                                validated: false
+            $http.get('/api/scores/gimmidi/' + this.score._id).then((resMidi) => {
+                let syncedMidi = resMidi.data;
+                MIDI.loadPlugin({
+                    soundfontUrl: "./soundfont/",
+                    instrument: "acoustic_grand_piano",
+                    onsuccess: () => {
+                        MIDI.Player.loadFile(syncedMidi, () => {
+                            this.isPlaying = true;
+                            this.tempo = this.score.tempoScore;
+                            this.beatAtStart = this.score.numBeatBar;
+                            this.metronome();
+                            $interval(() => {
+                                this.beatAtStart--;
+                                if (this.beatAtStart >= 0) {
+                                    //Play a beat
+                                    console.log('I beat one time');
+                                    MIDI.noteOn(0, 'd3', 150, 0);
+                                }
+                            }, 1 * 60 / this.tempo * 1000, this.score.numBeatBar).then(() => {
+                                angular.element('.redBar').css('opacity', '1');
+                                angular.element('.redBar').css('transition', '0s linear').css('margin-left', '123px').css('margin-top', '100px');
+                                let containerWidth = angular.element('.star').width(),
+                                    containerHeight = Math.floor((angular.element('.star').height() - 300) / 300),
+                                    currentLen = 101,
+                                    lineNumber = 0,
+                                    totalWidth = 0,
+                                    lineWidth = [0],
+                                    lineDuration = [0],
+                                    totalDuration = 0,
+                                    playAt = [],
+                                    pulses = [],
+                                    beat = 0,
+                                    microtimeStart = new Date().getTime(),
+                                    start = microtimeStart;
+                                this.errors = 0;
+                                this.endTime = 0;
+                                let c = 0;
+                                for (let note of this.noteCURRENT) {
+                                    if (note.valueNote < 5) {
+                                        playAt.push({
+                                            when: totalDuration,
+                                            note: 'assets/midi/' + note.valueNote + '/' + note.heigthNote + '.mid'
+                                        });
+                                        currentLen += note.valueNote * 140;
+                                        totalWidth += note.valueNote * 140;
+                                        c++;
+                                        if (currentLen > containerWidth) {
+                                            currentLen = note.valueNote * 140;
+                                            lineNumber++;
+                                            lineDuration[lineNumber] = 0;
+                                        }
+                                        lineWidth[lineNumber] = currentLen;
+                                        totalDuration += note.valueNote * 60 / this.tempo * 1000;
+                                        lineDuration[lineNumber] += note.valueNote * 60 / this.tempo;
+                                        beat += Number(note.valueNote);
+                                        for (let i = beat; i >= 1; i--) {
+                                            beat--;
+                                            pulses.push({
+                                                start: start,
+                                                end: start + (60 / this.tempo * 1000),
+                                                validated: false
+                                            });
+                                            start += (60 / this.tempo * 1000);
+                                        }
+                                    }
+                                }
+                                let last = 0,
+                                    current = 0;
+                                this.pulseControl = () => {
+                                    console.log('L\'exercice a débuté :)');
+                                    let clickAt = new Date().getTime();
+                                    if (pulses.filter((p) => {
+                                            return !p.validated && p.start < clickAt && p.end > clickAt;
+                                        }).length == 1) {
+                                        console.log('PERFECT !');
+                                        pulses.map((p) => {
+                                            if (!p.validated && p.start < clickAt && p.end > clickAt) {
+                                                p.validated = true;
+                                            }
+                                            return p;
+                                        });
+                                    } else {
+                                        console.log(':\'( T\'ES NUL LA LOUTRE ! (' + pulses.filter((p) => {
+                                            return !p.validated && p.start < clickAt && p.end > clickAt;
+                                        }).length + ' validés)');
+                                        this.errors++;
+                                    }
+                                };
+                                for (var i = 0; i <= containerHeight; i++) {
+                                    $timeout(() => {
+                                        angular.element('.redBar').css('transition', lineDuration[current] + 's linear').css('margin-left', lineWidth[current] + 'px');
+                                        $timeout(() => {
+                                            if (current != lineWidth.length - 1) {
+                                                current++;
+                                                angular.element('.redBar').css('transition', '0s').css('margin-left', '0px').css('margin-top', (Number(angular.element('.redBar').css('margin-top').replace(/px/, '')) + 300) + "px");
+
+                                            }
+                                        }, (lineDuration[current]) * 1000);
+                                    }, last * 1000);
+                                    last += lineDuration[i] + 0.05;
+                                }
+                                console.log('i\'ll start to play music');
+                                MIDI.Player.start();
+                                $timeout(() => {
+                                    this.isPlaying = false;
+                                    this.errors += pulses.filter((p) => {
+                                        return !p.validated;
+                                    }).length;
+                                    this.endTime = new Date().getTime() - microtimeStart;
+                                    if (this.errors > 0) {
+                                        ngToast.create('You looooooooose !');
+                                    } else {
+                                        ngToast.create('You Wiiiiiiiin !');
+                                    }
+                                    console.log(this.errors, this.endTime, pulses);
+                                }, totalDuration);
                             });
-                            start += (60 / this.tempo * 1000);
-                        }
-                    }
-                }
-                let last = 0,
-                    current = 0;
-                this.pulseControl = () => {
-                    console.log('L\'exercice a débuté :)');
-                    let clickAt = new Date().getTime();
-                    if (pulses.filter((p) => {
-                            return !p.validated && p.start < clickAt && p.end > clickAt;
-                        }).length == 1) {
-                        console.log('PERFECT !');
-                        pulses.map((p) => {
-                            if (!p.validated && p.start < clickAt && p.end > clickAt) {
-                                p.validated = true;
-                            }
-                            return p;
                         });
-                    } else {
-                        console.log(':\'( T\'ES NUL LA LOUTRE ! (' + pulses.filter((p) => {
-                            return !p.validated && p.start < clickAt && p.end > clickAt;
-                        }).length + ' validés)');
-                        this.errors++;
                     }
-                };
-                for (var i = 0; i <= containerHeight; i++) {
-                    $timeout(() => {
-                        angular.element('.redBar').css('transition', lineDuration[current] + 's linear').css('margin-left', lineWidth[current] + 'px');
-                        $timeout(() => {
-                            if (current != lineWidth.length - 1) {
-                                current++;
-                                angular.element('.redBar').css('transition', '0s').css('margin-left', '0px').css('margin-top', (Number(angular.element('.redBar').css('margin-top').replace(/px/, '')) + 300) + "px");
-                            }
-                        }, (lineDuration[current]) * 1000);
-                    }, last * 1000);
-                    last += lineDuration[i] + 0.05;
-                }
-                // for (let note of playAt) {
-                //     $timeout(() => {
-                //         console.log('Now listening : ' + note.note);
-                //         MIDIjs.play(note.note);
-                //     }, note.when);
-                // }
-                $timeout(() => {
-                    this.isPlaying = false;
-                    this.errors += pulses.filter((p) => {
-                        return !p.validated;
-                    }).length;
-                    this.endTime = new Date().getTime() - microtimeStart;
-                    if (this.errors > 0) {
-                        ngToast.create('You looooooooose !');
-                    } else {
-                        ngToast.create('You Wiiiiiiiin !');
-                    }
-                    console.log(this.errors, this.endTime, pulses);
-                }, totalDuration);
-            });
-        }
-    };
+                })
+            })
+        };
+    }
 
     this.metronome = () => {
         let time = 60 / this.score.tempoScore * 1000,

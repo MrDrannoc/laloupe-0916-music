@@ -12,8 +12,10 @@
   "dependencies": {
     "bcrypt": "^0.8.7",
     "body-parser": "",
+    "btoa": "^1.1.2",
     "cors": "",
     "express": "",
+    "jsmidgen": "^0.1.5",
     "jsonwebtoken": "",
     "method-override": "",
     "mongoose": "",
