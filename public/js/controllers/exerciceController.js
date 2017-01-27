@@ -1,4 +1,4 @@
-function exerciceController(scoreService, noteService, $location, $routeParams, $timeout, $interval, $scope, ngToast, $http) {
+function exerciceController(scoreService, noteService, $location, $routeParams, $timeout, $interval, $scope, $http) {
     this.scoreService = scoreService;
     this.noteService = noteService;
     this.$location = $location;
@@ -143,9 +143,9 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                                     }).length;
                                     this.endTime = new Date().getTime() - microtimeStart;
                                     if (this.errors > 0) {
-                                        ngToast.create('You looooooooose !');
+                                        $('#myModalLoose').modal('show');
                                     } else {
-                                        ngToast.create('You Wiiiiiiiin !');
+                                        $('#myModalWin').modal('show');
                                     }
                                     console.log(this.errors, this.endTime, pulses);
                                 }, totalDuration);
