@@ -672,7 +672,9 @@ footer .bloc3user .dropdown {
 .bloc3-exo {
     padding-top: 3%;
 }
-
+.imgListExercice img{
+  width: 25%
+}
 /* fin de listExercice */
 
 
