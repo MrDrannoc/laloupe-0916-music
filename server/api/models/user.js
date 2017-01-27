@@ -162,10 +162,11 @@ export default class User {
             if (err || !user) {
                 res.sendStatus(403);
             } else {
+              console.log(user[0],user[0].suspendUser, !user[0].suspendUser);
               model.update({
-                  _id: req.params.id
-              }, {suspendUser:!user.suspendUser}, (err, user) => {
-                  if (err || !user) {
+                  _id: user[0]._id
+              }, {suspendUser:!user[0].suspendUser}, (err, isOk) => {
+                  if (err || !isOk) {
                       res.status(500).send(err.message);
                   } else {
                       res.sendStatus(200);

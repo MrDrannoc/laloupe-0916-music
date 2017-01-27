@@ -11,8 +11,9 @@ function userBlockController(userService,ngToast) {
     this.load();
 
     this.suspend = (id) => {
+        console.log(id);
         this.userService.suspend(id).then(() => {
-          ngToast.create('Utilisateur suspendu');
+          ngToast.create('Modification effectué');
             this.load();
         });
     };
