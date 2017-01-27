@@ -38,11 +38,12 @@
         <button ng-click="vm.play()" type="button" class="btn btn-lg" ng-class='vm.isPlaying ? vm.beatAtStart>0 ? "btn-success" : "btn-danger" : "btn-primary"'>
             <span class='glyphicon glyphicon-play'></span>&nbsp;{{vm.isPlaying ? vm.beatAtStart>0 ? "Départ dans " + vm.beatAtStart + ' pulse' + (vm.beatAtStart>1?"s":"") : "Lecture en cours..." : "Lecture"}}</button>
     </div>
+    <toast class="toast"></toast>
     <div class="container">
         <div class="row">
             <div class="bloc4 col-md-12">
                 <div class="row">
-                    <img class="redBar" src="assets/img/elementsPartitions/sylvainLaBarre1.jpg" alt="" ng-click='vm.pulseControl()'/>
+                    <img class="redBar" src="assets/img/elementsPartitions/redBar1.jpg" alt="" ng-click='vm.pulseControl()'/>
                     <div class="star col-md-12">
                         <img class="imgacacher" src="assets/img/elementsPartitions/0/cleDeSol.png"/>
                         <div class="noteDisplay">

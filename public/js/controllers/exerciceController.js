@@ -1,4 +1,4 @@
-function exerciceController(scoreService, noteService, $location, $routeParams, $timeout, $interval) {
+function exerciceController(scoreService, noteService, $location, $routeParams, $timeout, $interval, $scope, ngToast) {
     this.scoreService = scoreService;
     this.noteService = noteService;
     this.$location = $location;
@@ -44,7 +44,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                     console.log('I beat one time');
                 }
             }, 1 * 60 / this.tempo * 1000, this.score.numBeatBar).then(() => {
-              angular.element('.redBar').css('opacity', '1');
+                angular.element('.redBar').css('opacity', '1');
                 angular.element('.redBar').css('transition', '0s linear').css('margin-left', '123px').css('margin-top', '100px');
                 let containerWidth = angular.element('.star').width(),
                     containerHeight = Math.floor((angular.element('.star').height() - 300) / 300),
@@ -63,30 +63,32 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                 this.endTime = 0;
                 let c = 0;
                 for (let note of this.noteCURRENT) {
-                    playAt.push({
-                        when: totalDuration,
-                        note: 'assets/midi/' + note.valueNote + '/' + note.heigthNote + '.mid'
-                    });
-                    currentLen += note.valueNote * 140;
-                    totalWidth += note.valueNote * 140;
-                    c++;
-                    if (currentLen > containerWidth) {
-                        currentLen = note.valueNote * 140;
-                        lineNumber++;
-                        lineDuration[lineNumber] = 0;
-                    }
-                    lineWidth[lineNumber] = currentLen;
-                    totalDuration += note.valueNote * 60 / this.tempo * 1000;
-                    lineDuration[lineNumber] += note.valueNote * 60 / this.tempo;
-                    beat += Number(note.valueNote);
-                    for (let i = beat; i >= 1; i--) {
-                        beat--;
-                        pulses.push({
-                            start: start,
-                            end: start + (60 / this.tempo * 1000),
-                            validated: false
+                    if (note.valueNote < 5) {
+                        playAt.push({
+                            when: totalDuration,
+                            note: 'assets/midi/' + note.valueNote + '/' + note.heigthNote + '.mid'
                         });
-                        start += (60 / this.tempo * 1000);
+                        currentLen += note.valueNote * 140;
+                        totalWidth += note.valueNote * 140;
+                        c++;
+                        if (currentLen > containerWidth) {
+                            currentLen = note.valueNote * 140;
+                            lineNumber++;
+                            lineDuration[lineNumber] = 0;
+                        }
+                        lineWidth[lineNumber] = currentLen;
+                        totalDuration += note.valueNote * 60 / this.tempo * 1000;
+                        lineDuration[lineNumber] += note.valueNote * 60 / this.tempo;
+                        beat += Number(note.valueNote);
+                        for (let i = beat; i >= 1; i--) {
+                            beat--;
+                            pulses.push({
+                                start: start,
+                                end: start + (60 / this.tempo * 1000),
+                                validated: false
+                            });
+                            start += (60 / this.tempo * 1000);
+                        }
                     }
                 }
                 let last = 0,
@@ -135,6 +137,11 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                         return !p.validated;
                     }).length;
                     this.endTime = new Date().getTime() - microtimeStart;
+                    if (this.errors > 0) {
+                        ngToast.create('You looooooooose !');
+                    } else {
+                        ngToast.create('You Wiiiiiiiin !');
+                    }
                     console.log(this.errors, this.endTime, pulses);
                 }, totalDuration);
             });
