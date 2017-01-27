@@ -691,17 +691,20 @@ footer .bloc3user .dropdown {
 }
 
 .metronome{
+  position: fixed;
+  bottom: 20px;;
+  left: 20px;
   margin-top: 4%;
 }
 
 .fullBody{
-  width: 51%;
+  width: 30%;
 }
 #wand {
-  width: 8%;
+  width: 5%;
     position: absolute;
     top: -1%;
-    left: 24%;
+    left: 12.5%;
 }
 
 /*fin du métronome*/
