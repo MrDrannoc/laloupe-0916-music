@@ -1,8 +1,8 @@
 <div class="pageLogin">
-    <div class="bloc1 col-lg-6 col-lg-offset-3">
-        <div class="sousBloc1 col-lg-8 col-lg-offset-4">
+    <div class="blocMainLogin">
+        <div class="sousBloc1 col-xs-8 col-xs-offset-4">
             <h2>Connexion à Happy Rythme</h2>
-            <form class="col-lg-10 col-lg-offset-1">
+            <form class="col-xs-10 col-xs-offset-1">
                 <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" ng-model='vm.email' ng-required='true' placeholder="Adresse mail">
                 </div>
@@ -11,12 +11,14 @@
                 </div>
                 <button type="submit" class="btn btn-default" ng-click='vm.login()' ng-disabled="formConnect.$invalid">Se connecter</button>
                 <div ng-show="(vm.loginMessage)" class="alert" ng-class="{'alert-danger': vm.loginMessage.type == 'error', 'alert-success': vm.loginMessage.type == 'connection validée', 'alert-info': vm.loginMessage.type == 'info'}">
-                      <h4><span class="glyphicon glyphicon-exclamation-sign pull-left"></span>&nbsp;{{vm.loginMessage.title}}</h4>
+                    <h4><span class="glyphicon glyphicon-exclamation-sign pull-left"></span>&nbsp;{{vm.loginMessage.title}}</h4>
                 </div>
             </form>
         </div>
-        <p>
+        <div class="paragrapheLogin col-xs-12">
+          <p>
             Pour avoir un compte et vous connecter, adressez-vous à l'administrateur du site.<br> Tèl: 06123456789 Mail: p.l.ledru@gmail.com
-        </p>
+          </p>
+        </div>
     </div>
 </div>

@@ -2,14 +2,14 @@
     <div class="row">
       <div class="bloc1">
           <div class="row">
-              <div class="col-md-2 col-md-offset-5">
+              <div class="col-xs-2 col-xs-offset-5">
                   <img src="./assets/img/elementsPages/ourson.png" alt="ourson" />
               </div>
           </div>
       </div>
         <div class="bloc2">
             <div class="row">
-                <div class="col-md-8 col-md-offset-4 paragrapheOurson" >
+                <div class="col-md-8 col-md-offset-2 col-xs-12 paragrapheOurson" >
                     <h2>Bonjour {{vm.user.firstname}}</h2>
                     <p>
                         Choisis dans la liste un exercice et commence ton entrainement.
@@ -18,17 +18,17 @@
             </div>
         </div>
         <div class="bloc3-exo">
-            <div class="col-md-10 col-md-offset-1 paragrapheOurson">
+            <div class="col-xs-10 col-xs-offset-1 paragrapheOurson">
                 <h2>Mes exercices</h2>
                 <div id="listExercice" class="row" ng-repeat="score in vm.scores | orderBy:'levelScore'">
-                    <div id="levelExercice" class="col-md-2 col-md-offset-1">
+                    <div id="levelExercice" class="col-xs-2 col-xs-offset-1">
                         {{score.levelScore == 1 ? "Facile" : score.levelScore == 2 ? "Intermédiare" : "Difficile"}}
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                       <button id="nameExercice" ng-click="vm.choiceExercice(score._id)" class="btn btn-link" type="button" name="button">{{score.nameScore}}</button>
                     </div>
-                    <div class="col-md-2">
-                      <img width="25%" src="./assets/img/elementsPages/{{score.levelScore == 1 ? 'easy' : score.levelScore == 2 ? 'medium' : 'hard'}}.png">
+                    <div class="imgListExercice col-xs-2">
+                      <img src="./assets/img/elementsPages/{{score.levelScore == 1 ? 'easy' : score.levelScore == 2 ? 'medium' : 'hard'}}.png">
                     </div>
                 </div>
             </div>
