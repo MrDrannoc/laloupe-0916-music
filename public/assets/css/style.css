@@ -230,7 +230,7 @@ nav .partContactFooter .navbar-text {
 /* bloc 1 (ourson) */
 
 .container .bloc1 {
-    margin-top: 8%;
+    margin-top: 80px;
     margin-left: 4%;
 }
 
@@ -254,7 +254,6 @@ ul {
 /* bloc 2 (discours de l'ourson) */
 
 .container .bloc2 {
-    width: 74%;
     margin-top: 0.5%;
 }
 
