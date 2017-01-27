@@ -337,43 +337,44 @@ ul {
 
 /* page login */
 
-.pageLogin .bloc1 {
+.pageLogin .blocMainLogin {
     width: 570px;
     height: 344px;
-    margin-top: 17%;
-    margin-left: 25%;
+  margin-top: 15%;
+  margin-left: 20%;
     background-image: url(/assets/img/elementsPages/backgroundCreationUser.jpg);
     background-repeat: no-repeat;
 }
 
-.pageLogin .bloc1 .sousBloc1 {
+.pageLogin .blocMainLogin .sousBloc1 {
     top: 12%;
     height: 70%;
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
 }
 
-.pageLogin .bloc1 .sousBloc1 h2 {
+.pageLogin .blocMainLogin .sousBloc1 h2 {
     text-align: center;
     font-family: 'Grand Hotel', cursive;
 }
 
-.pageLogin .bloc1 .sousBloc1 button {
+.pageLogin .blocMainLogin .sousBloc1 button {
     margin-left: 25%;
     color: white;
     background-color: #1893f7;
 }
 
-.pageLogin .bloc1 .sousBloc1 form {
+.pageLogin .blocMainLogin .sousBloc1 form {
     margin-top: 5%;
 }
 
-.pageLogin .bloc1 .sousBloc1 button:hover {
+.pageLogin .blocMainLogin .sousBloc1 button:hover {
     color: #f3e5f5;
     background-color: #17ADFF;
 }
-
-.pageLogin .bloc1 p {
-    margin-top: 52%;
+.paragrapheLogin{
+  margin-top: 45px;
+}
+.pageLogin .blocMainLogin p{
     text-align: center;
     font-size: 14px;
 }
