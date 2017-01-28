@@ -34,7 +34,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
     this.play = () => {
         if (!this.isPlaying) {
             $http.get('/api/scores/gimmidi/' + this.score._id).then((resMidi) => {
-                let syncedMidi = resMidi.data;
+                let syncedMidi = "data:audio/midi;base64," + resMidi.data;
                 MIDI.loadPlugin({
                     soundfontUrl: "./soundfont/",
                     instrument: "acoustic_grand_piano",
@@ -49,9 +49,12 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                                 if (this.beatAtStart >= 0) {
                                     //Play a beat
                                     console.log('I beat one time');
-                                    MIDI.noteOn(0, 'd3', 150, 0);
+                                    // MIDI.noteOn(0, 'd3', 150, 0);
+                                    // MIDI.noteOff(0, 'd3', 0.75);
                                 }
                             }, 1 * 60 / this.tempo * 1000, this.score.numBeatBar).then(() => {
+                                console.log('i\'ll start to play music');
+                                MIDI.Player.start();
                                 angular.element('.redBar').css('opacity', '1');
                                 angular.element('.redBar').css('transition', '0s linear').css('margin-left', '123px').css('margin-top', '100px');
                                 let containerWidth = angular.element('.star').width(),
@@ -134,8 +137,6 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                                     }, last * 1000);
                                     last += lineDuration[i] + 0.05;
                                 }
-                                console.log('i\'ll start to play music');
-                                MIDI.Player.start();
                                 $timeout(() => {
                                     this.isPlaying = false;
                                     this.errors += pulses.filter((p) => {

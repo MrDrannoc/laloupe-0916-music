@@ -72,6 +72,7 @@ export default class Score {
                     var track = new Midi.Track();
                     file.addTrack(track);
                     track.setTempo(score.tempoScore);
+                    track.addNote(0,'c4',128);
                     score.notes.sort(function(a, b) {
                         return (a.orderNote > b.orderNote) ? 1 : ((b.orderNote > a.orderNote) ? -1 : 0);
                     }).forEach(function(note) {
