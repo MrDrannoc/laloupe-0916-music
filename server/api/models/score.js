@@ -77,7 +77,7 @@ export default class Score {
                         return (a.orderNote > b.orderNote) ? 1 : ((b.orderNote > a.orderNote) ? -1 : 0);
                     }).forEach(function(note) {
                         if (note.valueNote < 5) {
-                            track.addNote(0, noteiconv(note.heigthNote), (128 * note.valueNote));
+                            track.addNote(0, noteiconv(note.heigthNote), (128 * note.valueNote), 0, Math.floor(Math.random() * (110 - 70 + 1) + 70));
                         }
                     });
                     let b64mid = btoa(file.toBytes());

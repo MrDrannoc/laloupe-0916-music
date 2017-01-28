@@ -1,26 +1,26 @@
 <div class="container-fluid">
-  <div class="metronome">
-      <img class="fullBody" src="./assets/img/elementsPages/fullBody.png">
-      <img id="wand" src="./assets/img/elementsPages/wand.png">
-  </div>
-      <div class="bloc1">
-          <div class="row">
-              <div class="col-xs-2 col-xs-offset-5">
-                  <img src="./assets/img/elementsPages/ourson.png" alt="ourson"/>
-                  <div id="flash"></div>
-              </div>
-          </div>
-          <br>
-          <div class="row">
-              <div class="col-xs-2 col-xs-offset-5">
-                  <a href="#!/list/exercices">
-                      <button style="margin-left:-50px" type="button" class="btn btn-default retourDashboard">
+    <div class="metronome">
+        <img class="fullBody" src="./assets/img/elementsPages/fullBody.png">
+        <img id="wand" src="./assets/img/elementsPages/wand.png">
+    </div>
+    <div class="bloc1">
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-5">
+                <img src="./assets/img/elementsPages/ourson.png" alt="ourson" />
+                <div id="flash"></div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-5">
+                <a href="#!/list/exercices">
+                    <button style="margin-left:-50px" type="button" class="btn btn-default retourDashboard">
                           <span class="glyphicon glyphicon-music"></span>
                           Liste des exercices</button>
-                  </a>
-              </div>
-          </div>
-      </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xs-6 col-xs-offset-3 bloc3user">
             <br>
@@ -35,7 +35,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center">
+    <div class="text-center playBtn">
         <button ng-click="vm.play()" type="button" class="btn btn-lg" ng-class='vm.isPlaying ? vm.beatAtStart>0 ? "btn-success" : "btn-danger" : "btn-primary"'>
             <span class='glyphicon glyphicon-play'></span>&nbsp;{{vm.isPlaying ? vm.beatAtStart>0 ? "Départ dans " + vm.beatAtStart + ' pulse' + (vm.beatAtStart>1?"s":"") : "Lecture en cours..." : "Lecture"}}</button>
     </div>
@@ -44,11 +44,11 @@
         <div class="row">
             <div class="bloc4 col-xs-12">
                 <div class="row">
-                    <img class="redBar" src="assets/img/elementsPartitions/redBar1.jpg" alt="" ng-click='vm.pulseControl()'/>
+                    <img class="redBar" src="assets/img/elementsPartitions/redBar1.jpg" alt="" ng-click='vm.pulseControl()' />
                     <div class="star col-xs-12">
-                        <img class="imgacacher" src="assets/img/elementsPartitions/0/cleDeSol.png"/>
+                        <img class="imgacacher" src="assets/img/elementsPartitions/0/cleDeSol.png" />
                         <div class="noteDisplay">
-                            <img src="assets/img/elementsPartitions/0/{{vm.numBeatBar}}x{{vm.referenceValueBar}}.png"/>
+                            <img src="assets/img/elementsPartitions/0/{{vm.numBeatBar}}x{{vm.referenceValueBar}}.png" />
                         </div>
                         <span ng-repeat="note in vm.noteCURRENT | orderBy:'orderNote'">
                             <div class="noteDisplay"><img alt="{{note.valueNote}}" src="assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{note.valueNote < 5 ? 140*note.valueNote : ""}}' height='{{note.valueNote < 5 ? 300 : ""}}' ng-click='vm.wrongNote()'/></div>
@@ -85,8 +85,8 @@
                     <h5 class="modal-title" id="ModalLabel2">Dommage, essaye encore !</h5>
                 </div>
                 <div class="modal-body">
-                  <img src="./assets/img/elementsPages/ourson.png" alt="panda" />
-                  <p>Tu as fait {{vm.errors}} faute(s) dans cet exercice.</p>
+                    <img src="./assets/img/elementsPages/ourson.png" alt="panda" />
+                    <p>Tu as fait {{vm.errors}} faute(s) dans cet exercice.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -94,5 +94,8 @@
             </div>
         </div>
     </div>
+
+</div>
+<div style='margin-top:calc(100vh - 300px);'>
 
 </div>
