@@ -89,13 +89,13 @@
                                     <option value="1">Noire</option>
                                     <option value="0.5">Croche</option>
                                     <option value="0.25">Double Croche</option>
-                                    <option value="1.0">Triolet</option>
+                                    <!-- <option value="1.0">Triolet</option>
                                     <option value="23">Bémol</option>
                                     <option value="24">Dièses</option>
                                     <option value="19">Armures bémols</option>
-                                    <option value="20">Armures dièses</option>
-                                    <option value="26">Points</option>
-                                    <option value="25">Barre</option>
+                                    <option value="20">Armures dièses</option> -->
+                                    <!-- <option value="26">Points</option>
+                                    <option value="25">Barre</option> -->
                                 </select>
                                 <select class="form-control" ng-model="note.heigthNote" ng-change='vm.editNote(note)'>
 
@@ -116,7 +116,7 @@
                                     <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="la3">la3</option>
                                     <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="si1">si1</option>
                                     <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25" value="si2">si2</option>
-                                    <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25">si3</option>
+                                    <!-- <option ng-hide="note.valueNote==19 || note.valueNote==20 || note.valueNote==25">si3</option>
                                     <option ng-show="note.valueNote==4" value="pause">Pause</option>
                                     <option ng-show="note.valueNote==2" value="demiPause">Demi-pause</option>
                                     <option ng-show="note.valueNote==='1'" value="soupir">Silence</option>
@@ -137,7 +137,7 @@
                                     <option ng-show="note.valueNote == 20" value="fadosolre"> faDoSolRe#</option>
                                     <option ng-show="note.valueNote == 20" value="fadosolrela"> faDoSolReLa#</option>
                                     <option ng-show="note.valueNote == 20" value="fadosolrelami"> faDoSolReLaMi#</option>
-                                    <option ng-show="note.valueNote == 20" value="fadosolrelamisi"> faDoSolReLaMiSi#</option>
+                                    <option ng-show="note.valueNote == 20" value="fadosolrelamisi"> faDoSolReLaMiSi#</option> -->
                                 </select>
                             </div>
                             <img class="imgacacher" alt="{{note.valueNote}}" src="./assets/img/elementsPartitions/{{note.valueNote}}/{{note.heigthNote}}.png" width='{{note.valueNote < 5 ? 140*note.valueNote : ""}}' height='{{note.valueNote < 5 ? 300 : ""}}'/>

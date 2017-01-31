@@ -76,6 +76,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                                         microtimeStart = new Date().getTime(),
                                         start = microtimeStart;
                                     this.errors = 0;
+                                    this.success= 0;
                                     this.endTime = 0;
                                     let c = 0;
                                     for (let note of this.noteCURRENT) {
@@ -119,6 +120,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                                             pulses.map((p) => {
                                                 if (!p.validated && p.start < clickAt && p.end > clickAt) {
                                                     p.validated = true;
+                                                    this.success++;
                                                     angular.element('#flash').show().addClass('green');
                                                     $timeout(function() {
                                                         angular.element('#flash').removeClass("green").hide();
@@ -162,6 +164,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                                     $timeout(() => {
                                         MIDI.Player.stop();
                                         this.isPlaying = false;
+                                        this.datGoodAnswers = pulses.length;
                                         this.errors += pulses.filter((p) => {
                                             return !p.validated;
                                         }).length;
