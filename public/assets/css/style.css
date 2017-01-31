@@ -717,6 +717,11 @@ footer .bloc3user .dropdown {
     margin-top: 4%;
 }
 
+.metronome .checkbox {
+  margin-top: -35px;
+  margin-left: 80px;
+}
+
 .fullBody {
     width: 30%;
 }
@@ -724,7 +729,7 @@ footer .bloc3user .dropdown {
 #wand {
     width: 5%;
     position: absolute;
-    top: -1%;
+    margin-top: 2%;
     left: 12.5%;
 }
 

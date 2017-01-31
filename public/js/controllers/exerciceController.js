@@ -2,6 +2,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
     this.scoreService = scoreService;
     this.noteService = noteService;
     this.$location = $location;
+    this.metronomeSwitch = false;
     this.currentScoreId = $routeParams.exerciceId;
     this.load = () => {
         this.scoreService.getOne(this.currentScoreId).then((res) => {
@@ -40,7 +41,6 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                     instrument: "acoustic_grand_piano",
                     onsuccess: () => {
                         MIDI.Player.BPM = this.tempo;
-                        this.metronome();
                         MIDI.Player.loadFile(syncedMidi, () => {
                             this.isPlaying = true;
                             $('html, body').animate({
@@ -150,7 +150,7 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                                                 if (current != lineWidth.length - 1) {
                                                     current++;
                                                     $('html, body').animate({
-                                                        scrollTop: angular.element('.playBtn').offset().top + (300*current) - angular.element('.navbar').height()
+                                                        scrollTop: angular.element('.playBtn').offset().top + (300 * current) - angular.element('.navbar').height()
                                                     }, 0);
                                                     angular.element('.redBar').css('transition', '0s').css('margin-left', '0px').css('margin-top', (Number(angular.element('.redBar').css('margin-top').replace(/px/, '')) + 300) + "px");
 
@@ -176,23 +176,35 @@ function exerciceController(scoreService, noteService, $location, $routeParams, 
                             });
                         });
                     }
-                })
-            })
+                });
+            });
         };
-    }
-
+    };
+    this.metronomeInterval = [undefined, undefined, undefined];
     this.metronome = () => {
-        let time = 60 / this.score.tempoScore * 1000,
-            aiguille = angular.element('#wand');
-        $interval(() => {
-            aiguille.css('animation', "halfTempRight " + time / 1000 + "s infinite linear");
-            aiguille.css('transform', 'rotate(-20deg)');
-        }, time * 2);
-        $timeout(() => {
-            $interval(() => {
-                aiguille.css('animation', "halfTempLeft " + time / 1000 + "s infinite linear");
-                aiguille.css('transform', 'rotate(20deg)');
+        $scope.$on('toggleMetronome', () => {
+            let time = 60 / this.score.tempoScore * 1000,
+                aiguille = angular.element('#wand');
+            this.metronomeInterval[0] = $interval(() => {
+                aiguille.css('animation', "halfTempRight " + time / 1000 + "s infinite linear");
+                aiguille.css('transform', 'rotate(-20deg)');
             }, time * 2);
-        }, time);
+            this.metronomeInterval[2] = $timeout(() => {
+                this.metronomeInterval[1] = $interval(() => {
+                    aiguille.css('animation', "halfTempLeft " + time / 1000 + "s infinite linear");
+                    aiguille.css('transform', 'rotate(20deg)');
+                }, time * 2);
+            }, time);
+        });
+        if (this.metronomeSwitch) {
+            $scope.$emit('toggleMetronome');
+        } else {
+            $timeout.cancel(this.metronomeInterval[2]);
+            $interval.cancel(this.metronomeInterval[0]);
+            $interval.cancel(this.metronomeInterval[1]);
+            angular.element('#wand').css('animation', 'none');
+            angular.element('#wand').css('transform', 'none');
+            this.metronomeInterval = [undefined, undefined, undefined];
+        }
     };
 }

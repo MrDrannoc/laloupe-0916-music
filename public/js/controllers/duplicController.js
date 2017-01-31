@@ -7,7 +7,6 @@ function duplicController(scoreService, noteService, $location, $routeParams) {
 
 
     this.duplic = (name) => {
-      console.log("COUCOU");
         this.newName = this.nameScoreDuplic;
         this.scoreService.getOne(this.id).then((res) => {
             this.copy = res.data;

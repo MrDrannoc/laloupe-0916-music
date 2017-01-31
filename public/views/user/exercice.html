@@ -1,7 +1,10 @@
 <div class="container-fluid">
     <div class="metronome">
+      <div class="checkbox">
+      </div>
         <img class="fullBody" src="./assets/img/elementsPages/fullBody.png">
         <img id="wand" src="./assets/img/elementsPages/wand.png">
+        <label><input ng-model="vm.metronomeSwitch" type="checkbox" ng-change='vm.metronome()'></label>
     </div>
     <div class="bloc1">
         <div class="row">
