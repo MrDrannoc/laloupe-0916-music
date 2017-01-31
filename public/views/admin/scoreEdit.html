@@ -30,7 +30,7 @@
     <div class="container bloc3edit col-md-6 col-md-offset-3">
         <div class="formulaire col-md-7 col-md-offset-5">
             <form ng-submit="vm.scoreChoice(vm.score)" class="form-horizontal col-md-10 col-md-offset-1">
-                <h6>Sélectionne une partition</h6>
+                <h6>Sélectionne un exercice</h6>
                 <div class="select">
                     <select class="form-control" ng-model="vm.score">
                         <option ng-repeat="score in vm.scores" ng-value="score._id">{{score.nameScore}}</option>
